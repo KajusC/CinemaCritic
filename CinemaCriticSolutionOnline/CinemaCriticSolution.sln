@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaCritic.Web", "CinemaCriticOnline.Web\CinemaCritic.Web.csproj", "{56281F95-3856-429D-811F-98190C3E3EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaCritic.API", "CinemaCritic.API\CinemaCritic.API.csproj", "{2D8012D7-9A5F-4E46-B19D-2D842D1AA99C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56281F95-3856-429D-811F-98190C3E3EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56281F95-3856-429D-811F-98190C3E3EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56281F95-3856-429D-811F-98190C3E3EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56281F95-3856-429D-811F-98190C3E3EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D8012D7-9A5F-4E46-B19D-2D842D1AA99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8012D7-9A5F-4E46-B19D-2D842D1AA99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8012D7-9A5F-4E46-B19D-2D842D1AA99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8012D7-9A5F-4E46-B19D-2D842D1AA99C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1BB25A4-A836-489B-9CB5-3065A1791E95}
+	EndGlobalSection
+EndGlobal
