@@ -1,4 +1,4 @@
-using CinemaCriticOnline.Web;
+using CinemaCritic.Web;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
