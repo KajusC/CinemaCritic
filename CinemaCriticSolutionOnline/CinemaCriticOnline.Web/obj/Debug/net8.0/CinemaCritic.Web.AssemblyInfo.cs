@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaCritic.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edda064be90e5da61911227f498af26ffc27e1a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f796c5d9d855e12a6dab1a928ff9bcf2c72238be")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaCritic.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaCritic.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
