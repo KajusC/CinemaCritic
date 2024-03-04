@@ -1,6 +1,7 @@
 ﻿using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
 {
@@ -11,38 +12,38 @@ namespace CinemaCritic.API.Repositories
         {
             _context = context;
         }
-        public bool CreateGenre(Genre genre)
+        public async Task<bool> CreateGenre(Genre genre)
         {
-            _context.Genres.Add(genre);
-            return SaveChanges();
+            await _context.Genres.AddAsync(genre);
+            return await SaveChanges();
         }
 
-        public bool DeleteGenre(Genre genre)
+        public async Task<bool> DeleteGenre(Genre genre)
         {
             _context.Genres.Remove(genre);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public bool GenreExists(int id)
+        public async Task<bool> GenreExists(int id)
         {
-            return _context.Genres.Any(g => g.Id == id);
+            return await _context.Genres.AnyAsync(g => g.Id == id);
         }
 
-        public ICollection<Genre> GetAllGenres()
+        public async Task<ICollection<Genre>> GetAllGenres()
         {
-            return _context.Genres.ToList();
+            return await _context.Genres.ToListAsync();
         }
 
-        public Genre GetGenre(int id)
+        public async Task<Genre> GetGenre(int id)
         {
-            return _context.Genres.Where(g => g.Id == id).FirstOrDefault();
+            return await _context.Genres.Where(g => g.Id == id).FirstOrDefaultAsync();
         }
 
-        public bool SaveChanges()
+        public async Task<bool> SaveChanges()
         {
             try
             {
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception)
@@ -51,10 +52,10 @@ namespace CinemaCritic.API.Repositories
             }
         }
 
-        public bool UpdateGenre(Genre genre)
+        public async Task<bool> UpdateGenre(Genre genre)
         {
             _context.Genres.Update(genre);
-            return SaveChanges();
+            return await SaveChanges();
         }
     }
 }

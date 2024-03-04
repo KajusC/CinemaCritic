@@ -2,6 +2,7 @@
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Models.JoinTables;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
 {
@@ -13,38 +14,38 @@ namespace CinemaCritic.API.Repositories
             _context = context;
         }
 
-        public bool CreateMovie(Movie movie)
+        public async Task<bool> CreateMovie(Movie movie)
         {
-            _context.Movies.Add(movie);
-            return SaveChanges();
+            await _context.Movies.AddAsync(movie);
+            return await SaveChanges();
         }
 
-        public bool DeleteMovie(Movie movie)
+        public async Task<bool> DeleteMovie(Movie movie)
         {
             _context.Movies.Remove(movie);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public ICollection<Movie> GetAllMovies()
+        public async Task<ICollection<Movie>> GetAllMovies()
         {
-            return _context.Movies.ToList();
+            return await _context.Movies.ToListAsync();
         }
 
-        public Movie GetMovie(int id)
+        public async Task<Movie> GetMovie(int id)
         {
-            return _context.Movies.Where(m => m.Id == id).FirstOrDefault();
+            return await _context.Movies.Where(m => m.Id == id).FirstOrDefaultAsync();
         }
 
-        public bool MovieExists(int id)
+        public async Task<bool> MovieExists(int id)
         {
-            return _context.Movies.Any(m => m.Id == id);
+            return await _context.Movies.AnyAsync(m => m.Id == id);
         }
 
-        public bool SaveChanges()
+        public async Task<bool> SaveChanges()
         {
             try
             {
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception e)
@@ -52,10 +53,10 @@ namespace CinemaCritic.API.Repositories
                 return false;
             }
         }
-        public bool UpdateMovie(Movie movie)
+        public async Task<bool> UpdateMovie(Movie movie)
         {
             _context.Movies.Update(movie);
-            return SaveChanges();
+            return await SaveChanges();
         }
     }
 }

@@ -2,6 +2,7 @@
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Models.JoinTables;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
 {
@@ -13,41 +14,49 @@ namespace CinemaCritic.API.Repositories
             _context = context;
         }
 
-        public bool CreateFavoriteMovie(int userId, int movieId)
+        public async Task<bool> CreateFavoriteMovie(int userId, int movieId)
         {
-            var user = _context.Users.Where(u => u.Id == userId).FirstOrDefault();
-            var movie = _context.Movies.Where(m => m.Id == movieId).FirstOrDefault();
+            var user = await _context.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
+            var movie = await _context.Movies.Where(m => m.Id == movieId).FirstOrDefaultAsync();
+
+            if(user == null || movie == null)
+                return false;
 
             var favoriteMovie = new UserMovies()
             {
                 User = user,
                 Movie = movie
             }; 
-            _context.UserMovies.Add(favoriteMovie);
-            return SaveChanges();
+            await _context.UserMovies.AddAsync(favoriteMovie);
+            return await SaveChanges();
         }
 
-        public bool DeleteFavoriteMovie(int userId, int movieId)
+        public async Task<bool> DeleteFavoriteMovie(int userId, int movieId)
         {
-            _context.UserMovies.Remove(_context.UserMovies.Where(um => um.UserId == userId && um.MovieId == movieId).FirstOrDefault());
-            return SaveChanges();
+            var favoriteMovie = await _context.UserMovies.Where(um => um.UserId == userId && um.MovieId == movieId).FirstOrDefaultAsync();
+
+            if(favoriteMovie == null)
+                return false;
+
+            _context.UserMovies.Remove(favoriteMovie);
+            return await SaveChanges();
         }
 
-        public bool FavoriteMovieExists(int userId, int movieId)
+        public async Task<bool> FavoriteMovieExists(int userId, int movieId)
         {
-            return _context.UserMovies.Any(um => um.UserId == userId && um.MovieId == movieId);
+            return await _context.UserMovies.AnyAsync(um => um.UserId == userId && um.MovieId == movieId);
         }
 
-        public ICollection<Movie> GetAllFavoriteMoviesOfUser(int userId)
+        public async Task<ICollection<Movie>> GetAllFavoriteMoviesOfUser(int userId)
         {
-            return _context.UserMovies.Where(um => um.UserId == userId).Select(um => um.Movie).ToList();
+            return await _context.UserMovies.Where(um => um.UserId == userId).Select(um => um.Movie).ToListAsync();
         }
 
-        public bool SaveChanges()
+        public async Task<bool> SaveChanges()
         {
             try
             {
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception)

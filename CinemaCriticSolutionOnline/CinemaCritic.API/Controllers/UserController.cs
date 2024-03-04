@@ -21,9 +21,9 @@ namespace CinemaCritic.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ICollection<User>))]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            var users = _mapper.Map<List<UserDto>>(_userRepository.GetAllUsers());
+            var users = _mapper.Map<List<UserDto>>(await _userRepository.GetAllUsers());
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -33,13 +33,13 @@ namespace CinemaCritic.API.Controllers
         [HttpGet("{userId}")]
         [ProducesResponseType(200, Type = typeof(User))]
         [ProducesResponseType(400)]
-        public IActionResult GetUser(int userId)
+        public async Task<IActionResult> GetUser(int userId)
         {
-            if(!_userRepository.UserExists(userId))
+            if(!await _userRepository.UserExists(userId))
             {
                 return BadRequest("User does not exist");
             }
-            var user = _mapper.Map<UserDto>(_userRepository.GetUser(userId));
+            var user = _mapper.Map<UserDto>(await _userRepository.GetUser(userId));
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -49,15 +49,15 @@ namespace CinemaCritic.API.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateUser([FromBody] UserDto userCreate)
+        public async Task<IActionResult> CreateUser([FromBody] UserDto userCreate)
         {
             if (userCreate == null)
             {
                 return BadRequest(ModelState);
             }
-            var user = _userRepository.GetAllUsers()
-                .Where(c => c.Email.Trim().ToUpper() == userCreate.Email.TrimEnd().ToUpper())
-                .FirstOrDefault();
+            var users = await _userRepository.GetAllUsers();
+
+            var user = users.Where(c => c.Email.Trim().ToUpper() == userCreate.Email.TrimEnd().ToUpper()).FirstOrDefault();
 
             if (user != null)
             {
@@ -67,11 +67,18 @@ namespace CinemaCritic.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var userMap = _mapper.Map<User>(userCreate);
-
-            if (!_userRepository.CreateUser(userMap))
+            User user1 = new User()
             {
-                ModelState.AddModelError("", "Something went wrong");
+                FirstName = userCreate.FirstName,
+                LastName = userCreate.LastName,
+                Email = userCreate.Email,
+                Password = userCreate.Password,
+                Username = userCreate.Username
+            };
+
+            if (!await _userRepository.CreateUser(user1))
+            {
+                ModelState.AddModelError("", "This");
                 return StatusCode(500, ModelState);
             }
             return Ok("Success");
@@ -80,7 +87,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateUser(int userId, [FromBody] UserDto userToUpdate)
+        public async Task<IActionResult> UpdateUser(int userId, [FromBody] UserDto userToUpdate)
         {
             if (userToUpdate is null)
             {
@@ -90,7 +97,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(!_userRepository.UserExists(userId))
+            if(!await _userRepository.UserExists(userId))
             {
                 return NotFound();
             }
@@ -99,7 +106,7 @@ namespace CinemaCritic.API.Controllers
                 return BadRequest(ModelState);
             }
             var ownerMap = _mapper.Map<User>(userToUpdate);
-            if (!_userRepository.UpdateUser(ownerMap))
+            if (!await _userRepository.UpdateUser(ownerMap))
             {
                 ModelState.AddModelError("", "Something went wrong");
                 return StatusCode(500, ModelState);
@@ -110,18 +117,18 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteUser(int userId)
+        public async Task<IActionResult> DeleteUser(int userId)
         {
-            if (!_userRepository.UserExists(userId))
+            if (!await _userRepository.UserExists(userId))
             {
                 return NotFound();
             }
-            var user = _userRepository.GetUser(userId);
+            var user = await _userRepository.GetUser(userId);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (!_userRepository.DeleteUser(user))
+            if (!await _userRepository.DeleteUser(user))
             {
                 ModelState.AddModelError("", "Something went wrong");
                 return StatusCode(500, ModelState);

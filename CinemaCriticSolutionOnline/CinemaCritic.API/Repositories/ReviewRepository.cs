@@ -1,6 +1,7 @@
 ﻿using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
 {
@@ -11,37 +12,37 @@ namespace CinemaCritic.API.Repositories
         {
             _context = context;
         }
-        public bool CreateReview(Review review)
+        public async Task<bool> CreateReview(Review review)
         {
-            _context.Reviews.Add(review);
-            return SaveChanges();
+            await _context.Reviews.AddAsync(review);
+            return await SaveChanges();
         }
 
-        public bool DeleteReview(Review review)
+        public async Task<bool> DeleteReview(Review review)
         {
             _context.Reviews.Remove(review);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public ICollection<Review> GetAllReviews()
+        public async Task<ICollection<Review>> GetAllReviews()
         {
-            return _context.Reviews.ToList();
+            return await _context.Reviews.ToListAsync();
         }
 
-        public Review GetReview(int id)
+        public async Task<Review> GetReview(int id)
         {
-            return _context.Reviews.Where(r => r.Id == id).FirstOrDefault();
+            return await _context.Reviews.Where(r => r.Id == id).FirstOrDefaultAsync();
         }
 
-        public bool ReviewExists(int id)
+        public async Task<bool> ReviewExists(int id)
         {
-            return _context.Reviews.Any(r => r.Id == id);
+            return await _context.Reviews.AnyAsync(r => r.Id == id);
         }
 
-        public bool SaveChanges()
+        public async Task<bool> SaveChanges()
         {
             try{
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch(Exception e)
@@ -50,10 +51,10 @@ namespace CinemaCritic.API.Repositories
             }
         }
 
-        public bool UpdateReview(Review review)
+        public async Task<bool> UpdateReview(Review review)
         {
             _context.Reviews.Update(review);
-            return SaveChanges();
+            return await SaveChanges();
         }
     }
 }

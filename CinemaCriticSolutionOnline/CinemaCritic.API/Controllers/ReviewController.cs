@@ -24,9 +24,9 @@ namespace CinemaCritic.API.Controllers
         }
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
-        public IActionResult GetReviews()
+        public async Task<IActionResult> GetReviews()
         {
-            var reviews = _mapper.Map<List<ReviewDto>>(_reviewRepository.GetAllReviews());
+            var reviews = _mapper.Map<List<ReviewDto>>(await _reviewRepository.GetAllReviews());
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -36,13 +36,13 @@ namespace CinemaCritic.API.Controllers
         [HttpGet("{reviewId}")]
         [ProducesResponseType(200, Type = typeof(Review))]
         [ProducesResponseType(400)]
-        public IActionResult GetReview(int reviewId)
+        public async Task<IActionResult> GetReview(int reviewId)
         {
-            if(!_reviewRepository.ReviewExists(reviewId))
+            if(!await _reviewRepository.ReviewExists(reviewId))
             {
                 return NotFound();
             }
-            var review = _mapper.Map<ReviewDto>(_reviewRepository.GetReview(reviewId));
+            var review = _mapper.Map<ReviewDto>(await _reviewRepository.GetReview(reviewId));
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -53,28 +53,32 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public IActionResult CreateReview([FromBody] ReviewDto reviewCreate, [FromQuery] int userId, [FromQuery] int movieId)
+        public async Task<IActionResult> CreateReview([FromBody] ReviewDto reviewCreate, [FromQuery] int userId, [FromQuery] int movieId)
         {
             if(reviewCreate is null)
             {
                 return BadRequest(ModelState);
             }
-            var review = _mapper.Map<Review>(reviewCreate);
-            if(!_userRepository.UserExists(userId))
+            Review review = new Review()
+            {
+                Rating = reviewCreate.Rating,
+                Comment = reviewCreate.Comment
+            };
+            if(!await _userRepository.UserExists(userId))
             {
                 return NotFound("User does not exist");
             }
-            if(!_movieRepository.MovieExists(movieId))
+            if(!await _movieRepository.MovieExists(movieId))
             {
                 return NotFound("Movie does not exist");
             }
-            review.User = _userRepository.GetUser(userId);
-            review.Movie = _movieRepository.GetMovie(movieId);
+            review.User = await _userRepository.GetUser(userId);
+            review.Movie = await _movieRepository.GetMovie(movieId);
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if(!_reviewRepository.CreateReview(review))
+            if(!await _reviewRepository.CreateReview(review))
             {
                 ModelState.AddModelError("", $"Something went wrong saving the review");
                 return StatusCode(500, ModelState);
@@ -86,7 +90,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateReview(int reviewId, [FromBody] ReviewDto reviewUpdate)
+        public async Task<IActionResult> UpdateReview(int reviewId, [FromBody] ReviewDto reviewUpdate)
         {
             if(reviewUpdate is null)
             {
@@ -96,7 +100,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(!_reviewRepository.ReviewExists(reviewId))
+            if(!await _reviewRepository.ReviewExists(reviewId))
             {
                 return NotFound();
             }
@@ -105,7 +109,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(!_reviewRepository.UpdateReview(review))
+            if(!await _reviewRepository.UpdateReview(review))
             {
                 ModelState.AddModelError("", $"Something went wrong updating the review");
                 return StatusCode(500, ModelState);
@@ -116,18 +120,18 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteReview(int reviewId)
+        public async Task<IActionResult> DeleteReview(int reviewId)
         {
-            if(!_reviewRepository.ReviewExists(reviewId))
+            if(!await _reviewRepository.ReviewExists(reviewId))
             {
                 return NotFound();
             }
-            var review = _reviewRepository.GetReview(reviewId);
+            var review = await _reviewRepository.GetReview(reviewId);
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if(!_reviewRepository.DeleteReview(review))
+            if(!await _reviewRepository.DeleteReview(review))
             {
                 ModelState.AddModelError("", $"Something went wrong deleting the review");
                 return StatusCode(500, ModelState);

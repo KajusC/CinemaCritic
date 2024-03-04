@@ -4,13 +4,13 @@ namespace CinemaCritic.API.Repositories.Contracts
 {
     public interface IUserRepository
     {
-        ICollection<User> GetAllUsers();
-        User GetUser(int id);
+        Task<ICollection<User>> GetAllUsers();
+        Task<User> GetUser(int id);
         //if needed add more methods
-        bool CreateUser(User user);
-        bool UpdateUser(User user);
-        bool DeleteUser(User user);
-        bool UserExists(int id);
-        bool SaveChanges();
+        Task<bool> CreateUser(User user);
+        Task<bool> UpdateUser(User user);
+        Task<bool> DeleteUser(User user);
+        Task<bool> UserExists(int id);
+        Task<bool> SaveChanges();
     }
 }

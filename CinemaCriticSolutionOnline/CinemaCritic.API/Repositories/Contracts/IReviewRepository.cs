@@ -4,13 +4,13 @@ namespace CinemaCritic.API.Repositories.Contracts
 {
     public interface IReviewRepository
     {
-        ICollection<Review> GetAllReviews();
-        Review GetReview(int id);
+        Task<ICollection<Review>> GetAllReviews();
+        Task<Review> GetReview(int id);
         //if needed add more methods
-        bool CreateReview(Review review);
-        bool UpdateReview(Review review);
-        bool DeleteReview(Review review);
-        bool ReviewExists(int id);
-        bool SaveChanges();
+        Task<bool> CreateReview(Review review);
+        Task<bool> UpdateReview(Review review);
+        Task<bool> DeleteReview(Review review);
+        Task<bool> ReviewExists(int id);
+        Task<bool> SaveChanges();
     }
 }

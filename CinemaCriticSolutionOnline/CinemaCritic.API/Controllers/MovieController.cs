@@ -24,24 +24,24 @@ namespace CinemaCritic.API.Controllers
         }
         [HttpGet]
         [ProducesResponseType(200, Type=typeof(ICollection<Movie>))]
-        public IActionResult GetMovies()
+        public async Task<IActionResult> GetMovies()
         {
-            var movies = _mapper.Map<List<MovieDto>>(_movieRepository.GetAllMovies());
+            var movies = _mapper.Map<List<MovieDto>>(await _movieRepository.GetAllMovies());
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             return Ok(movies);
         }
-        [HttpGet("{id}")]
+        [HttpGet("{movieId}")]
         [ProducesResponseType(200, Type=typeof(Movie))]
-        public IActionResult GetMovie(int movieId)
+        public async Task<IActionResult> GetMovie(int movieId)
         {
-            if(!_movieRepository.MovieExists(movieId))
+            if(!await _movieRepository.MovieExists(movieId))
             {
                 return NotFound();
             }
-            var movie = _mapper.Map<MovieDto>(_movieRepository.GetMovie(movieId));
+            var movie = _mapper.Map<MovieDto>(await _movieRepository.GetMovie(movieId));
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -51,15 +51,14 @@ namespace CinemaCritic.API.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateMovie([FromQuery] int genreId, [FromBody] MovieDto movieToCreate)
+        public async Task<IActionResult> CreateMovie([FromQuery] int genreId, [FromBody] MovieDto movieToCreate)
         {
             if(movieToCreate is null)
             {
                 return BadRequest(ModelState);
             }
-            var movie = _movieRepository.GetAllMovies()
-               .Where(m => m.Name.Trim().ToUpper() == movieToCreate.Name.TrimEnd().ToUpper())
-               .FirstOrDefault();
+            var movies = await _movieRepository.GetAllMovies();
+            var movie = movies.Where(m => m.Name.Trim().ToUpper() == movieToCreate.Name.TrimEnd().ToUpper()).FirstOrDefault();
             if (movie != null)
             {
                 ModelState.AddModelError("", "Movie already exists");
@@ -69,12 +68,19 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            movie = _mapper.Map<Movie>(movieToCreate);
-            var genre = _genreRepository.GetGenre(genreId);
-            movie.Genre = genre;
-            if(!_movieRepository.CreateMovie(movie))
+            Movie movie1 = new Movie()
             {
-                ModelState.AddModelError("", $"Something went wrong saving the movie {movie.Name}");
+                Name = movieToCreate.Name,
+                Description = movieToCreate.Description,
+                ReleaseDate = movieToCreate.ReleaseDate,
+                ImageUrl = movieToCreate.ImageUrl
+                
+            };
+            var genre = await _genreRepository.GetGenre(genreId);
+            movie1.Genre = genre;
+            if(!await _movieRepository.CreateMovie(movie1))
+            {
+                ModelState.AddModelError("", $"Something went wrong saving the movie {movie1.Name}");
                 return StatusCode(500, ModelState);
             }
             return Ok("Success");
@@ -83,7 +89,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateMovie(int movieId, [FromBody] MovieDto updatedMovie)
+        public async Task<IActionResult> UpdateMovie(int movieId, [FromBody] MovieDto updatedMovie)
         {
             if(updatedMovie is null)
             {
@@ -93,7 +99,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(!_movieRepository.MovieExists(movieId))
+            if(!await _movieRepository.MovieExists(movieId))
             {
                 return NotFound();
             }
@@ -102,7 +108,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(!_movieRepository.UpdateMovie(movie))
+            if(!await _movieRepository.UpdateMovie(movie))
             {
                 ModelState.AddModelError("", $"Something went wrong updating the movie {movie.Name}");
                 return StatusCode(500, ModelState);
@@ -113,18 +119,18 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteMovie(int movieId)
+        public async Task<IActionResult> DeleteMovie(int movieId)
         {
-            if(!_movieRepository.MovieExists(movieId))
+            if(!await _movieRepository.MovieExists(movieId))
             {
                 return NotFound();
             }
-            var movie = _movieRepository.GetMovie(movieId);
+            var movie = await _movieRepository.GetMovie(movieId);
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if(!_movieRepository.DeleteMovie(movie))
+            if(!await _movieRepository.DeleteMovie(movie))
             {
                 ModelState.AddModelError("", $"Something went wrong deleting the movie {movie.Name}");
                 return StatusCode(500, ModelState);

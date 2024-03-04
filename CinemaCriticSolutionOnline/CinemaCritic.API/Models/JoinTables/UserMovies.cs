@@ -1,4 +1,7 @@
-﻿namespace CinemaCritic.API.Models.JoinTables
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CinemaCritic.API.Models.JoinTables
 {
     public class UserMovies
     {

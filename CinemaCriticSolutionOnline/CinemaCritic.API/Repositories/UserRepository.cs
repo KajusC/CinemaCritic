@@ -1,6 +1,7 @@
 ﻿using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
 {
@@ -11,33 +12,33 @@ namespace CinemaCritic.API.Repositories
         {
             _context = context;
         }
-        public bool CreateUser(User user)
+        public async Task<bool> CreateUser(User user)
         {
-            _context.Users.Add(user);
-            return SaveChanges();
+            await _context.Users.AddAsync(user);
+            return await SaveChanges();
         }
 
-        public bool DeleteUser(User user)
+        public async Task<bool> DeleteUser(User user)
         {
             _context.Users.Remove(user);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public ICollection<User> GetAllUsers()
+        public async Task<ICollection<User>> GetAllUsers()
         {
-            return _context.Users.ToList();
+            return await _context.Users.ToListAsync();
         }
 
-        public User GetUser(int id)
+        public async Task<User> GetUser(int id)
         {
-            return _context.Users.Where(x => x.Id == id).FirstOrDefault();
+            return await _context.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public bool SaveChanges()
+        public async Task<bool> SaveChanges()
         {
             try
             {
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception)
@@ -46,15 +47,15 @@ namespace CinemaCritic.API.Repositories
             }
         }
 
-        public bool UpdateUser(User user)
+        public async Task<bool> UpdateUser(User user)
         {
             _context.Users.Update(user);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public bool UserExists(int id)
+        public async Task<bool> UserExists(int id)
         {
-            return _context.Users.Any(x => x.Id == id);
+            return await _context.Users.AnyAsync(x => x.Id == id);
         }
     }
 }

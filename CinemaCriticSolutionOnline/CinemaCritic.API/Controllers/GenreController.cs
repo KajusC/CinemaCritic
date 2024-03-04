@@ -21,9 +21,9 @@ namespace CinemaCritic.API.Controllers
         }
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ICollection<Genre>))]
-        public IActionResult GetGenres()
+        public async Task<IActionResult> GetGenres()
         {
-            var genres = _mapper.Map<List<GenreDto>>(_genreRepository.GetAllGenres());
+            var genres = _mapper.Map<List<GenreDto>>(await _genreRepository.GetAllGenres());
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -33,13 +33,13 @@ namespace CinemaCritic.API.Controllers
         [HttpGet("{genreId}")]
         [ProducesResponseType(200, Type = typeof(Genre))]
         [ProducesResponseType(400)]
-        public IActionResult GetGenre(int genreId)
+        public async Task<IActionResult> GetGenre(int genreId)
         {
-            if(!_genreRepository.GenreExists(genreId))
+            if(!await _genreRepository.GenreExists(genreId))
             {
                 return BadRequest("Genre does not exist");
             }
-            var genre = _mapper.Map<GenreDto>(_genreRepository.GetGenre(genreId));
+            var genre = _mapper.Map<GenreDto>(await _genreRepository.GetGenre(genreId));
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -49,22 +49,25 @@ namespace CinemaCritic.API.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateGenre([FromBody] GenreDto genreCreate)
+        public async Task<IActionResult> CreateGenre([FromBody] GenreDto genreCreate)
         {
             if (genreCreate == null)
             {
                 return BadRequest(ModelState);
             }
-            var genre = _genreRepository.GetAllGenres()
-                .Where(c => c.Name.Trim().ToUpper() == genreCreate.Name.TrimEnd().ToUpper())
-                .FirstOrDefault();
+            var genres = await _genreRepository.GetAllGenres();
+            var genre = genres.Where(c => c.Name.Trim().ToUpper() == genreCreate.Name.TrimEnd().ToUpper()).FirstOrDefault();
             if (genre != null)
             {
                 ModelState.AddModelError("", "Genre already exists");
                 return StatusCode(422, ModelState);
             }
-            _genreRepository.CreateGenre(_mapper.Map<Genre>(genreCreate));
-            if (!_genreRepository.SaveChanges())
+            Genre genre1 = new Genre()
+            {
+                Name = genreCreate.Name
+            };
+            await _genreRepository.CreateGenre(genre1);
+            if (!await _genreRepository.SaveChanges())
             {
                 ModelState.AddModelError("", "Something went wrong");
                 return StatusCode(500, ModelState);
@@ -75,7 +78,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateGenre(int genreId, [FromBody] GenreDto genreToUpdate)
+        public async Task<IActionResult> UpdateGenre(int genreId, [FromBody] GenreDto genreToUpdate)
         {
             if(genreToUpdate is null)
             {
@@ -85,7 +88,7 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (!_genreRepository.GenreExists(genreId))
+            if (!await _genreRepository.GenreExists(genreId))
             {
                 return NotFound("Genre does not exist");
             }
@@ -94,7 +97,7 @@ namespace CinemaCritic.API.Controllers
                 return BadRequest(ModelState);
             }
             var genreMap = _mapper.Map<Genre>(genreToUpdate);
-            if (!_genreRepository.UpdateGenre(genreMap))
+            if (!await _genreRepository.UpdateGenre(genreMap))
             {
                 ModelState.AddModelError("", "Something went wrong");
                 return StatusCode(500, ModelState);
@@ -105,18 +108,18 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteGenre(int genreId)
+        public async Task<IActionResult> DeleteGenre(int genreId)
         {
-            if (!_genreRepository.GenreExists(genreId))
+            if (!await _genreRepository.GenreExists(genreId))
             {
                 return NotFound("Genre does not exist");
             }
-            var genre = _genreRepository.GetGenre(genreId);
+            var genre = await _genreRepository.GetGenre(genreId);
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (!_genreRepository.DeleteGenre(genre))
+            if (!await _genreRepository.DeleteGenre(genre))
             {
                 ModelState.AddModelError("", "Something went wrong");
                 return StatusCode(500, ModelState);

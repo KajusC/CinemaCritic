@@ -4,13 +4,13 @@ namespace CinemaCritic.API.Repositories.Contracts
 {
     public interface IGenreRepository
     {
-        ICollection<Genre> GetAllGenres();
-        Genre GetGenre(int id);
+        Task<ICollection<Genre>> GetAllGenres();
+        Task<Genre> GetGenre(int id);
         //if needed add more methods
-        bool CreateGenre(Genre genre);
-        bool UpdateGenre(Genre genre);
-        bool DeleteGenre(Genre genre);
-        bool GenreExists(int id);
-        bool SaveChanges();
+        Task<bool> CreateGenre(Genre genre);
+        Task<bool> UpdateGenre(Genre genre);
+        Task<bool> DeleteGenre(Genre genre);
+        Task<bool> GenreExists(int id);
+        Task<bool> SaveChanges();
     }
 }
