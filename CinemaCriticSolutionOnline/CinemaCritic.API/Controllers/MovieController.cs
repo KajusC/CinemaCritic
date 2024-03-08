@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CinemaCritic.API.Dto;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using CinemaCritic.Models.Dto;
 using Microsoft.AspNetCore.Connections.Features;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

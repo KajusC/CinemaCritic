@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Y3JHY9FJnKVUTJMwRJI9l34UpIM6HG/ex0z7gfcrZNc=",
+  "Hash": "Huh3kpaYQaiX8rRGS0poWmT/PW3/v7ByinuYE6JsiNU=",
   "Source": "CinemaCritic.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -53,6 +53,44 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.2\\build\\net8.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.pdb",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CinemaCritic.Models.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\bin\\Debug\\net8.0\\CinemaCritic.Models.pdb"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.wasm",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CinemaCritic.Models.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\webcil\\CinemaCritic.Models.wasm"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Web.pdb",
@@ -109,7 +147,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -128,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.fojhkv9m2m.js",
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.1dbm7c0po7.js",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.1.fojhkv9m2m.js",
+      "RelativePath": "_framework/dotnet.native.8.0.2.1dbm7c0po7.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,7 +185,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -166,15 +204,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.an7ie5qjlu.js",
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.ogjkzs4x1d.js",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.1.an7ie5qjlu.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.ogjkzs4x1d.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +223,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -204,7 +242,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
@@ -223,7 +261,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -242,7 +280,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -261,7 +299,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -4007,6 +4045,25 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Principal.Windows.wasm"
     },
     {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\1dbm7c0po7.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.2.1dbm7c0po7.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.1dbm7c0po7.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.1dbm7c0po7.js"
+    },
+    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\1qxa3zolla.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -4349,6 +4406,25 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.Parallel.wasm"
     },
     {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\5oatz4t61r.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CinemaCritic.Models.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.wasm"
+    },
+    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\5zrizsxhjc.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -4366,6 +4442,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Numerics.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\61bxhy6m5e.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CinemaCritic.Models.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\CinemaCritic.Models.pdb"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\69nv37ot6o.gz",
@@ -4518,6 +4613,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\7m8ixkwutj.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\7q5bo2wm4j.gz",
@@ -4824,25 +4938,6 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Web.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\an7ie5qjlu.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.1.an7ie5qjlu.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.an7ie5qjlu.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.an7ie5qjlu.js"
-    },
-    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\antzwr6ymg.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -4860,25 +4955,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.Json.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\aoxbrghscn.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\ayiskuygz4.gz",
@@ -4976,25 +5052,6 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.FileProviders.Abstractions.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\c4nn2huo5o.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
-    },
-    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\c7n3di28y8.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -5088,6 +5145,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.WebAssembly.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\d7wk4axjb1.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\d97wz11is7.gz",
@@ -5375,25 +5451,6 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.TypeExtensions.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\fljkxhermw.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
-    },
-    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\fmptup4h06.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -5411,25 +5468,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.DataAnnotations.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\fojhkv9m2m.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.1.fojhkv9m2m.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.fojhkv9m2m.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.fojhkv9m2m.js"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\fveyapdap7.gz",
@@ -5582,6 +5620,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.Debug.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\gowc4irws0.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\gur2rtw1g6.gz",
@@ -5983,6 +6040,25 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.Extensions.wasm"
     },
     {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\kxmlxqa84y.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
+    },
+    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\l3cqm1iu1w.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -6000,6 +6076,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ValueTuple.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\l4rv750lfs.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\l59wi4lr5g.gz",
@@ -6076,6 +6171,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Xml.Linq.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\mbdq5rafny.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\mnb5z65bfr.gz",
@@ -6249,6 +6363,25 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.EventBasedAsync.wasm"
     },
     {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\ogjkzs4x1d.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.ogjkzs4x1d.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.ogjkzs4x1d.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.ogjkzs4x1d.js"
+    },
+    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\ojmpcps0mk.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -6323,25 +6456,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.Compression.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\oo2enqp1e0.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\op3o5x29gr.gz",
@@ -7199,25 +7313,6 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.DiagnosticSource.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\wax5pzkcws.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
-    },
-    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\wcus2p1gkn.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -7465,25 +7560,6 @@
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Text.Encodings.Web.wasm"
     },
     {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\xksaz1npl0.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
-    },
-    {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\xlr7u8xlcj.gz",
       "SourceId": "CinemaCritic.Web",
       "SourceType": "Computed",
@@ -7558,25 +7634,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.Tools.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\yecl1efsfs.gz",
-      "SourceId": "CinemaCritic.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\yj3jwjz7ya.gz",
@@ -7691,6 +7748,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\zqkfnok0px.gz",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\Debug\\net8.0\\compressed\\zsxvyls080.gz",

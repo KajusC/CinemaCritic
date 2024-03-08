@@ -2,6 +2,7 @@ using CinemaCritic.API.Data;
 using CinemaCritic.API.Repositories;
 using CinemaCritic.API.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(policy => 
+        policy.WithOrigins("https://localhost:7155", "http://localhost:7155")
+        .AllowAnyMethod()
+        .WithHeaders(HeaderNames.ContentType)
+    );
 
 app.UseHttpsRedirection();
 

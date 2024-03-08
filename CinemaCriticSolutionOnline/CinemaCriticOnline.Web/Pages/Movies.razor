@@ -1,0 +1,10 @@
+﻿@page "/Movies"
+@inherits MoviesBase
+
+@if(Movies is null)
+{
+    <h1>Loading...</h1>
+}
+else{
+    <DisplayMovies Movies="@Movies"></DisplayMovies>
+}

@@ -1,4 +1,4 @@
-﻿namespace CinemaCritic.API.Dto
+﻿namespace CinemaCritic.Models.Dto
 {
     public class MovieDto
     {

@@ -57,7 +57,6 @@ C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCr
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CinemaCritic.API.props
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\scopedcss\bundle\CinemaCritic.API.styles.css
-C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\CinemaCritic.API.csproj.CopyComplete
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\CinemaCritic.API.dll
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\refint\CinemaCritic.API.dll
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\CinemaCritic.API.pdb
@@ -136,3 +135,6 @@ C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCr
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\bin\Debug\net8.0\CinemaCritic.Models.dll
+C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\bin\Debug\net8.0\CinemaCritic.Models.pdb
+C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic.API\obj\Debug\net8.0\CinemaCr.1B40C4B4.Up2Date

@@ -160,3 +160,25 @@ main[b-8j26nxl7eo] {
         overflow-y: auto;
     }
 }
+/* /Pages/DisplayMovies.razor.rz.scp.css */
+*[b-expubzeqsq] {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.movie-cards[b-expubzeqsq]{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.movie-card[b-expubzeqsq]{
+    margin: 0px 10px 10px 0px;
+    border: 1px solid black;
+}
+.card-image[b-expubzeqsq]{
+    width: 100%;
+    height: 200px;
+    background-color: gray;
+}
+.card-info[b-expubzeqsq]{
+    text-align: center;
+}

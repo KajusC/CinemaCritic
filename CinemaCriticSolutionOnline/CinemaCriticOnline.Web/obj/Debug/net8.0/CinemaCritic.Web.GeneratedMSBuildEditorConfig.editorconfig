@@ -26,16 +26,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+[C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Movies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/_Imports.razor]
@@ -49,3 +45,7 @@ build_metadata.AdditionalFiles.CssScope = b-8j26nxl7eo
 [C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-al5fhtp0qs
+
+[C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/DisplayMovies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheU1vdmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-expubzeqsq

@@ -978,6 +978,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "CinemaCritic.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CinemaCritic.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaCritic.Models.dll": {}
+        }
       }
     }
   },
@@ -2732,11 +2742,17 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CinemaCritic.Models/1.0.0": {
+      "type": "project",
+      "path": "../CinemaCritic.Models/CinemaCritic.Models.csproj",
+      "msbuildProject": "../CinemaCritic.Models/CinemaCritic.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
+      "CinemaCritic.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2",
       "Npgsql >= 8.0.2",
@@ -2770,13 +2786,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+              "projectPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2829,7 +2854,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

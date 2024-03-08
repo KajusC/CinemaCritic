@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using CinemaCritic.API.Dto;
 using CinemaCritic.API.Models;
+using CinemaCritic.API.Models.JoinTables;
+using CinemaCritic.Models.Dto;
 
 namespace CinemaCritic.API.Helper
 {
@@ -16,6 +17,8 @@ namespace CinemaCritic.API.Helper
             CreateMap<UserDto, User>();
             CreateMap<Genre, GenreDto>();
             CreateMap<GenreDto, Genre>();
+            CreateMap<UserMovies, FavoriteMovieDto>();
+            CreateMap<FavoriteMovieDto, UserMovies>();
         }
     }
 }
