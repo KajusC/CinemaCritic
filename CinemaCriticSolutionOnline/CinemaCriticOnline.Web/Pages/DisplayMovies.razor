@@ -2,15 +2,17 @@
 
 <div class="movie-cards">
     @foreach (var movie in Movies)
-    {
-        <div class="movie-card">
-            <div class="card-image">
-                <img src="@movie.ImageUrl" alt="@movie.Name" />
+    {   
+        <a href="/MovieDetails/@movie.Id">
+            <div class="movie-card">
+                <div class="card-image">
+                    <img src="@movie.ImageUrl" alt="@movie.Name" />
+                </div>
+                <div class="card-info">
+                    <p>@movie.Name</p>
+                    <p>@movie.ReleaseDate.ToString("yyyy-mm-dd")</p>
+                </div>
             </div>
-            <div class="card-info">
-                <p>@movie.Name</p>
-                <p>@movie.ReleaseDate.ToString("yyyy-mm-dd")</p>
-            </div>
-        </div>
+        </a>
     }
 </div>

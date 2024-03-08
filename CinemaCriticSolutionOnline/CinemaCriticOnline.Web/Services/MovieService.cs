@@ -11,6 +11,30 @@ namespace CinemaCritic.Web.Services
         {
             _httpClient = httpClient;
         }
+
+        public async Task<MovieDto> GetMovie(int movieId)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"api/Movie/{movieId}");
+
+                if(response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<MovieDto>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<MovieDto>> GetMovies()
         {
             try

@@ -1,0 +1,15 @@
+﻿@page "/MovieDetails/{id:int}"
+@inherits MovieDetailsBase
+
+@if(MovieDto == null && ErrorMessage== null)
+{
+    <h1>Loading...</h1>
+}
+else if(ErrorMessage != null)
+{
+    <h1>@ErrorMessage</h1>
+}
+else
+{
+    <p>Success. This is a landing page for movie: @MovieDto.Name</p>
+}

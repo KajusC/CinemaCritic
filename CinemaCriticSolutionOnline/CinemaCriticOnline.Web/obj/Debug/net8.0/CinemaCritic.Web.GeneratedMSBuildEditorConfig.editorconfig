@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/MovieDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Erikas Rudokas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Movies.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
