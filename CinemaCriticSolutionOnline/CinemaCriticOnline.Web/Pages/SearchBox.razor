@@ -1,0 +1,24 @@
+﻿@typeparam TEntity
+
+
+<input class="search-box" placeholder="Search..."
+       @bind="searchItem" @bind:event="oninput" @onkeypress="OnKeyPress" />
+
+@code {
+    [Parameter]
+    public IEnumerable<TEntity> Items { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSearch { get; set; }
+
+    private string searchItem;
+
+    private async Task OnKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await OnSearch.InvokeAsync(searchItem);
+        }
+    }
+}
+
