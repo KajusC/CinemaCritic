@@ -3126,5 +3126,6 @@ D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnlin
 D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\refint\CinemaCritic.Web.dll
 D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\CinemaCritic.Web.pdb
 D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\ref\CinemaCritic.Web.dll
-D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Pages\Home.razor.rz.scp.css
 D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Layout\NavigationBar.razor.rz.scp.css
+D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Pages\Welcome.razor.rz.scp.css
+D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Pages\HomePage.razor.rz.scp.css

@@ -2,7 +2,7 @@
 
 
 <input class="search-box card" placeholder="Search..."
-       @bind="searchItem" @bind:event="oninput" @onclick="Display" />
+       @bind="searchItem" @bind:event="oninput" @onkeypress="KeyPressed" @onclick="Display" />
 
 @code {
     [Parameter]
@@ -16,6 +16,13 @@
     private async Task Display()
     {
         await OnSearch.InvokeAsync(searchItem);
+    }
+    private async Task KeyPressed(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await OnSearch.InvokeAsync(searchItem);
+        }
     }
 }
 
