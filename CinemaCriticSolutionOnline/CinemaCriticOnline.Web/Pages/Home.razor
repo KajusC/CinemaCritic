@@ -1,8 +1,60 @@
 ﻿@page "/"
 @using CinemaCritic.Models.Dto
+@inherits MoviesBase
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image</title>
+    <style>
+       body, html {
+            margin: 0;
+            padding: 0;
+            font: 1em/1.618 Inter, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            min-width: 100%;
+            color: #224;
+            background: url(https://images.pexels.com/photos/2339009/pexels-photo-2339009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(8px);
+        }
+    </style>
 
-}
-Welcome to your new app.
+</head>
+<body>
+    <div class="card">
+        <p>Welcome to CinemaCritic</p>
+        <div>
+            @if (Movies is null)
+            {
+                <h1>Loading...</h1>
+            }
+            else
+            {
+                <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
+                @code {
+                List<MovieDto> filteredMovies = new();
+                void UpdateFilteredMovies(string search)
+                {
+                    if (string.IsNullOrEmpty(search))
+                    {
+                        filteredMovies = Movies.ToList();
+                    }
+                    else
+                    {
+                        filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+                    }
+                }
+            }
+                <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
+            }
+        </div>
+    </div>
+</body>
+</html>

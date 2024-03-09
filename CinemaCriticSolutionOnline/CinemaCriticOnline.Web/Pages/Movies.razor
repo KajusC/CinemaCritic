@@ -9,7 +9,6 @@
 else
 {
     <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
-
     @code {
     List<MovieDto> filteredMovies = new();
     void UpdateFilteredMovies(string search)

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {}
+    "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+    "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "projectUniqueName": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
         "projectName": "CinemaCritic.Models",
-        "projectPath": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
-        "packagesPath": "C:\\Users\\obunga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\obunga\\Source\\Repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
+        "projectPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "packagesPath": "C:\\Users\\Holoph\\.nuget\\packages\\",
+        "outputPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\obunga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Holoph\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,20 +69,20 @@
         }
       }
     },
-    "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {
+    "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+        "projectUniqueName": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
         "projectName": "CinemaCritic.Web",
-        "projectPath": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
-        "packagesPath": "C:\\Users\\obunga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
+        "projectPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+        "packagesPath": "C:\\Users\\Holoph\\.nuget\\packages\\",
+        "outputPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\obunga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Holoph\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,14 +91,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-                "projectPath": "C:\\Users\\obunga\\source\\repos\\CinemaCritic1234\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+              "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+                "projectPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
               }
             }
           }

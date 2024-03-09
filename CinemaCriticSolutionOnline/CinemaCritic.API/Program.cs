@@ -3,7 +3,10 @@ using CinemaCritic.API.Repositories;
 using CinemaCritic.API.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
+using System.Net.NetworkInformation;
+using System.Net;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.ObjectPool;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,11 +37,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors(policy => 
-        policy.WithOrigins("https://localhost:7155", "http://localhost:7155")
-        .AllowAnyMethod()
-        .WithHeaders(HeaderNames.ContentType)
-    );
+
+app.UseCors(policy =>
+policy.WithOrigins("https://localhost:5223", "http://localhost:5278")
+.AllowAnyMethod()
+.WithHeaders(HeaderNames.ContentType));
+
 
 app.UseHttpsRedirection();
 

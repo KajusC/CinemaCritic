@@ -13,47 +13,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = CinemaCritic.Web
 build_property.RootNamespace = CinemaCritic.Web
-build_property.ProjectDir = C:\Users\obunga\source\repos\CinemaCritic1234\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\
+build_property.ProjectDir = D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\obunga\source\repos\CinemaCritic1234\CinemaCriticSolutionOnline\CinemaCriticOnline.Web
+build_property.MSBuildProjectDirectory = D:\repos VISUAL STUDIO\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/App.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/MovieDetails.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/MovieDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Movies.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Movies.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/_Imports.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/MainLayout.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-8j26nxl7eo
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/NavMenu.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/NavigationBar.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdmlnYXRpb25CYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-2dkh6mwi4a
+
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-al5fhtp0qs
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/DisplayMovies.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/DisplayMovies.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheU1vdmllcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-expubzeqsq
 
-[C:/Users/obunga/source/repos/CinemaCritic1234/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/SearchBox.razor]
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-zw15hackhb
+
+[D:/repos VISUAL STUDIO/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/SearchBox.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoQm94LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-1ne5r2v03n

@@ -1,8 +1,8 @@
 ﻿@typeparam TEntity
 
 
-<input class="search-box" placeholder="Search..."
-       @bind="searchItem" @bind:event="oninput" @onkeypress="OnKeyPress" />
+<input class="search-box card" placeholder="Search..."
+       @bind="searchItem" @bind:event="oninput" @onclick="Display" />
 
 @code {
     [Parameter]
@@ -13,12 +13,9 @@
 
     private string searchItem;
 
-    private async Task OnKeyPress(KeyboardEventArgs e)
+    private async Task Display()
     {
-        if (e.Key == "Enter")
-        {
-            await OnSearch.InvokeAsync(searchItem);
-        }
+        await OnSearch.InvokeAsync(searchItem);
     }
 }
 
