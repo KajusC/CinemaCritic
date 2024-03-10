@@ -173,7 +173,7 @@ Project Link: [https://github.com/KajusC/CinemaCritic](https://github.com/KajusC
 ## Acknowledgments
 
 * [C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/)
-* [Gavin Lee's video on Blazor](https://www.youtube.com/watch?v=sHuuo9L3e5c&ab_channel=freeCodeCamp.org)
+* [Gavin Lon's video on Blazor](https://www.youtube.com/watch?v=sHuuo9L3e5c&ab_channel=freeCodeCamp.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
