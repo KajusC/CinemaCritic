@@ -1849,9 +1849,7 @@ C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCr
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CinemaCritic.Web.props
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CinemaCritic.Web.props
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Layout\NavMenu.razor.rz.scp.css
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\bundle\CinemaCritic.Web.styles.css
-C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\projectbundle\CinemaCritic.Web.bundle.scp.css
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\kf2qmuv270.gz
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\voepjqw00f.gz
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\9wbeqebu3p.gz
@@ -2061,3 +2059,5 @@ C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCr
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\refint\CinemaCritic.Web.dll
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\CinemaCritic.Web.pdb
 C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\ref\CinemaCritic.Web.dll
+C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Layout\NavMenu.razor.rz.scp.css
+C:\Users\Matas\Documents\GitHub\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\projectbundle\CinemaCritic.Web.bundle.scp.css

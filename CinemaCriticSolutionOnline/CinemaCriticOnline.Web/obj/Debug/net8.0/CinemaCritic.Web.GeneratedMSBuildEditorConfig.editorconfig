@@ -30,12 +30,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Contacts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/PageNotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZU5vdEZvdW5kLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Matas/Documents/GitHub/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Weather.razor]

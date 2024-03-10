@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kBuJVW/OlwUtPWL8+Cop6bEHwd1MBHoCsmZ8HkYsC6E=",
+  "Hash": "70Fn9yt/FC7fZMLEXNCjfSt/RpZZjBVDfwskI0Ns3E4=",
   "Source": "CinemaCritic.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7919,6 +7919,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\wwwroot\\logo.png",
+      "SourceId": "CinemaCritic.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
     },
     {
       "Identity": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\wwwroot\\sample-data\\weather.json",
