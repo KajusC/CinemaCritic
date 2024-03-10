@@ -1,6 +1,6 @@
-﻿@page "/Home"
+﻿@page "/"
 @inherits MoviesBase
-
+@inject IJSRuntime JSRuntime
 <PageTitle>Home</PageTitle>
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@
     <h2 class="section-title">Recent movies</h2>
 
     <div class="media-scroller snaps-inline">
+
         @foreach (var movie in Movies)
         {
             <a href="/MovieDetails/@movie.Id">
@@ -46,8 +47,5 @@
             </a>
         }
     </div>
-
 </body>
 </html>
-
-

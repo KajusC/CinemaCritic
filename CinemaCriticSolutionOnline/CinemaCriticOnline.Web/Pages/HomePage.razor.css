@@ -8,7 +8,11 @@
     padding: 0 var(--_spacer) var(--_spacer);
     overflow-x: auto;
     overscroll-behavior-inline: contain;
+    overflow-y: hidden; /* Change overflow-y to hidden */
 }
+
+/* Other styles remain unchanged */
+
 .prevent-select {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -34,20 +38,23 @@ a {
 
 .media-element {
     display: grid;
-    grid-template-rows: min-content;
     gap: var(--_spacer);
     padding: var(--_spacer);
-    background: var(--surface-2);
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-2);
     font-family: Dax, sans-serif;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
 }
 
     .media-element > img {
         inline-size: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+        object-fit: scale-down;
+        width: 720px;
+        height: 200px;
     }
+    
 
 .snaps-inline {
     scroll-snap-type: inline mandatory;
@@ -63,6 +70,12 @@ a {
 .container {
     inline-size: min(100% - 4rem, 70rem);
     margin-inline: auto;
+}
+.title{
+    font-size: var(--font-size-fluid-5);
+    margin-block: var(--size-9) 0;
+    text-align: center;
+    margin: 0;
 }
 
 .flow {

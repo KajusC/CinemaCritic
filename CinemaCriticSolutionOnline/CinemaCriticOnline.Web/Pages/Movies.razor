@@ -23,6 +23,14 @@ else
         }
     }
 }
-    <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
+
+    @if(filteredMovies.Count == 0)
+    {
+        <DisplayMovies Movies="@Movies"></DisplayMovies>
+    }
+    else
+    {
+        <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
+    }
 }
 
