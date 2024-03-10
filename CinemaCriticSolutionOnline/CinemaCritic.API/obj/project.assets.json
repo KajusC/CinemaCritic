@@ -978,6 +978,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "CinemaCritic.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CinemaCritic.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaCritic.Models.dll": {}
+        }
       }
     }
   },
@@ -2732,11 +2742,17 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CinemaCritic.Models/1.0.0": {
+      "type": "project",
+      "path": "../CinemaCritic.Models/CinemaCritic.Models.csproj",
+      "msbuildProject": "../CinemaCritic.Models/CinemaCritic.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
+      "CinemaCritic.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2",
       "Npgsql >= 8.0.2",
@@ -2745,19 +2761,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\": {}
+    "C:\\Users\\Holoph\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+      "projectUniqueName": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
       "projectName": "CinemaCritic.API",
-      "projectPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
-      "packagesPath": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
+      "projectPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+      "packagesPath": "C:\\Users\\Holoph\\.nuget\\packages\\",
+      "outputPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Erikas Rudokas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Holoph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2765,18 +2786,28 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+              "projectPath": "D:\\repos VISUAL STUDIO\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2829,7 +2860,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

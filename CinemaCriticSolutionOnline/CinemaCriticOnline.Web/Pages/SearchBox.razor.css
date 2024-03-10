@@ -1,0 +1,25 @@
+﻿.search-box {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+.card {
+    max-width: 300px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+}
