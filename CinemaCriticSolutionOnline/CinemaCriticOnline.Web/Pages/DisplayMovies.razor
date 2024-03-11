@@ -5,12 +5,9 @@
     {   
         <a href="/MovieDetails/@movie.Id">
             <div class="movie-card">
-                <div class="card-image">
-                    <img src="@movie.ImageUrl" alt="@movie.Name" />
-                </div>
+                <img src="@movie.ImageUrl" alt="@movie.Name" />
                 <div class="card-info">
                     <p>@movie.Name</p>
-                    <p>@movie.ReleaseDate.ToString("yyyy-mm-dd")</p>
                 </div>
             </div>
         </a>

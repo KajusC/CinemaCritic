@@ -1,7 +1,8 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: rgba(1,1,20,1);
+    color: white;
 }
-
 h1:focus {
     outline: none;
 }
@@ -9,7 +10,6 @@ h1:focus {
 a, .btn-link {
     color: #0071c1;
 }
-
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;

@@ -8,21 +8,23 @@
 }
 else
 {
-    <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
+    <div class="center">
+        <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
+    </div>
     @code {
-    List<MovieDto> filteredMovies = new();
-    void UpdateFilteredMovies(string search)
-    {
-        if (string.IsNullOrEmpty(search))
+        List<MovieDto> filteredMovies = new();
+        void UpdateFilteredMovies(string search)
         {
-            filteredMovies = Movies.ToList();
-        }
-        else
-        {
-            filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (string.IsNullOrEmpty(search))
+            {
+                filteredMovies = Movies.ToList();
+            }
+            else
+            {
+                filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
         }
     }
-}
 
     @if(filteredMovies.Count == 0)
     {

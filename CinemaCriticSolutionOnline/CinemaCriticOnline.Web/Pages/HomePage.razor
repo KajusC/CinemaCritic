@@ -1,6 +1,5 @@
 ﻿@page "/"
 @inherits MoviesBase
-@inject IJSRuntime JSRuntime
 <PageTitle>Home</PageTitle>
 
 <!DOCTYPE html>
@@ -8,10 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Image</title>
     <style>
-
-
         body, html {
             margin: 0;
             padding: 0;
@@ -23,7 +19,6 @@
             background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
             background-size: cover;
         }
-
     </style>
 </head>
 <body>
@@ -37,14 +32,21 @@
 
     <div class="media-scroller snaps-inline">
 
-        @foreach (var movie in Movies)
+        @if(Movies is null)
         {
-            <a href="/MovieDetails/@movie.Id">
-                <div class="media-element">
-                    <img src="@movie.ImageUrl" alt="@movie.Name">
-                    <p class="title">@movie.Name</p>
-                </div>
-            </a>
+            <p>Loading...</p>
+        }
+        else
+        {
+            @foreach (var movie in Movies)
+            {
+                <a href="/MovieDetails/@movie.Id">
+                    <div class="media-element">
+                        <img src="@movie.ImageUrl" alt="@movie.Name">
+                        <p class="title">@movie.Name</p>
+                    </div>
+                </a>
+            }
         }
     </div>
 </body>

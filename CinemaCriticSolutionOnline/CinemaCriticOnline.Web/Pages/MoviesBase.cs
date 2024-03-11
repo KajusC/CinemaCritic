@@ -8,6 +8,7 @@ namespace CinemaCritic.Web.Pages
     {
         [Inject]
         public IMovieService _movieService { get; set; }
+        [Parameter]
         public IEnumerable<MovieDto> Movies { get; set; } 
 
         override protected async Task OnInitializedAsync()

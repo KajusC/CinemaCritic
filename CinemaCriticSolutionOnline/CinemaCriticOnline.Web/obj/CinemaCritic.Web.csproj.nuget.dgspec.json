@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {}
+    "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+    "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
         "projectName": "CinemaCritic.Models",
-        "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
-        "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
+        "projectPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "packagesPath": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erikas Rudokas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {
+    "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
         "projectName": "CinemaCritic.Web",
-        "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
-        "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
+        "projectPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+        "packagesPath": "C:\\Users\\Erikas Rudokas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erikas Rudokas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-                "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+              "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+                "projectPath": "C:\\Users\\Erikas Rudokas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
               }
             }
           }
@@ -153,7 +153,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
