@@ -1,0 +1,59 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    background: rgb(1,1,74);
+    background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: cover;
+    font: 1em/1.618 Inter, sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    font-size: 20px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.card {
+    max-width: 400px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgb(62, 22, 228, 0.10);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-footer {
+    font-size: 0.65em;
+    color: #446;
+}
+.Home
+{
+    padding: 20px 35%;
+    color:white;
+
+}
