@@ -8,9 +8,12 @@
     grid-template-columns: repeat(8, 1fr);
     margin-top: 30px;
     gap: 6px;
+    justify-items: center;
+    align-items: center;
 }
 .movie-card{
     height: 380px;
+    width: 220px;
     transition: box-shadow 0.5s linear;
     margin-bottom: 10px;
 }
@@ -37,18 +40,38 @@ a{
     text-decoration: none;
     color: black;
 }
-@media (max-width: 1500px){
+@media (max-width: 1800px){
     .movie-cards{
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+@media (max-width: 1600px) {
+    .movie-cards {
         grid-template-columns: repeat(6, 1fr);
     }
 }
-@media (max-width: 1000px){
+@media (max-width: 1400px){
+    .movie-cards{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media (max-width: 1150px){
     .movie-cards{
         grid-template-columns: repeat(4, 1fr);
     }
 }
-@media (max-width: 500px){
-    .movie-cards{
+@media (max-width: 950px) {
+    .movie-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 700px) {
+    .movie-cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    .movie-cards {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
