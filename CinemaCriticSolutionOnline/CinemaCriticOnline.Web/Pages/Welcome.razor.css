@@ -1,0 +1,44 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    background: rgb(1,1,74);
+    background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: cover;
+    font: 1em/1.618 Inter, sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+.Box h1 {
+    font-size: 80px;
+}
+.Box p {
+    font-size: 20px;
+}
+.Box a {
+    text-decoration: none;
+    color: #fff;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-color:white;
+    margin: 20vw;
+    font-size: 20px;
+}
+
+
+.oswald-box {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

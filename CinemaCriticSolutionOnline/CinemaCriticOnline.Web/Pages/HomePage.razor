@@ -1,5 +1,4 @@
-﻿@page "/"
-@inherits MoviesBase
+﻿@inherits MoviesBase
 <PageTitle>Home</PageTitle>
 
 <!DOCTYPE html>
@@ -11,13 +10,16 @@
         body, html {
             margin: 0;
             padding: 0;
-            display: unset;
+            display: flex;
             position: relative;
             min-height: 100%;
             min-width: 100%;
             background: rgb(1,1,74);
             background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
             background-size: cover;
+            font: 1em/1.618 Inter, sans-serif;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -41,8 +43,7 @@
             @foreach (var movie in Movies)
             {
                 <a href="/MovieDetails/@movie.Id">
-                    <div class="media-element">
-                        <img src="@movie.ImageUrl" alt="@movie.Name">
+                    <div class="media-element">                        <img src="@movie.ImageUrl" alt="@movie.Name">
                         <p class="title">@movie.Name</p>
                     </div>
                 </a>
