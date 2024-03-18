@@ -6,7 +6,7 @@ namespace CinemaCritic.API.Repositories.Contracts
     {
         Task<ICollection<Movie>> GetAllMovies();
         Task<Movie> GetMovie(int id);
-        //if needed add more methods
+        Task<Movie> GetMovieDetails(int id);
         Task<bool> CreateMovie(Movie movie);
         Task<bool> UpdateMovie(Movie movie);
         Task<bool> DeleteMovie(Movie movie);

@@ -445,6 +445,32 @@
     ]
   },
   {
+    "ContainingType": "CinemaCritic.API.Controllers.MovieController",
+    "Method": "GetMovieDetails",
+    "RelativePath": "api/Movie/details/{movieId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "movieId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CinemaCritic.API.Models.Movie",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CinemaCritic.API.Controllers.ReviewController",
     "Method": "GetReviews",
     "RelativePath": "api/Review",

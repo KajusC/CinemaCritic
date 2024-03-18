@@ -22,6 +22,15 @@ namespace CinemaCritic.API.Models
         [Required(ErrorMessage = "Image URL is required")]
         public string ImageUrl { get; set; }
 
+        [Required(ErrorMessage = "Trailer URL is required")]
+        public string TrailerUrl { get; set; }
+
+        [Required(ErrorMessage = "Movie length is required")]
+        public string MovieLength { get; set; }
+
+        [Required(ErrorMessage = "Age rating is required")]
+        public string AgeRating { get; set; }
+
         public Genre Genre { get; set; }
         public ICollection<Review> Reviews { get; set;}
         public ICollection<UserMovies> UserMovies { get; set; }

@@ -1,7 +1,7 @@
 ﻿@page "/MovieDetails/{id:int}"
 @inherits MovieDetailsBase
 
-@if(MovieDto == null && ErrorMessage== null)
+@if(MovieDetailsDto == null && ErrorMessage== null)
 {
     <h1>Loading...</h1>
 }
@@ -11,5 +11,21 @@ else if(ErrorMessage != null)
 }
 else
 {
-    <p>Success. This is a landing page for movie: @MovieDto.Name</p>
+    <div class="movie-details">
+        <h1 class="movie-title">@MovieDetailsDto.Name</h1>
+        <hr />
+        <p class="movie-description">@MovieDetailsDto.Description</p>
+        <div class="info-container">
+            <p class="movie-genre">@MovieDetailsDto.Genre.Name</p>
+            <div class="detail-container">
+                <p class="movie-info">@MovieDetailsDto.ReleaseDate.ToString("yyyy")</p>
+                <p class ="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.AgeRating</p>
+                <p class="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.MovieLength</p>
+            </div>
+        </div>
+        <div class="poster-trailer-container">
+            <img class="movie-poster" src="@MovieDetailsDto.ImageUrl" alt="@MovieDetailsDto.Name" />
+            <iframe class="movie-trailer" src="@MovieDetailsDto.TrailerUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
 }

@@ -36,6 +36,11 @@ namespace CinemaCritic.API.Repositories
             return await _context.Movies.Where(m => m.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<Movie> GetMovieDetails(int id)
+        {
+            return await _context.Movies.Where(m => m.Id == id).Include(m => m.Genre).FirstOrDefaultAsync();
+        }
+
         public async Task<bool> MovieExists(int id)
         {
             return await _context.Movies.AnyAsync(m => m.Id == id);

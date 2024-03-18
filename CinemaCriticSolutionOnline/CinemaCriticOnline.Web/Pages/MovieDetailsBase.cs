@@ -12,13 +12,13 @@ namespace CinemaCritic.Web.Pages
         [Inject]
         public IMovieService MovieService { get; set; }
 
-        public MovieDto MovieDto { get; set; }
+        public MovieDetailsDto MovieDetailsDto { get; set; }
         public string ErrorMessage { get; set; }
         override protected async Task OnInitializedAsync()
         {
             try
             {
-                MovieDto = await MovieService.GetMovie(Id);
+                MovieDetailsDto = await MovieService.GetMovieDetails(Id);
             }
             catch (Exception ex)
             {

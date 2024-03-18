@@ -48,6 +48,21 @@ namespace CinemaCritic.API.Controllers
             }
             return Ok(movie);
         }
+        [HttpGet("details/{movieId}")]
+        [ProducesResponseType(200, Type=typeof(Movie))]
+        public async Task<IActionResult> GetMovieDetails(int movieId)
+        {
+            if(!await _movieRepository.MovieExists(movieId))
+            {
+                return NotFound();
+            }
+            var movie = _mapper.Map<MovieDetailsDto>(await _movieRepository.GetMovieDetails(movieId));
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(movie);
+        }
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]

@@ -5,5 +5,6 @@ namespace CinemaCritic.Web.Services.Contracts
     {
         Task<IEnumerable<MovieDto>> GetMovies();
         Task<MovieDto> GetMovie(int id);
+        Task<MovieDetailsDto> GetMovieDetails(int id);
     }
 }
