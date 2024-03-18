@@ -1,0 +1,18 @@
+﻿@page "/login"
+
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <input type="text" id="username" name="username" placeholder="Username/Email"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+        <a href="/forgot" class="link">Forgot password?</a>
+        <a href="/signup" class="link signup">Not registered? <span>Create an account</span></a>
+    </div>
+</body>
+
+@code {
+
+}
