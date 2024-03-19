@@ -19,9 +19,13 @@
     color: white;
     height: 60px;
     display: flex;
+    flex-wrap:nowrap;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid white;
+}
+.navbar-options-list {
+
 }
 .website-info{
     display: flex;
