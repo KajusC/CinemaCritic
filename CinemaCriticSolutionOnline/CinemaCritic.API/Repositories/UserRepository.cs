@@ -1,6 +1,7 @@
 ﻿using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories

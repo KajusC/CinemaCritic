@@ -1,5 +1,6 @@
 ﻿using CinemaCritic.API.Models;
 using CinemaCritic.API.Models.JoinTables;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Data
