@@ -35,8 +35,8 @@
 {
     <div class="popup">
         <div class="popup-content">
-            <h2>Registration Successful!</h2>
-            <p>Your account has been successfully registered.</p>
+            <h2>@ErrorMessage</h2>
+            <p>@ErrorMessageFooter</p>
             <button @onclick="ClosePopup">Close</button>
         </div>
     </div>
@@ -50,6 +50,9 @@
     protected string Email { get; set; }
     protected string Password { get; set; }
     protected string confirmPassword;
+
+    protected string ErrorMessage;
+    protected string ErrorMessageFooter;
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
@@ -68,29 +71,21 @@
                 Password = Password
             };
 
-        if (model.Password != confirmPassword)
-        {
-            // Handle password mismatch
-            return;
-        }
-
         try
         {
-            // Call the RegisterAsync method of RegisterService
             await RegisterService.RegisterAsync(model);
 
-            // Set showPopup to true to display the success message
+            ErrorMessage = "Registration successful";
+            ErrorMessageFooter = "You can now log in";
             showPopup = true;
-
-            // Redirect to another page after successful registration
-            NavigationManager.NavigateTo("/success"); // Replace "/success" with the desired URL
         }
-        catch (Exception ex)
+        catch (UserTakenException ex)
         {
-            // Handle registration failure
-            // You can display an error message to the user or log the error
-            NavigationManager.NavigateTo("/failed");
+            ErrorMessage = "User already exists";
+            ErrorMessageFooter = "Please try again with a different username or email";
+            showPopup = true;
         }
+        
     }
 
     private bool showPopup;
