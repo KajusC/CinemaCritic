@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using CinemaCritic.API.Authentication;
+using CinemaCritic.Models.Dto;
 
 namespace CinemaCritic.API.Controllers
 {
@@ -33,7 +34,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Register([FromBody] RegistrationModel model)
+        public async Task<IActionResult> Register([FromBody] UserDto model)
         {
             _logger.LogInformation("Register called");
 

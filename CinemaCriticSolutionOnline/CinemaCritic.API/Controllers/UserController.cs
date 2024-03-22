@@ -73,7 +73,7 @@ namespace CinemaCritic.API.Controllers
                 LastName = userCreate.LastName,
                 Email = userCreate.Email,
                 Password = userCreate.Password,
-                Username = userCreate.Username
+                UserName = userCreate.Username
             };
 
             if (!await _userRepository.CreateUser(user1))

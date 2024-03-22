@@ -1,15 +1,16 @@
 ﻿@page "/signup"
-
+@using CinemaCritic.Web.Services
+@using CinemaCritic.Web.Services.Contracts
 <body>
     <div class="signup-box">
         <h1>Sign Up</h1>
-        <form action="/" method="post">
-            <input type="text" id="first-name" name="first-name" placeholder="First Name"><br>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name"><br>
-            <input type="text" id="username" name="username" placeholder="Username"><br>
-            <input type="text" id="email" name="email" placeholder="Email"><br>
-            <input type="password" id="password" name="password" placeholder="Password"><br>
-            <input type="password" id="password-confirm" name="password-confirm" placeholder="Confirm password"><br>
+        <form action="/" method="post" @onsubmit="HandleValidSubmit">
+            <input @bind="FirstName" type="text" id="first-name" name="first-name" placeholder="First Name"><br>
+            <input @bind="LastName" type="text" id="last-name" name="last-name" placeholder="Last Name"><br>
+            <input @bind="UserName" type="text" id="username" name="username" placeholder="Username"><br>
+            <input @bind="Email" type="text" id="email" name="email" placeholder="Email"><br>
+            <input @bind="Password" type="password" id="password" name="password" placeholder="Password"><br>
+            <input @bind="confirmPassword" type="password" id="password-confirm" name="password-confirm" placeholder="Confirm password"><br>
             <button type="submit" class="submit">Submit</button>
         </form>
         <a href="/login" class="link login">Already registered? <span>Log in</span></a>
@@ -24,8 +25,78 @@
             else {
                 passwordConfirmInput.setCustomValidity("Passwords need to match");
             }
-        } 
+        }
         passwordInput.onchange = ValidatePassword;
         passwordConfirmInput.onkeyup = ValidatePassword;
     </script>
 </body>
+
+@if (showPopup)
+{
+    <div class="popup">
+        <div class="popup-content">
+            <h2>Registration Successful!</h2>
+            <p>Your account has been successfully registered.</p>
+            <button @onclick="ClosePopup">Close</button>
+        </div>
+    </div>
+}
+
+@code {
+
+    protected string FirstName { get; set; }
+    protected string LastName { get; set; }
+    protected string UserName { get; set; }
+    protected string Email { get; set; }
+    protected string Password { get; set; }
+    protected string confirmPassword;
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    [Inject]
+    protected IRegisterService RegisterService { get; set; }
+
+    protected virtual async Task HandleValidSubmit()
+    {
+        var model = new Models.RegisterModel
+            {
+                FirstName = FirstName,
+                LastName = LastName,
+                UserName = UserName,
+                Email = Email,
+                Password = Password
+            };
+
+        if (model.Password != confirmPassword)
+        {
+            // Handle password mismatch
+            return;
+        }
+
+        try
+        {
+            // Call the RegisterAsync method of RegisterService
+            await RegisterService.RegisterAsync(model);
+
+            // Set showPopup to true to display the success message
+            showPopup = true;
+
+            // Redirect to another page after successful registration
+            NavigationManager.NavigateTo("/success"); // Replace "/success" with the desired URL
+        }
+        catch (Exception ex)
+        {
+            // Handle registration failure
+            // You can display an error message to the user or log the error
+            NavigationManager.NavigateTo("/failed");
+        }
+    }
+
+    private bool showPopup;
+
+    private void ClosePopup()
+    {
+        showPopup = false;
+    }
+}

@@ -17,6 +17,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +38,8 @@ builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 
+
+///API Authentication
 builder.Services.AddDbContext<DataContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
@@ -121,14 +126,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Use CORS middleware
 app.UseCors(policy =>
-policy.WithOrigins("https://localhost:5223", "http://localhost:5278")
-.AllowAnyMethod()
-.WithHeaders(HeaderNames.ContentType));
-
+    policy.WithOrigins("https://localhost:5223", "http://localhost:5278")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+);
 
 app.UseAuthentication();
 app.UseAuthorization();
+// app.UseCors("AllowSpecificOrigin"); // Removed redundant CORS middleware
 
 app.MapControllers();
 
@@ -153,22 +160,3 @@ Task LogAttempt(IHeaderDictionary headers, string eventType)
 
     return Task.CompletedTask;
 }
-
-//void PopulateDb()
-//{
-//    using var scope = app.Services.CreateScope();
-
-//    using var db = scope.ServiceProvider.GetRequiredService<ReviewContext>();
-
-//    db.BookReviews.Add(new() { Title = "Dr No", Rating = 4 });
-//    db.BookReviews.Add(new() { Title = "Goldfinger", Rating = 3 });
-//    db.BookReviews.Add(new() { Title = "From Russia with Love", Rating = 1 });
-//    db.BookReviews.Add(new() { Title = "Moonraker", Rating = 4 });
-//    db.BookReviews.Add(new() { Title = "Dr No", Rating = 5 });
-//    db.BookReviews.Add(new() { Title = "Moonraker", Rating = 2 });
-//    db.BookReviews.Add(new() { Title = "Dr No", Rating = 2});
-//    db.BookReviews.Add(new() { Title = "From Russia with Love", Rating = 5 });
-//    db.BookReviews.Add(new() { Title = "From Russia with Love", Rating = 3 });
-
-//    db.SaveChanges();
-//}
