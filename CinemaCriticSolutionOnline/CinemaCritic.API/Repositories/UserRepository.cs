@@ -1,6 +1,7 @@
 ﻿using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace CinemaCritic.API.Repositories
@@ -34,6 +35,11 @@ namespace CinemaCritic.API.Repositories
             return await _context.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<User> GetUser(string username)
+        {
+            return await _context.Users.Where(x => x.UserName == username).FirstOrDefaultAsync();
+        }
+
         public async Task<bool> SaveChanges()
         {
             try
@@ -56,6 +62,10 @@ namespace CinemaCritic.API.Repositories
         public async Task<bool> UserExists(int id)
         {
             return await _context.Users.AnyAsync(x => x.Id == id);
+        }
+        public async Task<bool> UserExists(string userName)
+        {
+            return await _context.Users.AnyAsync(x => x.UserName == userName);
         }
     }
 }

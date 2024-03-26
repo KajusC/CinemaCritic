@@ -1,13 +1,80 @@
 ﻿@page "/login"
+@using CinemaCritic.Web.Models
+@using CinemaCritic.Web.Services
+@inject JwtAuthenticationService AuthStateProvider
+@inject NavigationManager Navigation
 
-<body>
-    <div class="login-box">
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            <input type="text" id="username" name="username" placeholder="Username/Email"><br>
-            <input type="password" id="password" name="password" placeholder="Password"><br>
-            <button type="submit" class="submit">Submit</button>
-        </form>
-        <a href="/signup" class="link signup">Not registered? <span>Create an account</span></a>
+<div class="login-box">
+    <h1>Login</h1>
+    <EditForm Model="@loginModel" OnSubmit="HandleSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <input @bind="loginModel.Username" type="text" id="username" name="username" placeholder="Username/Email"><br>
+        <input @bind="loginModel.Password" type="password" id="password" name="password" placeholder="Password"><br>
+        <button type="submit" class="submit">Submit</button>
+    </EditForm>
+    <a href="/signup" class="link signup">Not registered? <span>Create an account</span></a>
+</div>
+
+@if (showPopup)
+{
+    <div class="popup submit">
+        <div class="popup-content">
+            <h2>@ErrorMessage</h2>
+            <p>@ErrorMessageFooter</p>
+            <button @onclick="ClosePopup">Close</button>
+        </div>
     </div>
-</body>
+}
+
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+
+    protected string ErrorMessage = "";
+    protected string ErrorMessageFooter = "";
+
+    private async Task HandleSubmit()
+    {
+        var jwtToken = await AuthStateProvider.GetJwtTokenFromLogin(loginModel);
+        if (!string.IsNullOrEmpty(jwtToken))
+        {
+            try
+            {
+                AuthStateProvider.Login(jwtToken);
+                if (AuthStateProvider.GetAuthenticationStateAsync().Result.User.Identity.IsAuthenticated)
+                {
+                    ErrorMessage = $"Login successful! {AuthStateProvider.DisplayName}";
+                    ErrorMessageFooter = "You will be redirected to the Movies.";
+                    showPopup = true;
+                    //make a sleep for 2 seconds
+                    //await Task.Delay(2000);
+                    //Navigation.NavigateTo("/movies");
+                }
+                else
+                {
+                    ErrorMessage = "Failed to login!";
+                    ErrorMessageFooter = "Please check your credentials and try again.";
+                    showPopup = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = "Failed";
+                ErrorMessageFooter = "Please try again later.";
+                showPopup = true;
+            }
+
+        }
+
+    }
+    private bool showPopup;
+
+    private void ClosePopup()
+    {
+        showPopup = false;
+    }
+}
+
+

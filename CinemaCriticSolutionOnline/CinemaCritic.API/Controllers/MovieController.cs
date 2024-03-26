@@ -2,6 +2,7 @@
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
 using CinemaCritic.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Connections.Features;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ namespace CinemaCritic.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MovieController : Controller
     {
         private readonly IMovieRepository _movieRepository;

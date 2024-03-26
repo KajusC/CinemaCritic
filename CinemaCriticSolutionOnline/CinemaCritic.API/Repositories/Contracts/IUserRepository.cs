@@ -6,11 +6,13 @@ namespace CinemaCritic.API.Repositories.Contracts
     {
         Task<ICollection<User>> GetAllUsers();
         Task<User> GetUser(int id);
+        Task<User> GetUser(string username);
         //if needed add more methods
         Task<bool> CreateUser(User user);
         Task<bool> UpdateUser(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> UserExists(int id);
+        Task<bool> UserExists(string username);
         Task<bool> SaveChanges();
     }
 }
