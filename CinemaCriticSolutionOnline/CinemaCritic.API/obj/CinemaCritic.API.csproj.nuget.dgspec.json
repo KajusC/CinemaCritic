@@ -135,7 +135,7 @@
         "projectName": "CinemaCritic.Models",
         "projectPath": "C:\\Users\\Holoph\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
         "packagesPath": "C:\\Users\\Holoph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Holoph\\Source\\Repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
+        "outputPath": "C:\\Users\\Holoph\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

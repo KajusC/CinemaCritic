@@ -14,52 +14,48 @@ using CinemaCritic.Models.Dto;
 namespace CinemaCritic.API.Controllers
 {
 
-
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticationController : ControllerBase
+    public class WebApiAuthentication : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _configuration;
-        private readonly ILogger<AuthenticationController> _logger;
+        private readonly IPasswordHasher<User> _passwordHasher;
 
-        public AuthenticationController(UserManager<User> userManager, IConfiguration configuration, ILogger<AuthenticationController> logger)
+        public WebApiAuthentication(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, IPasswordHasher<User> passwordHasher)
         {
-            _userManager = userManager;
-            _configuration = configuration;
-            _logger = logger;
+            this._userManager = userManager;
+            this._signInManager = signInManager;
+            this._configuration = configuration;
+            _passwordHasher = passwordHasher;
         }
 
-        [HttpPost("Register")]
-        [ProducesResponseType(StatusCodes.Status409Conflict)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Register([FromBody] UserDto model)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Register([FromBody]RegisterModel request)
         {
-            _logger.LogInformation("Register called");
 
-            var existingUser = await _userManager.FindByNameAsync(model.Username);
+            var existingUser = await _userManager.FindByNameAsync(request.UserName);
 
             if (existingUser != null)
                 return Conflict("User already exists.");
 
-            var newUser = new User
+            var user = new User()
             {
-                UserName = model.Username,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                Password = model.Password,
-                Username = model.Username,
+                UserName = request.UserName,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
-            var result = await _userManager.CreateAsync(newUser, model.Password);
+            var hashedPassword = _passwordHasher.HashPassword(user, request.Password);
+                user.PasswordHash = hashedPassword;
 
+
+            var result = await this._userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
             {
-                _logger.LogInformation("Register succeeded");
-
                 return Ok("User successfully created");
             }
             else
@@ -67,142 +63,73 @@ namespace CinemaCritic.API.Controllers
                        $"Failed to create user: {string.Join(" ", result.Errors.Select(e => e.Description))}");
         }
 
-        [HttpPost("Login")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginResponse))]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
+        [HttpPost("[action]")]
+        public async Task<LoginResponse> Login([FromBody] LoginModel request)
         {
-            _logger.LogInformation("Login called");
-
-            var user = await _userManager.FindByNameAsync(model.Username);
-
-            if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
-                return Unauthorized();
-
-            JwtSecurityToken token = GenerateJwt(model.Username);
-
-            var refreshToken = GenerateRefreshToken();
-
-            user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiry = DateTime.UtcNow.AddMinutes(1);
-
-            await _userManager.UpdateAsync(user);
-
-            _logger.LogInformation("Login succeeded");
-
-            return Ok(new LoginResponse
+            var user = await _userManager.FindByNameAsync(request.UserName);
+            if (user != null)
             {
-                JwtToken = new JwtSecurityTokenHandler().WriteToken(token),
-                Expiration = token.ValidTo,
-                RefreshToken = refreshToken
-            });
+                // Verify the hashed password
+                if (_passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.Password) == PasswordVerificationResult.Success)
+                {
+                    string jwt = CreateJWT(user);
+                    AppendRefreshTokenCookie(user, HttpContext.Response.Cookies);
+
+                    return new LoginResponse(true, jwt);
+                }
+                return new LoginResponse(true, "Random");
+            }
+
+            return LoginResponse.Failed;
         }
 
-        [HttpPost("Refresh")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Refresh([FromBody] RefreshModel model)
+        private static void AppendRefreshTokenCookie(User user, IResponseCookies cookies)
         {
-            _logger.LogInformation("Refresh called");
-
-            var principal = GetPrincipalFromExpiredToken(model.AccessToken);
-
-            if (principal?.Identity?.Name is null)
-                return Unauthorized();
-
-            var user = await _userManager.FindByNameAsync(principal.Identity.Name);
-
-            if (user is null || user.RefreshToken != model.RefreshToken || user.RefreshTokenExpiry < DateTime.UtcNow)
-                return Unauthorized();
-
-            var token = GenerateJwt(principal.Identity.Name);
-
-            _logger.LogInformation("Refresh succeeded");
-
-            return Ok(new LoginResponse
-            {
-                JwtToken = new JwtSecurityTokenHandler().WriteToken(token),
-                Expiration = token.ValidTo,
-                RefreshToken = model.RefreshToken
-            });
+            var options = new CookieOptions();
+            options.HttpOnly = true;
+            options.Secure = true;
+            options.SameSite = SameSiteMode.Strict;
+            options.Expires = DateTime.Now.AddMinutes(60);
+            cookies.Append("fr0MwzuyRdoodkyl9GQBjFsehxdyfjfAApgWGMkbxxn5Bqu69xB98qMpKQdkPWR", user.SecurityStamp, options);
         }
 
-        [Authorize]
-        [HttpDelete("Revoke")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Revoke()
+        private static string CreateJWT(User user)
         {
-            _logger.LogInformation("Revoke called");
+            
+            var secretkey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("fr0MwzuyRdoodkyl9GQBjFsehxdyfjfAApgWGMkbxxn5Bqu69xB98qMpKQdkPWR"));
+            var credentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
 
-            var username = HttpContext.User.Identity?.Name;
-
-            if (username is null)
-                return Unauthorized();
-
-            var user = await _userManager.FindByNameAsync(username);
-
-            if (user is null)
-                return Unauthorized();
-
-            user.RefreshToken = null;
-
-            await _userManager.UpdateAsync(user);
-
-            _logger.LogInformation("Revoke succeeded");
-
-            return Ok();
-        }
-
-        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
-        {
-            var secret = _configuration["JWT:Secret"] ?? throw new InvalidOperationException("Secret not configured");
-
-            var validation = new TokenValidationParameters
+            var claims = new[]
             {
-                ValidIssuer = _configuration["JWT:ValidIssuer"],
-                ValidAudience = _configuration["JWT:ValidAudience"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
-                ValidateLifetime = false
+                new Claim(ClaimTypes.Name, user.UserName), // NOTE: this will be the "User.Identity.Name" value
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, user.Id.ToString()),
             };
-
-            return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
-        }
-
-        private JwtSecurityToken GenerateJwt(string username)
-        {
-            var authClaims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                _configuration["JWT:Secret"] ?? throw new InvalidOperationException("Secret not configured")));
-
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.UtcNow.AddSeconds(30),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
-                );
+                issuer: "http://localhost:5278",
+                audience: "http://localhost:5278",
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(60),
+                signingCredentials: credentials);
 
-            return token;
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private static string GenerateRefreshToken()
+        [HttpPost("[action]")]
+        public LoginResponse RefreshToken()
         {
-            var randomNumber = new byte[64];
+            var cookie = HttpContext.Request.Cookies["fr0MwzuyRdoodkyl9GQBjFsehxdyfjfAApgWGMkbxxn5Bqu69xB98qMpKQdkPWR"];
+            if (cookie != null)
+            {
+                var user = _userManager.Users.FirstOrDefault(user => user.SecurityStamp == cookie);
+                if (user != null)
+                {
+                    var jwtToken = CreateJWT(user);
+                    return new LoginResponse(true, jwtToken);
+                }
+            }
 
-            using var generator = RandomNumberGenerator.Create();
-
-            generator.GetBytes(randomNumber);
-
-            return Convert.ToBase64String(randomNumber);
+            return LoginResponse.Failed;
         }
     }
 }

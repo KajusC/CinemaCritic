@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OxdBMpqmD9XAAtNp4tvXi7dIqjLGsn93vT42VpcH011P7PxOd8txtzj4Mu/LSAepcLKrsC43EHVnB+PCwH+Y1A==",
+  "dgSpecHash": "DlYki3+/b7Lg6DA51a5fuOIWZakZjZWLElCgoQNaM+QOTlOzbRMYXUWHOUJ2UM6f5ij8nCRbJcZb25IZapMX2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Holoph\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.3\\microsoft.aspnetcore.authorization.8.0.3.nupkg.sha512",
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.3\\microsoft.aspnetcore.components.8.0.3.nupkg.sha512",
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.3\\microsoft.aspnetcore.components.analyzers.8.0.3.nupkg.sha512",
+    "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\8.0.3\\microsoft.aspnetcore.components.authorization.8.0.3.nupkg.sha512",
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.3\\microsoft.aspnetcore.components.forms.8.0.3.nupkg.sha512",
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.3\\microsoft.aspnetcore.components.web.8.0.3.nupkg.sha512",
     "C:\\Users\\Holoph\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.3\\microsoft.aspnetcore.components.webassembly.8.0.3.nupkg.sha512",

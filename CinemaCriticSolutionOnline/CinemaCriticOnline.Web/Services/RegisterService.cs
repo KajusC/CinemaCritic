@@ -65,7 +65,7 @@ namespace CinemaCritic.Web.Services
                     Password = model.Password,
                 };
 
-                var response = await _httpClient.PostAsync($"api/Authentication/Register", JsonContent.Create(model));
+                var response = await _httpClient.PostAsync($"api/WebApiAuthentication/Register", JsonContent.Create(model));
 
                 if (response.IsSuccessStatusCode)
                 {

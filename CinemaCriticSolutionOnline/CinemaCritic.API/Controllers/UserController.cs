@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using CinemaCritic.API.Authentication;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Repositories.Contracts;
 using CinemaCritic.Models.Dto;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CinemaCritic.API.Controllers
@@ -13,10 +15,12 @@ namespace CinemaCritic.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
-        public UserController(IMapper mapper, IUserRepository userRepository)
+        private readonly IPasswordHasher<User> _passwordHasher;
+        public UserController(IMapper mapper, IUserRepository userRepository, IPasswordHasher<User> passwordHasher)
         {
             _mapper = mapper;
             _userRepository = userRepository;
+            _passwordHasher = passwordHasher;
         }
 
         [HttpGet]
@@ -35,12 +39,12 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetUser(int userId)
         {
-            if(!await _userRepository.UserExists(userId))
+            if (!await _userRepository.UserExists(userId))
             {
                 return BadRequest("User does not exist");
             }
             var user = _mapper.Map<UserDto>(await _userRepository.GetUser(userId));
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -72,9 +76,9 @@ namespace CinemaCritic.API.Controllers
                 FirstName = userCreate.FirstName,
                 LastName = userCreate.LastName,
                 Email = userCreate.Email,
-                Password = userCreate.Password,
                 UserName = userCreate.Username
             };
+            user1.PasswordHash = _passwordHasher.HashPassword(user1, userCreate.Password);
 
             if (!await _userRepository.CreateUser(user1))
             {
@@ -93,11 +97,11 @@ namespace CinemaCritic.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(userToUpdate.Id != userId)
+            if (userToUpdate.Id != userId)
             {
                 return BadRequest(ModelState);
             }
-            if(!await _userRepository.UserExists(userId))
+            if (!await _userRepository.UserExists(userId))
             {
                 return NotFound();
             }

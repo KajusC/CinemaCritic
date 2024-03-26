@@ -6,107 +6,56 @@ using System.Reflection;
 using Blazored.SessionStorage;
 using CinemaCritic.Web.Services.Contracts;
 using System.Net.Http;
-
+using Microsoft.JSInterop;
 
 namespace CinemaCritic.Web
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IHttpClientFactory _factory;
-        private ISessionStorageService _sessionStorageService;
+        private const string TokenKey = "authToken";
+        private readonly IJSRuntime _jsRuntime;
 
-        private const string JWT_KEY = nameof(JWT_KEY);
-        private const string REFRESH_KEY = nameof(REFRESH_KEY);
-
-        private string? _jwtCache;
+        public AuthenticationService(IJSRuntime jsRuntime)
+        {
+            _jsRuntime = jsRuntime;
+        }
 
         public event Action<string?>? LoginChange;
 
-        public AuthenticationService(IHttpClientFactory factory, ISessionStorageService sessionStorageService)
+        public ValueTask<string> GetJwtAsync()
         {
-            _factory = factory;
-            _sessionStorageService = sessionStorageService;
+            throw new NotImplementedException();
         }
 
-        public async ValueTask<string> GetJwtAsync()
+        public async Task<string> GetTokenAsync()
         {
-            if (string.IsNullOrEmpty(_jwtCache))
-                _jwtCache = await _sessionStorageService.GetItemAsync<string>(JWT_KEY);
+            return await _jsRuntime.InvokeAsync<string>("localStorage.getItem", TokenKey);
+        }
 
-            return _jwtCache;
+        public async Task<bool> IsAuthenticatedAsync()
+        {
+            string token = await GetTokenAsync();
+            return !string.IsNullOrEmpty(token);
+        }
+
+        public async Task LoginAsync(string token)
+        {
+            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", TokenKey, token);
+        }
+
+        public Task<DateTime> LoginAsync(LoginModel model)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task LogoutAsync()
         {
-            var response = await _factory.CreateClient("ServerApi").DeleteAsync("api/authentication/revoke");
-
-            await _sessionStorageService.RemoveItemAsync(JWT_KEY);
-            await _sessionStorageService.RemoveItemAsync(REFRESH_KEY);
-
-            _jwtCache = null;
-
-            await Console.Out.WriteLineAsync($"Revoke gave response {response.StatusCode}");
-
-            LoginChange?.Invoke(null);
+            await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", TokenKey);
         }
 
-        private static string GetUsername(string token)
+        public Task<bool> RefreshAsync()
         {
-            var jwt = new JwtSecurityToken(token);
-
-            return jwt.Claims.First(c => c.Type == ClaimTypes.Name).Value;
-        }
-
-        public async Task<DateTime> LoginAsync(LoginModel model)
-        {
-            var response = await _factory.CreateClient("ServerApi").PostAsync("api/authentication/login",
-                                                        JsonContent.Create(model));
-
-            if (!response.IsSuccessStatusCode)
-                throw new UnauthorizedAccessException("Login failed.");
-
-            var content = await response.Content.ReadFromJsonAsync<LoginResponse>();
-
-            if (content == null)
-                throw new InvalidDataException();
-
-            await _sessionStorageService.SetItemAsync(JWT_KEY, content.JwtToken);
-            await _sessionStorageService.SetItemAsync(REFRESH_KEY, content.RefreshToken);
-
-            LoginChange?.Invoke(GetUsername(content.JwtToken));
-
-            return content.Expiration;
-        }
-
-        public async Task<bool> RefreshAsync()
-        {
-            var model = new RefreshModel
-            {
-                AccessToken = await _sessionStorageService.GetItemAsync<string>(JWT_KEY),
-                RefreshToken = await _sessionStorageService.GetItemAsync<string>(REFRESH_KEY)
-            };
-
-            var response = await _factory.CreateClient("ServerApi").PostAsync("api/authentication/refresh",
-                                                        JsonContent.Create(model));
-
-            if (!response.IsSuccessStatusCode)
-            {
-                await LogoutAsync();
-
-                return false;
-            }
-
-            var content = await response.Content.ReadFromJsonAsync<LoginResponse>();
-
-            if (content == null)
-                throw new InvalidDataException();
-
-            await _sessionStorageService.SetItemAsync(JWT_KEY, content.JwtToken);
-            await _sessionStorageService.SetItemAsync(REFRESH_KEY, content.RefreshToken);
-
-            _jwtCache = content.JwtToken;
-
-            return true;
+            throw new NotImplementedException();
         }
     }
 }
