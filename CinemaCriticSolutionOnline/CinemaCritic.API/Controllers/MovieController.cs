@@ -27,7 +27,7 @@ namespace CinemaCritic.API.Controllers
         [ProducesResponseType(200, Type=typeof(ICollection<Movie>))]
         public async Task<IActionResult> GetMovies()
         {
-            var movies = _mapper.Map<List<MovieDto>>(await _movieRepository.GetAllMovies());
+            var movies = _mapper.Map<List<MovieGridDto>>(await _movieRepository.GetAllMovies());
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

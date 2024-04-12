@@ -6,6 +6,6 @@ namespace CinemaCritic.Web.Pages
     public class DisplayMoviesBase : ComponentBase
     {
         [Parameter]
-        public IEnumerable<MovieDto> Movies { get; set; }
+        public IEnumerable<MovieGridDto> Movies { get; set; }
     }
 }

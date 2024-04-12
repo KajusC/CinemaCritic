@@ -21,6 +21,8 @@ namespace CinemaCritic.API.Helper
             CreateMap<FavoriteMovieDto, UserMovies>();
             CreateMap<Movie, MovieDetailsDto>()
                 .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre));
+            CreateMap<Movie, MovieGridDto>()
+                .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre));
             CreateMap<MovieDetailsDto, Movie>();
         }
     }

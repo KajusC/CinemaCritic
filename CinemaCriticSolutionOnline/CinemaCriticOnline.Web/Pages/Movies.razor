@@ -11,8 +11,27 @@ else
     <div class="center">
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
     </div>
+    <div class="filter-section">
+        <select @bind="selectedGenre">
+            <option value="">Select Genre</option>
+            @foreach (var genre in Genres.Select(g => g.Name).ToList())
+            {
+                <option value="@genre">@genre</option>
+            }
+        </select>
+        <select @bind="selectedAgeRating">
+            <option value="">Select Age Rating</option>
+            @foreach (var rating in ageRatings)
+            {
+                <option value="@rating">@rating</option>
+            }
+        </select>
+        <input type="number" @bind="fromYear" placeholder="From Year">
+        <input type="number" @bind="toYear" placeholder="To Year">
+        <button @onclick="ApplyFilters">Apply Filters</button>
+    </div>
 
-    @if (filteredMovies.Count == 0)
+    @if (filteredMovies.Count == 0 && string.IsNullOrEmpty(selectedGenre) && string.IsNullOrEmpty(selectedAgeRating) && !fromYear.HasValue && !toYear.HasValue)
     {
         filteredMovies = Movies.ToList();
         UpdatePagedMovies();
@@ -33,15 +52,22 @@ else
     </div>
 }
 @code {
-    List<MovieDto> filteredMovies = new();
-    List<MovieDto> pagedMovies = new();
+    List<MovieGridDto> filteredMovies = new();
+    List<MovieGridDto> pagedMovies = new();
     int currentPage = 1;
     int pageSize = 25;
+    string selectedGenre;
+    string selectedAgeRating;
+    int? fromYear;
+    int? toYear;
+
+    List<string> ageRatings = new List<string> { "G", "PG", "PG-13", "R" };
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        if (Movies != null)
+        await base.OnInitializedAsync();
+        if (Movies != null && filteredMovies.Count == 0)
         {
             filteredMovies = Movies.ToList();
             UpdatePagedMovies();
@@ -55,7 +81,31 @@ else
         }
         else
         {
-            filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+            filteredMovies = filteredMovies.Count < Movies.Count() && filteredMovies.Count != 0 ? filteredMovies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList() : Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+        currentPage = 1;
+        UpdatePagedMovies();
+    }
+    void ApplyFilters()
+    {
+        filteredMovies = Movies.ToList();
+        if (!string.IsNullOrEmpty(selectedGenre))
+        {
+            filteredMovies = filteredMovies.Where(m => m.Genre.Name.ToLower() == selectedGenre.ToLower()).ToList();
+        }
+
+        if (!string.IsNullOrEmpty(selectedAgeRating))
+        {
+            filteredMovies = filteredMovies.Where(m => m.AgeRating.ToLower() == selectedAgeRating.ToLower()).ToList();
+        }
+
+        if (fromYear.HasValue){
+            filteredMovies = filteredMovies.Where(m => m.ReleaseDate.Year >= fromYear).ToList();
+        }
+
+        if (toYear.HasValue)
+        {
+            filteredMovies = filteredMovies.Where(m => m.ReleaseDate.Year <= toYear).ToList();
         }
         currentPage = 1;
         UpdatePagedMovies();

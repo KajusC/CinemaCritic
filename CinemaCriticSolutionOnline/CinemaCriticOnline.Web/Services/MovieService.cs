@@ -61,7 +61,7 @@ namespace CinemaCritic.Web.Services
             }
         }
 
-        public async Task<IEnumerable<MovieDto>> GetMovies()
+        public async Task<IEnumerable<MovieGridDto>> GetMovies()
         {
             try
             {
@@ -71,9 +71,9 @@ namespace CinemaCritic.Web.Services
                 {
                     if(response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
-                        return Enumerable.Empty<MovieDto>();
+                        return Enumerable.Empty<MovieGridDto>();
                     }
-                    return await response.Content.ReadFromJsonAsync<IEnumerable<MovieDto>>();
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<MovieGridDto>>();
                 }
                 else
                 {
