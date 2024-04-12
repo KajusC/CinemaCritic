@@ -11,28 +11,79 @@ else
     <div class="center">
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
     </div>
-    @code {
-        List<MovieDto> filteredMovies = new();
-        void UpdateFilteredMovies(string search)
+
+    @if (filteredMovies.Count == 0)
+    {
+        filteredMovies = Movies.ToList();
+        UpdatePagedMovies();
+    }
+
+    <DisplayMovies Movies="@pagedMovies"></DisplayMovies>
+
+    <div class="pagination-container center">
+        @if (currentPage > 1)
         {
-            if (string.IsNullOrEmpty(search))
-            {
-                filteredMovies = Movies.ToList();
-            }
-            else
-            {
-                filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
+            <button class="pagination-button" @onclick="PreviousPage">Previous</button>
+        }
+        <span>Page @currentPage of @totalPages</span>
+        @if (currentPage < totalPages)
+        {
+            <button class="pagination-button" @onclick="NextPage">Next</button>
+        }
+    </div>
+}
+@code {
+    List<MovieDto> filteredMovies = new();
+    List<MovieDto> pagedMovies = new();
+    int currentPage = 1;
+    int pageSize = 25;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        if (Movies != null)
+        {
+            filteredMovies = Movies.ToList();
+            UpdatePagedMovies();
+        }
+    }
+    void UpdateFilteredMovies(string search)
+    {
+        if (string.IsNullOrEmpty(search))
+        {
+            filteredMovies = Movies.ToList();
+        }
+        else
+        {
+            filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+        currentPage = 1;
+        UpdatePagedMovies();
+    }
+
+    void UpdatePagedMovies()
+    {
+        int startIndex = (currentPage - 1) * pageSize;
+        pagedMovies = filteredMovies.Skip(startIndex).Take(pageSize).ToList();
+    }
+
+    void NextPage()
+    {
+        if (currentPage < totalPages)
+        {
+            currentPage++;
+            UpdatePagedMovies();
         }
     }
 
-    @if(filteredMovies.Count == 0)
+    void PreviousPage()
     {
-        <DisplayMovies Movies="@Movies"></DisplayMovies>
+        if (currentPage > 1)
+        {
+            currentPage--;
+            UpdatePagedMovies();
+        }
     }
-    else
-    {
-        <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
-    }
-}
 
+    int totalPages => (int)Math.Ceiling((double)filteredMovies.Count / pageSize);
+}

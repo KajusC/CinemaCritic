@@ -12,7 +12,6 @@ namespace CinemaCritic.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class MovieController : Controller
     {
         private readonly IMovieRepository _movieRepository;

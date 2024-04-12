@@ -2,3 +2,17 @@
     margin: 0 auto;
     text-align: center;
 }
+.pagination-container {
+    margin: 0px 0px 40px 0px;
+}
+.pagination-button {
+    margin: 0px 8px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    outline: none;
+    background-color: #14143C;
+    border: 1px solid white;
+}

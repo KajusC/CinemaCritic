@@ -22,10 +22,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync($"api/Movie/{movieId}");
 
                 if (response.IsSuccessStatusCode)
@@ -47,10 +43,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync($"api/Movie/details/{movieId}");
                 if(response.IsSuccessStatusCode)
                 {
@@ -73,10 +65,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync("api/Movie");
 
                 if (response.IsSuccessStatusCode)
