@@ -10,25 +10,26 @@ else
 {
     <div class="center">
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
+        <button @onclick="ApplyFilters" class="filter-button">Apply Filters</button>
     </div>
-    <div class="filter-section">
-        <select @bind="selectedGenre">
-            <option value="">Select Genre</option>
+    <div class="filter-section" >
+        <select @bind="selectedGenre" class="filter-field">
+            <option value="">Genre</option>
             @foreach (var genre in Genres.Select(g => g.Name).ToList())
             {
                 <option value="@genre">@genre</option>
             }
         </select>
-        <select @bind="selectedAgeRating">
-            <option value="">Select Age Rating</option>
+        <select @bind="selectedAgeRating" class="filter-field">
+            <option value="">Age Rating</option>
             @foreach (var rating in ageRatings)
             {
                 <option value="@rating">@rating</option>
             }
         </select>
-        <input type="number" @bind="fromYear" placeholder="From Year">
-        <input type="number" @bind="toYear" placeholder="To Year">
-        <button @onclick="ApplyFilters">Apply Filters</button>
+        <input type="number" class="filter-field" @bind="fromYear" placeholder="From Year">
+        <input type="number" class="filter-field" @bind="toYear" placeholder="To Year">
+        
     </div>
 
     @if (filteredMovies.Count == 0 && string.IsNullOrEmpty(selectedGenre) && string.IsNullOrEmpty(selectedAgeRating) && !fromYear.HasValue && !toYear.HasValue)
