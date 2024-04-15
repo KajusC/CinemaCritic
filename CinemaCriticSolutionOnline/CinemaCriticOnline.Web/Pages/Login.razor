@@ -1,8 +1,11 @@
 ﻿@page "/login"
 @using CinemaCritic.Web.Models
 @using CinemaCritic.Web.Services
+@using CinemaCritic.Web.Services.Contracts
+@using CinemaCritic.Web.Handlers
 @inject JwtAuthenticationService AuthStateProvider
 @inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
 
 <div class="login-box">
     <h1>Login</h1>
@@ -51,6 +54,7 @@
                     //make a sleep for 2 seconds
                     //await Task.Delay(2000);
                     //Navigation.NavigateTo("/movies");
+                    Navigation.NavigateTo("/Movies", forceLoad: true);
                 }
                 else
                 {
@@ -65,16 +69,14 @@
                 ErrorMessageFooter = "Please try again later.";
                 showPopup = true;
             }
-
+                
         }
-
     }
     private bool showPopup;
+
 
     private void ClosePopup()
     {
         showPopup = false;
     }
 }
-
-

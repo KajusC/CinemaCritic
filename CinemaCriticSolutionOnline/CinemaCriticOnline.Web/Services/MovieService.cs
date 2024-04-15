@@ -11,6 +11,7 @@ namespace CinemaCritic.Web.Services
         private readonly ILocalStorageService localStorageService;
         private readonly AuthenticationStateProvider _authenticationStateProvider;
 
+
         public MovieService(HttpClient httpClient, ILocalStorageService localStorageService, AuthenticationStateProvider authenticationStateProvider)
         {
             _httpClient = httpClient;
@@ -52,7 +53,7 @@ namespace CinemaCritic.Web.Services
                 _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 var response = await _httpClient.GetAsync($"api/Movie/details/{movieId}");
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     return await response.Content.ReadFromJsonAsync<MovieDetailsDto>();
                 }
@@ -81,7 +82,7 @@ namespace CinemaCritic.Web.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    if(response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
                         return Enumerable.Empty<MovieDto>();
                     }
@@ -104,15 +105,17 @@ namespace CinemaCritic.Web.Services
         {
             var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
-
-            if (user.Identity.IsAuthenticated)
+            await Console.Out.WriteLineAsync(user.ToString());
+            try
             {
                 return await localStorageService.GetItem<string>("token");
             }
-            else
+            catch
             {
                 throw new InvalidOperationException("User is not authenticated.");
             }
         }
+
+
     }
 }

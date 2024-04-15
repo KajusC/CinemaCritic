@@ -7,8 +7,9 @@ namespace CinemaCritic.Web.Services.Contracts
         event Action<string?>? LoginChange;
 
         ValueTask<string> GetJwtAsync();
-        Task<DateTime> LoginAsync(LoginModel model);
+        Task<DateTime> LoginAsync(string token);
         Task LogoutAsync();
         Task<bool> RefreshAsync();
+        Task<bool> IsAuthenticatedAsync();
     }
 }

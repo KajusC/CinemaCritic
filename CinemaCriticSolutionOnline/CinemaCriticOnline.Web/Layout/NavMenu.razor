@@ -1,4 +1,14 @@
-﻿<nav class="navbar">
+﻿@using CinemaCritic.Web.Handlers
+@using CinemaCritic.Web.Models
+@using CinemaCritic.Web.Services
+@using CinemaCritic.Web.Services.Contracts
+@using Microsoft.AspNetCore.Components.Authorization
+@inject IAuthenticationService AuthStateServices
+@inject JwtAuthenticationService AuthStateService
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthStateProvider
+
+<nav class="navbar">
     <div class="website-info">
         <img class="logo" src="logo.png" alt="Logo">
         <a class="navbar-brand" href="">CinemaCritic</a>
@@ -13,12 +23,46 @@
         <li class="nav-item">
             <a class="nav-link" href="movies">Movies</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="login">Log in</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="signup">Sign up</a>
-        </li>
+        @if (IsLoggedIn)
+        {
+            <li class="nav-item">
+                <a class="nav-link" href="logout" @onclick="Logout">Log out</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile">Profile</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" href="login">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signup">Sign up</a>
+            </li>
+        }
     </ul>
 </nav>
 
+@code {
+    private bool IsLoggedIn { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateServices.IsAuthenticatedAsync();
+        UpdateNavbar(authState);
+    }
+
+    private void UpdateNavbar(bool isLoggedIn)
+    {
+        IsLoggedIn = isLoggedIn;
+         //   StateHasChanged(); // Trigger re-render
+    }
+
+    private async Task Logout()
+    {
+        AuthStateService.Logout();
+        // Call logout function here
+        //UpdateNavbar(false); // Update navbar after logging out
+    }
+}

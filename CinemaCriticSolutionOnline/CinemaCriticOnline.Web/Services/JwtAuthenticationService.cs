@@ -2,7 +2,9 @@
 using CinemaCritic.Web.Services.Contracts;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Json;
+using System.Security.Claims;
 
 namespace CinemaCritic.Web.Services
 {
@@ -19,11 +21,13 @@ namespace CinemaCritic.Web.Services
         {
             _httpClient = client;
             _localStorageService = localStorageService;
+            Initialize();
         }
 
         public string DisplayName => this._user?.DisplayName;
 
         public bool IsLoggedIn => this._user != null;
+        public bool logged = false;
 
         public string Token => this._user?.Jwt;
 
@@ -39,6 +43,8 @@ namespace CinemaCritic.Web.Services
             await _localStorageService.SetItem("token", jwt);
             await _localStorageService.SetItem("user", _user);
             this.NotifyAuthenticationStateChanged(Task.FromResult(GetState()));
+            await Task.Delay(1);
+            logged = true;
         }
 
         public async Task<bool> CheckIfUserIsInDatabase(LoginModel model)
@@ -84,17 +90,32 @@ namespace CinemaCritic.Web.Services
                 throw new Exception("Login failed.", ex);
             }
         }
-        public async void Logout()
+        public async Task Logout()
         {
             this._user = null;
             await _localStorageService.RemoveItem("token");
             await _localStorageService.RemoveItem("user");
             this.NotifyAuthenticationStateChanged(Task.FromResult(GetState()));
+            logged = false;
         }
 
         public override Task<AuthenticationState> GetAuthenticationStateAsync()
         {
-            return Task.FromResult(GetState());
+            try
+            {
+
+                var token = _localStorageService.GetItem<string>("token");
+                if (token != null)
+                {
+                    return Task.FromResult(GetState());
+                }
+
+            }
+            catch (Exception)
+            {
+                throw new Exception("User is biiim bam.");
+            }
+            return Task.FromResult(NotAuthenticatedState);
         }
         private AuthenticationState GetState()
         {

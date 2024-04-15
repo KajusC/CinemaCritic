@@ -20,6 +20,7 @@ builder.Services.AddHttpClient("MyApp.ServerAPI", client => client.BaseAddress =
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5223/") });
 builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<IRegisterService, RegisterService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
 builder.Services.AddScoped<JwtAuthenticationService>();
 builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.GetRequiredService<JwtAuthenticationService>());
@@ -28,6 +29,7 @@ builder.Services.AddAuthorizationCore();
 builder.Services.AddHttpClient();
 
 await builder.Build().RunAsync();
+
 await RefreshJwtToken(builder.Build());
 
 

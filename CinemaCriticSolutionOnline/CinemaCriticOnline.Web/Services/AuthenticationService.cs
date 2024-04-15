@@ -12,7 +12,7 @@ namespace CinemaCritic.Web
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private const string TokenKey = "authToken";
+        private const string TokenKey = "token";
         private readonly IJSRuntime _jsRuntime;
 
         public AuthenticationService(IJSRuntime jsRuntime)
@@ -37,22 +37,17 @@ namespace CinemaCritic.Web
             string token = await GetTokenAsync();
             return !string.IsNullOrEmpty(token);
         }
-
-        public async Task LoginAsync(string token)
-        {
-            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", TokenKey, token);
-        }
-
-        public Task<DateTime> LoginAsync(LoginModel model)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task LogoutAsync()
         {
             await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", TokenKey);
         }
 
+        public async Task<DateTime> LoginAsync(string token)
+        {
+            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", TokenKey, token);
+            return DateTime.Now;
+
+        }
         public Task<bool> RefreshAsync()
         {
             throw new NotImplementedException();
