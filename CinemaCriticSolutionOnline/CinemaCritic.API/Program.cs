@@ -145,18 +145,26 @@ Task LogAttempt(IHeaderDictionary headers, string eventType)
 {
     var logger = loggerFactory.CreateLogger<Program>();
 
+    if (!headers.ContainsKey("Authorization"))
+    {
+        logger.LogInformation($"{eventType}. Authorization header missing. JWT not present");
+        return Task.CompletedTask;
+    }
+
     var authorizationHeader = headers["Authorization"].FirstOrDefault();
 
-    if (authorizationHeader is null)
-        logger.LogInformation($"{eventType}. JWT not present");
-    else
+    if (string.IsNullOrEmpty(authorizationHeader) || !authorizationHeader.StartsWith("Bearer "))
     {
-        string jwtString = authorizationHeader.Substring("Bearer ".Length);
-
-        var jwt = new JwtSecurityToken(jwtString);
-
-        logger.LogInformation($"{eventType}. Expiration: {jwt.ValidTo.ToLongTimeString()}. System time: {DateTime.UtcNow.ToLongTimeString()}");
+        logger.LogInformation($"{eventType}. Invalid authorization header format. JWT not present");
+        return Task.CompletedTask;
     }
+
+    string jwtString = authorizationHeader.Substring("Bearer ".Length);
+
+    var jwt = new JwtSecurityToken(jwtString);
+
+    logger.LogInformation($"{eventType}. Expiration: {jwt.ValidTo.ToLongTimeString()}. System time: {DateTime.UtcNow.ToLongTimeString()}");
 
     return Task.CompletedTask;
 }
+
