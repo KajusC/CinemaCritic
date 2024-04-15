@@ -4,7 +4,7 @@
 @using CinemaCritic.Web.Services.Contracts
 @using Microsoft.AspNetCore.Components.Authorization
 @inject IAuthenticationService AuthStateServices
-@inject JwtAuthenticationService AuthStateService
+@inject JwtAuthenticationService JwtAuthService
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthStateProvider
 
@@ -56,13 +56,11 @@
     private void UpdateNavbar(bool isLoggedIn)
     {
         IsLoggedIn = isLoggedIn;
-         //   StateHasChanged(); // Trigger re-render
+
     }
 
     private async Task Logout()
     {
-        AuthStateService.Logout();
-        // Call logout function here
-        //UpdateNavbar(false); // Update navbar after logging out
+        JwtAuthService.Logout();
     }
 }

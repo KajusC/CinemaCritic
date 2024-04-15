@@ -37,6 +37,12 @@ namespace CinemaCritic.Web
             string token = await GetTokenAsync();
             return !string.IsNullOrEmpty(token);
         }
+        public async Task<string> GetUsernameAsync()
+        {
+            var user = await _jsRuntime.InvokeAsync<LoginUser>("localStorage.getItem", "user");
+            await Console.Out.WriteLineAsync(user.Jwt);
+            return user.DisplayName;
+        }
         public async Task LogoutAsync()
         {
             await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", TokenKey);

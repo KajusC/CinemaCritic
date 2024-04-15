@@ -11,5 +11,6 @@ namespace CinemaCritic.Web.Services.Contracts
         Task LogoutAsync();
         Task<bool> RefreshAsync();
         Task<bool> IsAuthenticatedAsync();
+        Task<string> GetUsernameAsync();
     }
 }
