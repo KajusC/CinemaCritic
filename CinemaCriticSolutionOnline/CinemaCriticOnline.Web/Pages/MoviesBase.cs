@@ -21,15 +21,8 @@ namespace CinemaCritic.Web.Pages
 
         [Parameter]
         public IEnumerable<GenreDto> Genres { get; set;}
-        public IEnumerable<MovieDto> Movies { get; set; }
 
         override protected async Task OnInitializedAsync()
-        {
-            Movies = await _movieService.GetMovies();
-            Genres = await _genreService.GetGenres();
-        }
-    }
-        protected override async Task OnInitializedAsync()
         {
             try
             {
@@ -37,6 +30,7 @@ namespace CinemaCritic.Web.Pages
                 if (logged)
                 {
                     Movies = await _movieService.GetMovies();
+                    Genres = await _genreService.GetGenres();
                 }
             }
             catch (Exception ex)

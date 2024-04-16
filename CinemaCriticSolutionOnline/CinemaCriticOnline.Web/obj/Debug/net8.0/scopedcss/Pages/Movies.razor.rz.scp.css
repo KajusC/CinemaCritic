@@ -2,3 +2,66 @@
     margin: 0 auto;
     text-align: center;
 }
+.pagination-container[b-4brx93jtjb] {
+    margin: 0px 0px 40px 0px;
+}
+.pagination-button[b-4brx93jtjb] {
+    margin: 0px 8px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    outline: none;
+    background-color: #14143C;
+    border: 1px solid white;
+}
+.filter-section[b-4brx93jtjb] {
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+.filter-field[b-4brx93jtjb] {
+    width: 200px;
+    height: 35px;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    outline: none;
+    background-color: #14143C;
+    border: none;
+    color:white;
+    appearance:none;
+}
+.filter-field:hover[b-4brx93jtjb] {
+    background-color: #2d2d86;
+}
+.filter-button[b-4brx93jtjb] {
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    outline: none;
+    background-color: #14143C;
+    border: 1.5px solid white;
+}
+.filter-button:hover[b-4brx93jtjb] {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+    background-color: #2d2d86;
+}
+/* Chrome, Safari, Edge, Opera- hide arrows from input type number*/
+input[b-4brx93jtjb]::-webkit-outer-spin-button,
+input[b-4brx93jtjb]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox- hide arrows from input type number */
+input[type=number][b-4brx93jtjb] {
+    -moz-appearance: textfield;
+}
