@@ -1,10 +1,20 @@
 ﻿@page "/Movies"
 @inherits MoviesBase
 @using CinemaCritic.Models.Dto
+@using CinemaCritic.Web.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@inject JwtAuthenticationService AuthenticationServiced
 
 @if (Movies is null)
 {
-    <h1>Loading...</h1>
+    if (!IsLoggedIn)
+    {
+        <h1>You are not authorized to view this page</h1>
+    }
+    else
+    {
+        <h1>Loading...</h1>
+    }
 }
 else
 {
@@ -12,19 +22,19 @@ else
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
     </div>
     @code {
-        List<MovieDto> filteredMovies = new();
-        void UpdateFilteredMovies(string search)
+    List<MovieDto> filteredMovies = new();
+    void UpdateFilteredMovies(string search)
+    {
+        if (string.IsNullOrEmpty(search))
         {
-            if (string.IsNullOrEmpty(search))
-            {
-                filteredMovies = Movies.ToList();
-            }
-            else
-            {
-                filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
+            filteredMovies = Movies.ToList();
+        }
+        else
+        {
+            filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
+}
 
     @if(filteredMovies.Count == 0)
     {
@@ -33,6 +43,23 @@ else
     else
     {
         <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
+    }
+}
+@code {
+    private bool IsLoggedIn = false;
+    private static AuthenticationState NotAuthenticatedState = new AuthenticationState(new System.Security.Claims.ClaimsPrincipal());
+
+    private async Task CheckIfAuthenticated()
+    {
+        var authState = await AuthenticationServiced.GetAuthenticationStateAsync();
+        if(authState == NotAuthenticatedState)
+        {
+            IsLoggedIn = false;
+        }
+        else
+        {
+            IsLoggedIn = true;
+        }
     }
 }
 

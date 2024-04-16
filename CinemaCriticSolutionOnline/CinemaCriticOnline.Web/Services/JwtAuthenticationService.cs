@@ -103,7 +103,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-
                 var token = _localStorageService.GetItem<string>("token");
                 if (token != null)
                 {
