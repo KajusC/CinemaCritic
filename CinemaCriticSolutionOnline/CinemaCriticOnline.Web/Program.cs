@@ -25,6 +25,7 @@ builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
 builder.Services.AddScoped<JwtAuthenticationService>();
 builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.GetRequiredService<JwtAuthenticationService>());
 builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<UserService>();
 
 builder.Services.AddHttpClient();
 

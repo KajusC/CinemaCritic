@@ -1,0 +1,96 @@
+﻿@using CinemaCritic.Web.Handlers
+@using CinemaCritic.Web.Models
+@using CinemaCritic.Web.Services
+@using CinemaCritic.Web.Services.Contracts
+@using CinemaCritic.Models.Dto
+
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.IdentityModel.Tokens.Jwt
+@inject IAuthenticationService AuthStateServices
+@inject JwtAuthenticationService JwtAuthService
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ILocalStorageService _localStorageService
+@inject JwtAuthenticationService JwtAuthService
+@inject HttpClient HttpClient
+@inject UserService UserService
+
+
+@page "/profile"
+
+<div class="signup-box">
+    <h1>Edit Profile</h1>
+    <form>
+
+        <!-- Username -->
+        <label for="username" class="input-label">Username:</label>
+        <input type="text" id="username" class="input-field" value=@Username />
+
+        <!-- Email -->
+        <label for="email" class="input-label">Email:</label>
+        <input type="email" id="email" class="input-field" value=@Email />
+
+        <!-- First Name -->
+        <label for="firstName" class="input-label">First Name:</label>
+        <input type="text" id="firstName" class="input-field" value=@FirstName />
+
+        <!-- Last Name -->
+        <label for="lastName" class="input-label">Last Name:</label>
+        <input type="text" id="lastName" class="input-field" value=@LastName />
+
+        <!-- Review Count (assuming it's read-only) -->
+        <label for="reviewCount" class="input-label">Review Count:</label>
+        <input type="text" id="reviewCount" value="10" readonly />
+
+        <!-- "Want to change password?" link -->
+        <div>
+            <a href="/changepassword" class="change-password">Want to change password?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit">Change 👨‍🦽👨‍🦽</button>
+
+    </form>
+</div>
+
+@code {
+    string token = string.Empty;
+
+    private string Username { get; set; }
+    private string Email { get; set; }
+    private string FirstName { get; set; }
+    private string LastName { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tokens = await _localStorageService.GetItem<string>("token");
+        if (!string.IsNullOrEmpty(tokens))
+        {
+            token = tokens;
+        }
+        var userId = GetUserId();
+
+        var User = await UserService.GetUser(userId);
+
+        Username = User.Username;
+        Email = User.Email;
+        FirstName = User.FirstName;
+        LastName = User.LastName;
+
+    }
+    public int GetUserId()
+    {
+        var handler = new JwtSecurityTokenHandler();
+        try
+        {
+            var token = handler.ReadJwtToken(this.token);
+            var userId = token.Claims.First(claim => claim.Type == "jti").Value;
+            return int.Parse(userId);
+        }
+        catch (Exception)
+        {
+            return 0;
+        }
+    }
+}
