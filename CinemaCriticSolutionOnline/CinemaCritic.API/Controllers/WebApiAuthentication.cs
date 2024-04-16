@@ -34,8 +34,16 @@ namespace CinemaCritic.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Register([FromBody]RegisterModel request)
         {
-
-            var existingUser = await _userManager.FindByNameAsync(request.UserName);
+            User? existingUser = null;
+            try
+            {
+                existingUser = await _userManager.FindByNameAsync(request.UserName);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status404NotFound, $"Failed to find user: {ex.Message}");
+            }
+            
 
             if (existingUser != null)
                 return Conflict("User already exists.");
@@ -119,9 +127,11 @@ namespace CinemaCritic.API.Controllers
         public LoginResponse RefreshToken()
         {
             var cookie = HttpContext.Request.Cookies["fr0MwzuyRdoodkyl9GQBjFsehxdyfjfAApgWGMkbxxn5Bqu69xB98qMpKQdkPWR"];
+            Console.WriteLine("Te");
             if (cookie != null)
             {
                 var user = _userManager.Users.FirstOrDefault(user => user.SecurityStamp == cookie);
+                Console.WriteLine("AAAAAAAAAAAAAT");
                 if (user != null)
                 {
                     var jwtToken = CreateJWT(user);

@@ -1,0 +1,19 @@
+.search-box[b-1ne5r2v03n] {
+    width: 500px;
+    padding: 10px 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    outline: none;
+    background-color: #14143C;
+    border: none;
+}
+    .search-box[b-1ne5r2v03n]::placeholder {
+        color: white;
+    }
+@media (max-width: 600px){
+    .search-box[b-1ne5r2v03n] {
+        width: 300px;
+    }
+}

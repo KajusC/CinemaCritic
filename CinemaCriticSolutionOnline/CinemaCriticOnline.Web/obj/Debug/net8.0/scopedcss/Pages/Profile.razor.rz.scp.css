@@ -1,0 +1,77 @@
+body[b-qrp1xnnosw] {
+    font-family: Arial, sans-serif;
+}
+
+.signup-box[b-qrp1xnnosw] {
+    width: 600px;
+    background-color: black;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    padding: 60px;
+    text-align: center;
+}
+
+    .signup-box h1[b-qrp1xnnosw] {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+    .signup-box .input-label[b-qrp1xnnosw] {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+        text-align: left;
+    }
+
+    .signup-box input[type="text"][b-qrp1xnnosw],
+    .signup-box input[type="email"][b-qrp1xnnosw],
+    .signup-box input[type="file"][b-qrp1xnnosw],
+    .signup-box input[type="password"][b-qrp1xnnosw] {
+        background: black;
+        outline: none;
+        color: white;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 2px solid white;
+        box-shadow: none;
+        font-size: 1.4rem;
+        font-weight: 600;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+        width: calc(70% - 5px);
+    }
+
+    .signup-box .change-password[b-qrp1xnnosw] {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .signup-box button.submit[b-qrp1xnnosw] {
+        background-color: rgb(1, 1, 54);
+        margin-top: 50px;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 10px 30px;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: calc(30% - 5px);
+    }
+
+    .signup-box .submit:hover[b-qrp1xnnosw] {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
+    }
+
+    .signup-box .submit:active[b-qrp1xnnosw] {
+        transform: scale(0.95);
+    }

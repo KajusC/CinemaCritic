@@ -1,0 +1,25 @@
+h3[b-j3zdfco5p9] {
+    color: #ff00ff; /* Magenta */
+    font-family: "Comic Sans MS", cursive;
+    text-decoration: underline;
+    transform: rotate(5deg) scaleX(1.2) scaleY(0.8);
+    margin-bottom: 100px;
+}
+
+ul[b-j3zdfco5p9] {
+    list-style-type: none;
+    padding: 15px;
+    background-color: #ffffcc; /* Light yellow */
+    border: 5px dashed #00cccc; /* Cyan */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red */
+    transform: skewX(-10deg) skewY(5deg);
+}
+
+li[b-j3zdfco5p9] {
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    color: #00cc00; /* Green */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); /* Black */
+    animation: shake 0.4s infinite alternate;
+}

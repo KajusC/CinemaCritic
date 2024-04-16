@@ -20,47 +20,62 @@
 
 <div class="signup-box">
     <h1>Edit Profile</h1>
-    <form>
+    <EditForm Model="@userModel" OnSubmit="HandleSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-        <!-- Username -->
+    
         <label for="username" class="input-label">Username:</label>
-        <input type="text" id="username" class="input-field" value=@Username />
+        <input type="text" id="username" class="input-field" placeholder=@Username @bind="Username" />
 
-        <!-- Email -->
         <label for="email" class="input-label">Email:</label>
-        <input type="email" id="email" class="input-field" value=@Email />
+        <input type="email" id="email" class="input-field" placeholder=@Email @bind="Email" />
 
-        <!-- First Name -->
         <label for="firstName" class="input-label">First Name:</label>
-        <input type="text" id="firstName" class="input-field" value=@FirstName />
+        <input type="text" id="firstName" class="input-field" placeholder=@FirstName @bind="FirstName" />
 
-        <!-- Last Name -->
         <label for="lastName" class="input-label">Last Name:</label>
-        <input type="text" id="lastName" class="input-field" value=@LastName />
+        <input type="text" id="lastName" class="input-field" placeholder=@LastName @bind="LastName" />
 
-        <!-- Review Count (assuming it's read-only) -->
         <label for="reviewCount" class="input-label">Review Count:</label>
         <input type="text" id="reviewCount" value="10" readonly />
 
-        <!-- "Want to change password?" link -->
         <div>
             <a href="/changepassword" class="change-password">Want to change password?</a>
         </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="submit">Change 👨‍🦽👨‍🦽</button>
 
-    </form>
+        <button type="submit" class="submit">Change 👨‍🦽👨‍🦽</button>
+    </EditForm>
+
+
+    @if (showPopup)
+    {
+        <div class="popup submit">
+            <div class="popup-content">
+                <h2>@ErrorMessage</h2>
+                <p>@ErrorMessageFooter</p>
+                <button @onclick="ClosePopup">Close</button>
+            </div>
+        </div>
+    }
 </div>
+
 
 @code {
     string token = string.Empty;
+
+    private UserDto userModel = new UserDto();
+
+    protected string ErrorMessage = "";
+    protected string ErrorMessageFooter = "";
 
     private string Username { get; set; }
     private string Email { get; set; }
     private string FirstName { get; set; }
     private string LastName { get; set; }
-
+    private string HashedPassword { get; set; }
+    private int userId;
 
     protected override async Task OnInitializedAsync()
     {
@@ -69,14 +84,17 @@
         {
             token = tokens;
         }
-        var userId = GetUserId();
+        userId = GetUserId();
 
         var User = await UserService.GetUser(userId);
+
+        Console.WriteLine($"IserP: {User.Password}");
 
         Username = User.Username;
         Email = User.Email;
         FirstName = User.FirstName;
         LastName = User.LastName;
+        HashedPassword = User.Password;
 
     }
     public int GetUserId()
@@ -93,4 +111,38 @@
             return 0;
         }
     }
+
+    private async Task HandleSubmit()
+    {
+        userModel.Id = this.userId;
+        userModel.Username = this.Username;
+        userModel.Email = this.Email;
+        userModel.FirstName = this.FirstName;
+        userModel.LastName = this.LastName;
+        userModel.Password = HashedPassword;
+        try
+        {
+            Console.WriteLine("Edited");
+            await UserService.UpdateUser(userId, userModel);
+            ErrorMessage = "Profile updated!";
+            ErrorMessageFooter = "🤓🤓🤓";
+            showPopup = true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Failed");
+            ErrorMessage = "Failed";
+            ErrorMessageFooter = "Please try again later.";
+            showPopup = true;
+        }
+        
+    }
+    private bool showPopup;
+
+
+    private void ClosePopup()
+    {
+        showPopup = false;
+    }
+
 }
