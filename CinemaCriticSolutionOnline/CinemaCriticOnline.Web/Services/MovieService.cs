@@ -23,10 +23,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync($"api/Movie/{movieId}");
 
                 if (response.IsSuccessStatusCode)
@@ -48,10 +44,6 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync($"api/Movie/details/{movieId}");
                 if (response.IsSuccessStatusCode)
                 {
@@ -70,23 +62,19 @@ namespace CinemaCritic.Web.Services
             }
         }
 
-        public async Task<IEnumerable<MovieDto>> GetMovies()
+        public async Task<IEnumerable<MovieGridDto>> GetMovies()
         {
             try
             {
-                var token = await GetJwtToken();
-
-                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
                 var response = await _httpClient.GetAsync("api/Movie");
 
                 if (response.IsSuccessStatusCode)
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
-                        return Enumerable.Empty<MovieDto>();
+                        return Enumerable.Empty<MovieGridDto>();
                     }
-                    return await response.Content.ReadFromJsonAsync<IEnumerable<MovieDto>>();
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<MovieGridDto>>();
                 }
                 else
                 {

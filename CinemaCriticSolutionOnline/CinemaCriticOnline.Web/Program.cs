@@ -19,6 +19,7 @@ builder.Services.AddHttpClient("MyApp.ServerAPI", client => client.BaseAddress =
     .AddHttpMessageHandler<JwtTokenMessageHandler>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5223/") });
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IRegisterService, RegisterService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();

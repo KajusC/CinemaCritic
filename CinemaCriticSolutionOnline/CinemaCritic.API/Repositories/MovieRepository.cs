@@ -28,7 +28,7 @@ namespace CinemaCritic.API.Repositories
 
         public async Task<ICollection<Movie>> GetAllMovies()
         {
-            return await _context.Movies.ToListAsync();
+            return await _context.Movies.Include(m => m.Genre).ToListAsync();
         }
 
         public async Task<Movie> GetMovie(int id)

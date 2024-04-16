@@ -9,12 +9,26 @@ namespace CinemaCritic.Web.Pages
     {
         [Inject]
         public IMovieService _movieService { get; set; }
+
+        [Inject]
+        public IGenreService _genreService { get; set; }
+
+        [Parameter]
+        public IEnumerable<MovieGridDto> Movies { get; set; }
+
         [Inject]
         IAuthenticationService _authService { get; set; }
 
         [Parameter]
+        public IEnumerable<GenreDto> Genres { get; set;}
         public IEnumerable<MovieDto> Movies { get; set; }
 
+        override protected async Task OnInitializedAsync()
+        {
+            Movies = await _movieService.GetMovies();
+            Genres = await _genreService.GetGenres();
+        }
+    }
         protected override async Task OnInitializedAsync()
         {
             try

@@ -20,9 +20,70 @@ else
 {
     <div class="center">
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
+        <button @onclick="ApplyFilters" class="filter-button">Apply Filters</button>
     </div>
-    @code {
-    List<MovieDto> filteredMovies = new();
+    <div class="filter-section" >
+        <select @bind="selectedGenre" class="filter-field">
+            <option value="">Genre</option>
+            @foreach (var genre in Genres.Select(g => g.Name).ToList())
+            {
+                <option value="@genre">@genre</option>
+            }
+        </select>
+        <select @bind="selectedAgeRating" class="filter-field">
+            <option value="">Age Rating</option>
+            @foreach (var rating in ageRatings)
+            {
+                <option value="@rating">@rating</option>
+            }
+        </select>
+        <input type="number" class="filter-field" @bind="fromYear" placeholder="From Year">
+        <input type="number" class="filter-field" @bind="toYear" placeholder="To Year">
+        
+    </div>
+
+    @if (filteredMovies.Count == 0 && string.IsNullOrEmpty(selectedGenre) && string.IsNullOrEmpty(selectedAgeRating) && !fromYear.HasValue && !toYear.HasValue)
+    {
+        filteredMovies = Movies.ToList();
+        UpdatePagedMovies();
+    }
+
+    <DisplayMovies Movies="@pagedMovies"></DisplayMovies>
+
+    <div class="pagination-container center">
+        @if (currentPage > 1)
+        {
+            <button class="pagination-button" @onclick="PreviousPage">Previous</button>
+        }
+        <span>Page @currentPage of @totalPages</span>
+        @if (currentPage < totalPages)
+        {
+            <button class="pagination-button" @onclick="NextPage">Next</button>
+        }
+    </div>
+}
+@code {
+    List<MovieGridDto> filteredMovies = new();
+    List<MovieGridDto> pagedMovies = new();
+    int currentPage = 1;
+    int pageSize = 25;
+    string selectedGenre;
+    string selectedAgeRating;
+    int? fromYear;
+    int? toYear;
+
+    List<string> ageRatings = new List<string> { "G", "PG", "PG-13", "R" };
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await base.OnInitializedAsync();
+        if (Movies != null && filteredMovies.Count == 0)
+        {
+            filteredMovies = Movies.ToList();
+            UpdatePagedMovies();
+        }
+    }
     void UpdateFilteredMovies(string search)
     {
         if (string.IsNullOrEmpty(search))
@@ -31,35 +92,59 @@ else
         }
         else
         {
-            filteredMovies = Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+            filteredMovies = filteredMovies.Count < Movies.Count() && filteredMovies.Count != 0 ? filteredMovies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList() : Movies.Where(m => m.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
         }
+        currentPage = 1;
+        UpdatePagedMovies();
     }
-}
-
-    @if(filteredMovies.Count == 0)
+    void ApplyFilters()
     {
-        <DisplayMovies Movies="@Movies"></DisplayMovies>
-    }
-    else
-    {
-        <DisplayMovies Movies="@filteredMovies"></DisplayMovies>
-    }
-}
-@code {
-    private bool IsLoggedIn = false;
-    private static AuthenticationState NotAuthenticatedState = new AuthenticationState(new System.Security.Claims.ClaimsPrincipal());
-
-    private async Task CheckIfAuthenticated()
-    {
-        var authState = await AuthenticationServiced.GetAuthenticationStateAsync();
-        if(authState == NotAuthenticatedState)
+        filteredMovies = Movies.ToList();
+        if (!string.IsNullOrEmpty(selectedGenre))
         {
-            IsLoggedIn = false;
+            filteredMovies = filteredMovies.Where(m => m.Genre.Name.ToLower() == selectedGenre.ToLower()).ToList();
         }
-        else
+
+        if (!string.IsNullOrEmpty(selectedAgeRating))
         {
-            IsLoggedIn = true;
+            filteredMovies = filteredMovies.Where(m => m.AgeRating.ToLower() == selectedAgeRating.ToLower()).ToList();
+        }
+
+        if (fromYear.HasValue){
+            filteredMovies = filteredMovies.Where(m => m.ReleaseDate.Year >= fromYear).ToList();
+        }
+
+        if (toYear.HasValue)
+        {
+            filteredMovies = filteredMovies.Where(m => m.ReleaseDate.Year <= toYear).ToList();
+        }
+        currentPage = 1;
+        UpdatePagedMovies();
+    }
+
+    void UpdatePagedMovies()
+    {
+        int startIndex = (currentPage - 1) * pageSize;
+        pagedMovies = filteredMovies.Skip(startIndex).Take(pageSize).ToList();
+    }
+
+    void NextPage()
+    {
+        if (currentPage < totalPages)
+        {
+            currentPage++;
+            UpdatePagedMovies();
         }
     }
-}
 
+    void PreviousPage()
+    {
+        if (currentPage > 1)
+        {
+            currentPage--;
+            UpdatePagedMovies();
+        }
+    }
+
+    int totalPages => (int)Math.Ceiling((double)filteredMovies.Count / pageSize);
+}
