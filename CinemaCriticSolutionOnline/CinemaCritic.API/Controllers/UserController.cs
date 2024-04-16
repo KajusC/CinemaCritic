@@ -110,6 +110,10 @@ namespace CinemaCritic.API.Controllers
                 return BadRequest(ModelState);
             }
             var ownerMap = _mapper.Map<User>(userToUpdate);
+            ownerMap.PasswordHash =  userToUpdate.Password;
+            ownerMap.NormalizedEmail = userToUpdate.Email.ToUpper();
+            ownerMap.NormalizedUserName = userToUpdate.Username.ToUpper();
+
             if (!await _userRepository.UpdateUser(ownerMap))
             {
                 ModelState.AddModelError("", "Something went wrong");

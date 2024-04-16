@@ -13,7 +13,7 @@ namespace CinemaCritic.API.Helper
             CreateMap<MovieDto, Movie>();
             CreateMap<Review, ReviewDto>();
             CreateMap<ReviewDto, Review>();
-            CreateMap<User, UserDto>();
+            CreateMap<User, UserDto>().ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.PasswordHash));
             CreateMap<UserDto, User>();
             CreateMap<Genre, GenreDto>();
             CreateMap<GenreDto, Genre>();
