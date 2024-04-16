@@ -1,4 +1,5 @@
 ﻿using CinemaCritic.Models.Dto;
+using CinemaCritic.Web.Services;
 using CinemaCritic.Web.Services.Contracts;
 using Microsoft.AspNetCore.Components;
 
@@ -8,12 +9,26 @@ namespace CinemaCritic.Web.Pages
     {
         [Inject]
         public IMovieService _movieService { get; set; }
-        [Parameter]
-        public IEnumerable<MovieDto> Movies { get; set; } 
+        [Inject]
+        IAuthenticationService _authService { get; set; }
 
-        override protected async Task OnInitializedAsync()
+        [Parameter]
+        public IEnumerable<MovieDto> Movies { get; set; }
+
+        protected override async Task OnInitializedAsync()
         {
-            Movies = await _movieService.GetMovies();
+            try
+            {
+                var logged = await _authService.IsAuthenticatedAsync();
+                if (logged)
+                {
+                    Movies = await _movieService.GetMovies();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
