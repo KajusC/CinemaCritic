@@ -8,3 +8,37 @@ html[b-vtnkpnsx1u]{
     height: auto;
     min-height: 100%;
 }
+div[b-vtnkpnsx1u] {
+    padding-bottom:20px;
+}
+img[b-vtnkpnsx1u] {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 200px;
+    height: 200px;
+    column-gap: 5px;
+}
+ul[b-vtnkpnsx1u] {
+    list-style-type:none;
+}
+.name[b-vtnkpnsx1u] {
+    font-size: 30px;
+}
+.role[b-vtnkpnsx1u] {
+    font-size: 20px;
+}
+.email[b-vtnkpnsx1u] {
+    font-size: 16px;
+}
+.experience[b-vtnkpnsx1u] {
+    font-size: 13px;
+}
+.flexcontainer[b-vtnkpnsx1u] {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 320px) {
+    .flexcontainer[b-vtnkpnsx1u] {
+        display: block;
+    }
+}
