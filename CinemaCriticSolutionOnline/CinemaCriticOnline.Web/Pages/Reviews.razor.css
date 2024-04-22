@@ -1,0 +1,39 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.review-card{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: black;
+}
+.review-card-middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-card-bottom{
+    margin-top: 10px;
+}
+.review-title {
+    font-size: 1.8rem;
+}
+.movie-name{
+    font-size: 1.2rem;
+    color: gray;
+}
+.review-rating{
+    color: darkgoldenrod;
+}
+.review-rating, .review-card{
+    font-size: 1rem;
+}
+.review-description{
+    font-size: 1rem;
+    max-height: 60px;
+    overflow-y: auto;
+}

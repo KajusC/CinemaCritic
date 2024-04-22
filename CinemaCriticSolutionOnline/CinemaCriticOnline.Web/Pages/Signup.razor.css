@@ -28,7 +28,8 @@
     }
 
     .signup-box input[type="text"],
-    .signup-box input[type="password"] {
+    .signup-box input[type="password"],
+    .signup-box input[type="email"] {
         background: black;
         outline: none;
         color: white;

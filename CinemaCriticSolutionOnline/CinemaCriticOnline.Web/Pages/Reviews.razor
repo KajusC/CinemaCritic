@@ -1,21 +1,35 @@
 ﻿@page "/reviews"
 @inherits ReviewBase
 
-@foreach (var item in Reviews)
+@if (Reviews == null)
 {
-     <div class="review-card">
-         <div class="review-card-top">
-             <div class="card-top-left">
-                <p class="review-title">@item.Title</p>
-                <p class="review-rating">@item.Rating</p>
-             </div>
-             <p class="movie-name">@item.Movie.Name</p>
-         </div>
-         <div>
-            <p class="review-date">@item.CommentDate.ToString("yyyy-MM-dd")</p>
-         </div>
-         <div class="review-card-bottom">
-             <p class="review-description">@item.Comment</p>
-         </div>
-     </div>
+    <h1>Loading...</h1>
 }
+else if (ErrorMessage != null)
+{
+    <h1>Something went wrong...</h1>
+}
+else if(Reviews.Count() == 0)
+{
+    <h1>You have no reviews</h1>
+}
+else
+{
+    @foreach (var item in Reviews)
+    {
+        <div class="review-card">
+            <div class="review-card-top">
+                <p class="review-title">@item.Title</p>
+                <p class="movie-name">@item.Movie.Name</p>
+            </div>
+            <div class="review-card-middle">
+                <p class="review-rating">@item.Rating / 5</p>
+                <p class="review-date">@item.CommentDate.ToString("yyyy-MM-dd")</p>
+            </div>
+            <div class="review-card-bottom">
+                <p class="review-description">@item.Comment</p>
+            </div>
+        </div>
+    }
+}
+

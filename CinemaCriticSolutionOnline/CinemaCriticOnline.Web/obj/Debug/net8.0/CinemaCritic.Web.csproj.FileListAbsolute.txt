@@ -3574,3 +3574,4 @@ C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCr
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\refint\CinemaCritic.Web.dll
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\CinemaCritic.Web.pdb
 C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\ref\CinemaCritic.Web.dll
+C:\Users\Erikas Rudokas\Desktop\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Pages\Reviews.razor.rz.scp.css

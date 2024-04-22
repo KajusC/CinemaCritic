@@ -28,7 +28,8 @@ body[b-k4t44gf9ix] {
     }
 
     .signup-box input[type="text"][b-k4t44gf9ix],
-    .signup-box input[type="password"][b-k4t44gf9ix] {
+    .signup-box input[type="password"][b-k4t44gf9ix],
+    .signup-box input[type="email"][b-k4t44gf9ix] {
         background: black;
         outline: none;
         color: white;

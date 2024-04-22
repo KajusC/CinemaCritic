@@ -19,6 +19,8 @@ namespace CinemaCritic.Web.Pages
         [Parameter]
         public IEnumerable<ReviewListDto> Reviews { get; set; } = new List<ReviewListDto>();
 
+        public string ErrorMessage { get; set; }
+
         override protected async Task OnInitializedAsync()
         {
             try
@@ -35,7 +37,7 @@ namespace CinemaCritic.Web.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ErrorMessage = ex.Message;
             }
         }   
     }

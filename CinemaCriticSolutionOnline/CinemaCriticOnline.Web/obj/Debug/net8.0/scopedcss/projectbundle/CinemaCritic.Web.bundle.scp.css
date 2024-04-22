@@ -1960,6 +1960,46 @@ body[b-qrp1xnnosw] {
     .signup-box .submit:active[b-qrp1xnnosw] {
         transform: scale(0.95);
     }
+/* /Pages/Reviews.razor.rz.scp.css */
+*[b-vh7d0qh1mu]{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.review-card[b-vh7d0qh1mu]{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: black;
+}
+.review-card-middle[b-vh7d0qh1mu]{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-card-bottom[b-vh7d0qh1mu]{
+    margin-top: 10px;
+}
+.review-title[b-vh7d0qh1mu] {
+    font-size: 1.8rem;
+}
+.movie-name[b-vh7d0qh1mu]{
+    font-size: 1.2rem;
+    color: gray;
+}
+.review-rating[b-vh7d0qh1mu]{
+    color: darkgoldenrod;
+}
+.review-rating[b-vh7d0qh1mu], .review-card[b-vh7d0qh1mu]{
+    font-size: 1rem;
+}
+.review-description[b-vh7d0qh1mu]{
+    font-size: 1rem;
+    max-height: 60px;
+    overflow-y: auto;
+}
 /* /Pages/SearchBox.razor.rz.scp.css */
 .search-box[b-1ne5r2v03n] {
     width: 500px;
@@ -2011,7 +2051,8 @@ body[b-k4t44gf9ix] {
     }
 
     .signup-box input[type="text"][b-k4t44gf9ix],
-    .signup-box input[type="password"][b-k4t44gf9ix] {
+    .signup-box input[type="password"][b-k4t44gf9ix],
+    .signup-box input[type="email"][b-k4t44gf9ix] {
         background: black;
         outline: none;
         color: white;
