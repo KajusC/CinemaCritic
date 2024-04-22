@@ -8203,11 +8203,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
       "projectName": "CinemaCritic.Web",
-      "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+      "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
       "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
+      "outputPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8224,8 +8224,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-              "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+            "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+              "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
             }
           }
         }

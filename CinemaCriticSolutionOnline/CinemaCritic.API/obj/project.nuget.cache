@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3uZ70MM/hmVk0dL5rYCjv67x0bXy0Qtx0J6tN9IXibEG7vqAZtG3Gl8S1zz6SEQ7nod8lUWRaJCTxQC7yop+8Q==",
+  "dgSpecHash": "sFrMLrC2LIBZLxVDUBPGZOiYdyX0nBtFOduPiTR33GCrwFkksgiLHDtfYGhI7lGU8ctx6Hgv9XVx9wOmBczYEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+  "projectFilePath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matas\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Matas\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

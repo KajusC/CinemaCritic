@@ -27,5 +27,8 @@ else
             <img class="movie-poster" src="@MovieDetailsDto.ImageUrl" alt="@MovieDetailsDto.Name" />
             <iframe class="movie-trailer" src="@MovieDetailsDto.TrailerUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+        <div>
+            <a href="/Review/@MovieDetailsDto.Id" class="review-button">Review "@MovieDetailsDto.Name"</a>
+        </div>
     </div>
 }

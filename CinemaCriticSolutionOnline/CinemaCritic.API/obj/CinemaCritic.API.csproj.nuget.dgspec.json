@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj": {}
+    "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj": {
+    "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+        "projectUniqueName": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
         "projectName": "CinemaCritic.API",
-        "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+        "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
         "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
+        "outputPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-                "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+              "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+                "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
               }
             }
           }
@@ -123,14 +123,14 @@
         }
       }
     },
-    "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+    "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
         "projectName": "CinemaCritic.Models",
-        "projectPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
+        "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj",
         "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matas\\Documents\\GitHub\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
+        "outputPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
