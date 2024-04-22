@@ -12,6 +12,8 @@ namespace CinemaCritic.API.Models
         [Required(ErrorMessage = "Rating is required")]
         public double Rating {  get; set; }
 
+        public string Title { get; set; }
+
         [Required(ErrorMessage = "Comment is required")]
         public string Comment { get; set; }
 

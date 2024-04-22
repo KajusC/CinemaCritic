@@ -1,0 +1,21 @@
+﻿@page "/reviews"
+@inherits ReviewBase
+
+@foreach (var item in Reviews)
+{
+     <div class="review-card">
+         <div class="review-card-top">
+             <div class="card-top-left">
+                <p class="review-title">@item.Title</p>
+                <p class="review-rating">@item.Rating</p>
+             </div>
+             <p class="movie-name">@item.Movie.Name</p>
+         </div>
+         <div>
+            <p class="review-date">@item.CommentDate.ToString("yyyy-MM-dd")</p>
+         </div>
+         <div class="review-card-bottom">
+             <p class="review-description">@item.Comment</p>
+         </div>
+     </div>
+}

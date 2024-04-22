@@ -49,6 +49,19 @@ namespace CinemaCritic.API.Controllers
             }
             return Ok(review);
         }
+
+        [HttpGet("user/{userId}")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
+        public async Task<IActionResult> GetReviewsOfUser(int userId)
+        {
+            var reviews = _mapper.Map<List<ReviewListDto>>(await _reviewRepository.GetReviewsOfUser(userId));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(reviews);
+        }
+
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -62,7 +75,9 @@ namespace CinemaCritic.API.Controllers
             Review review = new Review()
             {
                 Rating = reviewCreate.Rating,
-                Comment = reviewCreate.Comment
+                Title = reviewCreate.Title,
+                Comment = reviewCreate.Comment,
+                CommentDate = reviewCreate.CommentDate
             };
             if(!await _userRepository.UserExists(userId))
             {
