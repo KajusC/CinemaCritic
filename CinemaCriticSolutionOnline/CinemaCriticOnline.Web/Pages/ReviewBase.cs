@@ -39,6 +39,25 @@ namespace CinemaCritic.Web.Pages
             {
                 ErrorMessage = ex.Message;
             }
-        }   
+        }
+        private async Task DeleteReview(int reviewId)
+        {
+            try
+            {
+                // Delete the review from the database
+                await _reviewService.GetReviewsOfUser(reviewId);
+
+                // Update the Reviews collection to reflect the deletion
+                Reviews = Reviews.Where(review => review.Id != reviewId).ToList();
+
+                // Notify Blazor to re-render the UI
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                ErrorMessage = ex.Message;
+            }
+        }
     }
 }

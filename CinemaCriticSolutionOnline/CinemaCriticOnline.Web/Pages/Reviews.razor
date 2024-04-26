@@ -1,4 +1,5 @@
-﻿@page "/reviews"
+﻿@using CinemaCritic.Models.Dto
+@page "/reviews"
 @inherits ReviewBase
 
 @if (Reviews == null)
@@ -9,7 +10,7 @@ else if (ErrorMessage != null)
 {
     <h1>Something went wrong...</h1>
 }
-else if(Reviews.Count() == 0)
+else if (Reviews.Count() == 0)
 {
     <h1>You have no reviews</h1>
 }
@@ -29,7 +30,58 @@ else
             <div class="review-card-bottom">
                 <p class="review-description">@item.Comment</p>
             </div>
+            <div class="review-card-delete">
+                <button class="edit-button">Edit</button>
+                <button class="delete-button" @onclick="() => ShowConfirmation(item)">Delete</button>
+            </div>
         </div>
     }
 }
 
+@if (showConfirmation)
+{
+    <div class="confirmation-popup-overlay">
+        <div class="confirmation-popup">
+            <p>Are you sure you want to delete "@reviewToDelete.Title"?</p>
+            <div class="button-container">
+                <button class="confirm-button" @onclick="DeleteReview">Yes</button>
+                <button class="cancel-button" @onclick="CancelDelete">Cancel</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private ReviewListDto reviewToDelete; 
+    private bool showConfirmation = false; 
+
+    // Method to show the confirmation pop-up
+    private void ShowConfirmation(ReviewListDto review)
+    {
+        reviewToDelete = review; 
+        showConfirmation = true; 
+    }
+
+    
+    private void CancelDelete()
+    {
+        showConfirmation = false; 
+    }
+
+    // Method to handle deleting a review
+    private async Task DeleteReview()
+    {
+        try
+        {
+            await _reviewService.DeleteReview(reviewToDelete.Id);
+            
+            await OnInitializedAsync();
+            showConfirmation = false; 
+        }
+        catch (Exception ex)
+        {
+            // Handle any errors
+            ErrorMessage = ex.Message;
+        }
+    }
+}

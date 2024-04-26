@@ -1,0 +1,38 @@
+﻿
+
+<div class="modal" style="display: @(_showConfirmation ? "block" : "none")">
+    <div class="modal-content">
+        <span class="close" @onclick="CancelDelete">&times;</span>
+        <p>Are you sure you want to delete "@_reviewToDeleteTitle"?</p>
+        <button @onclick="ConfirmDelete">Yes</button>
+        <button @onclick="CancelDelete">Cancel</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback<bool> OnConfirmation { get; set; }
+
+    private bool _showConfirmation = false;
+    private string _reviewToDeleteTitle = "";
+
+    public async Task Show(string reviewTitle)
+    {
+        _reviewToDeleteTitle = reviewTitle;
+        _showConfirmation = true;
+        StateHasChanged();
+    }
+
+    private async Task ConfirmDelete()
+    {
+        _showConfirmation = false;
+        await OnConfirmation.InvokeAsync(true);
+    }
+
+    private void CancelDelete()
+    {
+        _showConfirmation = false;
+        _reviewToDeleteTitle = "";
+        StateHasChanged();
+    }
+}

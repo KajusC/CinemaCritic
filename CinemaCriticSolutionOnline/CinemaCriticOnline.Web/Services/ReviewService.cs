@@ -1,5 +1,6 @@
 ﻿using CinemaCritic.Models.Dto;
 using CinemaCritic.Web.Services.Contracts;
+using System.Data.Entity;
 using System.Net.Http.Json;
 
 namespace CinemaCritic.Web.Services
@@ -35,6 +36,25 @@ namespace CinemaCritic.Web.Services
             catch (Exception)
             {
                 //log error
+                throw;
+            }
+        }
+
+        public async Task DeleteReview(int reviewId)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"api/Review/{reviewId}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+                // Log error
                 throw;
             }
         }
