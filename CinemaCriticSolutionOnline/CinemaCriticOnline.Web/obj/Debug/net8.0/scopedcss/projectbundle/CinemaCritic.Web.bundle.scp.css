@@ -2142,6 +2142,7 @@ hr[b-4ubclwfsgm] {
     color: white; /* changed text color */
     width: 60%;
     margin: 0 auto;
+
 }
 
     .review-box h1[b-4ubclwfsgm] {
@@ -2174,27 +2175,73 @@ hr[b-4ubclwfsgm] {
         height: 100px;
     }
 
-.rating[b-4ubclwfsgm] {
+/*.rating {
     margin-bottom: 20px;
     text-align: center;
+    height:50px;
 }
 
-    .rating input[b-4ubclwfsgm] {
+    .rating input {
         display: none;
     }
 
-    .rating label[b-4ubclwfsgm] {
+    .rating label {
         font-size: 2rem;
         color: #ccc;
         cursor: pointer;
         transition: color 0.3s;
     }
 
-        .rating label:hover[b-4ubclwfsgm],
-        .rating input:checked + label[b-4ubclwfsgm] {
+        .rating label:hover,
+        .rating input:checked + label {
             color: yellow;
+        }*/
+.rating[b-4ubclwfsgm] {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+
+    .rating > span[b-4ubclwfsgm] {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+    }
+
+        .rating > span:hover[b-4ubclwfsgm]:before,
+        .rating > span:hover ~ span[b-4ubclwfsgm]:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
         }
 
+        .rating > span:hover[b-4ubclwfsgm]:before {
+            content: "\2605";
+            color: gold;
+        }
+
+    .rating > input[b-4ubclwfsgm] {
+        display: none;
+    }
+
+    .rating > label[b-4ubclwfsgm] {
+        color: #ccc;
+        font-size: 2em;
+        padding: 0 0.1em;
+        cursor: pointer;
+    }
+
+    .rating > input:checked ~ label[b-4ubclwfsgm],
+    .rating:not(:checked) > label:hover[b-4ubclwfsgm],
+    .rating:not(:checked) > label:hover ~ label[b-4ubclwfsgm] {
+        color: gold;
+    }
+
+        .rating > input:checked + label:hover[b-4ubclwfsgm],
+        .rating > label:hover ~ input:checked ~ label[b-4ubclwfsgm],
+        .rating > input:checked ~ label:hover ~ label[b-4ubclwfsgm] {
+            color: #ccc;
+        }
 .review-box button.submit[b-4ubclwfsgm] {
     background-color: rgb(1, 1, 54); /* changed background color */
     color: white;
@@ -2222,9 +2269,6 @@ hr[b-4ubclwfsgm] {
 .review-input[b-4ubclwfsgm] {
     width: 100%;
 
-}
-textarea[b-4ubclwfsgm] {
-    maxlength: 160;
 }
 /* /Pages/SearchBox.razor.rz.scp.css */
 .search-box[b-1ne5r2v03n] {

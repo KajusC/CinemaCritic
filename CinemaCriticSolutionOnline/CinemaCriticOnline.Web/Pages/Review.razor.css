@@ -159,6 +159,7 @@ hr {
     color: white; /* changed text color */
     width: 60%;
     margin: 0 auto;
+
 }
 
     .review-box h1 {
@@ -191,9 +192,10 @@ hr {
         height: 100px;
     }
 
-.rating {
+/*.rating {
     margin-bottom: 20px;
     text-align: center;
+    height:50px;
 }
 
     .rating input {
@@ -210,8 +212,53 @@ hr {
         .rating label:hover,
         .rating input:checked + label {
             color: yellow;
+        }*/
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+
+    .rating > span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+    }
+
+        .rating > span:hover:before,
+        .rating > span:hover ~ span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
         }
 
+        .rating > span:hover:before {
+            content: "\2605";
+            color: gold;
+        }
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label {
+        color: #ccc;
+        font-size: 2em;
+        padding: 0 0.1em;
+        cursor: pointer;
+    }
+
+    .rating > input:checked ~ label,
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+    }
+
+        .rating > input:checked + label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            color: #ccc;
+        }
 .review-box button.submit {
     background-color: rgb(1, 1, 54); /* changed background color */
     color: white;
@@ -239,7 +286,4 @@ hr {
 .review-input {
     width: 100%;
 
-}
-textarea {
-    maxlength: 160;
 }
