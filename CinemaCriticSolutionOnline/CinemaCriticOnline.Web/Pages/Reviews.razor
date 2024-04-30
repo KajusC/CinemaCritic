@@ -31,7 +31,7 @@ else
                 <p class="review-description">@item.Comment</p>
             </div>
             <div class="review-card-delete">
-                <button class="edit-button">Edit</button>
+                <a href="/EditReview/@item.Id" class="edit-button">Edit</a>
                 <button class="delete-button" @onclick="() => ShowConfirmation(item)">Delete</button>
             </div>
         </div>

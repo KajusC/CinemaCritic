@@ -40,11 +40,11 @@ namespace CinemaCritic.Web.Services
             }
         }
 
-        public async Task UpdateReview(ReviewDto review)
+        public async Task UpdateReview(int id, ReviewDto review)
         {
 	        try
 	        {
-		        var response = await _httpClient.PutAsJsonAsync("api/Review", review);
+		        var response = await _httpClient.PutAsJsonAsync($"api/Review/{id}", review);
 
 		        if (!response.IsSuccessStatusCode)
 		        {
