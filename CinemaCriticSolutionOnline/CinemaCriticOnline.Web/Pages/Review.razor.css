@@ -1,2 +1,245 @@
-﻿body {
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    border-top: 6px solid #3939ac;
+    margin: 4px 0;
+}
+
+.movie-title {
+    font-size: 40px;
+}
+
+.movie-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.movie-details {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.poster-trailer-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+}
+
+.movie-poster {
+    width: auto;
+    height: 100%;
+    margin-right: 10px;
+    border: 1px solid white;
+}
+
+.movie-trailer {
+    flex: 1;
+    width: auto;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.detail-container {
+    display: flex;
+    align-items: center;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.movie-genre {
+    background-color: #14143C;
+    padding: 2px 6px;
+    border-radius: 25%;
+    font-size: 16px;
+}
+
+.bullet-pnt {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.review-button {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background-color: rgb(1, 1, 54);
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    width: fit-content;
+    display: flex;
+    border-color: white;
+    border: groove;
+    text-decoration: none;
+}
+
+    .review-button:hover {
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+        background-color: #2d2d86;
+    }
+
+@media (max-width: 1700px) {
+    .poster-trailer-container {
+        height: 500px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .poster-trailer-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .poster-trailer-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .poster-trailer-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-poster {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .movie-title {
+        font-size: 30px;
+    }
+
+    .movie-description {
+        font-size: 16px;
+    }
+}
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+.review-title {
+    text-align: center;
+
+}
+.review-box {
+    width: 1000px; /* modified width */
+    background-color: black; /* changed background color */
+    padding: 60px;
+    border: 1px solid #ccc;
+    color: white; /* changed text color */
+    width: 60%;
+    margin: 0 auto;
+}
+
+    .review-box h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .review-box input[type="text"],
+    .review-box textarea {
+        background: black;
+        outline: none;
+        color: white;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 2px solid white;
+        box-shadow: none;
+        font-size: 1.4rem;
+        font-weight: 600;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+        width: 600px;
+        maxlength:160;
+    }
+
+    .review-box textarea {
+        height: 100px;
+    }
+
+.rating {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+        .rating label:hover,
+        .rating input:checked + label {
+            color: yellow;
+        }
+
+.review-box button.submit {
+    background-color: rgb(1, 1, 54); /* changed background color */
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .review-box button.submit:hover {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
+    }
+
+    .review-box button.submit:active {
+        transform: scale(0.95);
+    }
+.title-input{
+    width:60%;
+}
+.review-input {
+    width: 100%;
+
+}
+textarea {
+    maxlength: 160;
 }

@@ -1,107 +1,45 @@
 ﻿@page "/Review/{id:int}"
-@inherits ReviewBase
+@inherits MovieDetailsBase
 
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Review Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black; /* changed background color */
-        }
-
-        .review-box {
-            width: 1000px; /* modified width */
-            background-color: black; /* changed background color */
-            padding: 60px;
-            border: 1px solid #ccc;
-            text-align: center;
-            color: white; /* changed text color */
-        }
-
-            .review-box h1 {
-                font-size: 2.4rem;
-                font-weight: 600;
-                margin-top: 20px;
-                margin-bottom: 30px;
-            }
-
-            .review-box input[type="text"],
-            .review-box textarea {
-                background: black;
-                outline: none;
-                color: white;
-                border-radius: 0;
-                border: 0;
-                border-bottom: 2px solid white;
-                box-shadow: none;
-                font-size: 1.4rem;
-                font-weight: 600;
-                height: 40px;
-                line-height: 40px;
-                margin-bottom: 25px;
-                padding: 0 15px;
-                width: 100%;
-            }
-
-            .review-box textarea {
-                height: 100px;
-            }
-
-        .rating {
-            margin-bottom: 20px;
-        }
-
-            .rating input {
-                display: none;
-            }
-
-            .rating label {
-                font-size: 2rem;
-                color: #ccc;
-                cursor: pointer;
-                transition: color 0.3s;
-            }
-
-                .rating label:hover,
-                .rating input:checked + label {
-                    color: yellow;
-                }
-
-        .review-box button.submit {
-            background-color: rgb(1, 1, 54); /* changed background color */
-            color: white;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 10px;
-            padding: 10px 30px;
-            border: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-            .review-box button.submit:hover {
-                background-color: rgb(0, 0, 78);
-                transform: scale(1.05);
-            }
-
-            .review-box button.submit:active {
-                transform: scale(0.95);
-            }
-    </style>
 </head>
-<body>
-
+@if (MovieDetailsDto == null && ErrorMessage == null)
+{
+    <h1>Loading...</h1>
+}
+else if (ErrorMessage != null)
+{
+    <h1>@ErrorMessage</h1>
+}
+else
+{
+    <div class="movie-details">
+        <h1 class="movie-title">@MovieDetailsDto.Name</h1>
+        <hr />
+        <p class="movie-description">@MovieDetailsDto.Description</p>
+        <div class="info-container">
+            <p class="movie-genre">@MovieDetailsDto.Genre.Name</p>
+            <div class="detail-container">
+                <p class="movie-info">@MovieDetailsDto.ReleaseDate.ToString("yyyy")</p>
+                <p class="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.AgeRating</p>
+                <p class="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.MovieLength</p>
+            </div>
+        </div>
+        <div class="poster-trailer-container">
+            <img class="movie-poster" src="@MovieDetailsDto.ImageUrl" alt="@MovieDetailsDto.Name" />
+            <iframe class="movie-trailer" src="@MovieDetailsDto.TrailerUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div>
+            <a href="/Review/@MovieDetailsDto.Id" class="review-button">Review "@MovieDetailsDto.Name"</a>
+        </div>
+    </div>
     <div class="review-box">
-        <h1>Write a Review</h1>
+        <h1 class="review-title"> Write a Review</h1>
+        <div>
         <form>
             <div class="rating">
                 <input type="radio" id="star5" name="rating" value="5">
@@ -115,15 +53,13 @@
                 <input type="radio" id="star1" name="rating" value="1">
                 <label for="star1">&#9733;</label>
             </div>
-            <input type="text" name="title" placeholder="Title" required><br>
-            <textarea name="review" placeholder="Your Review" required></textarea><br>
+                <input class="title-input" maxlength="30" type="text" name="title" placeholder="Title" required><br>
+                <textarea class="review-input" maxlength="160" name="review" placeholder="Your Review" required></textarea><br>
             <button class="submit" type="submit">Submit</button>
         </form>
+        </div>
     </div>
-
-</body>
-</html>
-
+}
 
 
 
