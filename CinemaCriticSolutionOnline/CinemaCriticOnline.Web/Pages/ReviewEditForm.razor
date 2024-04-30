@@ -1,7 +1,175 @@
-﻿@page "/EditReview/{id:int}"
+﻿@page "/EditReview/{ReviewId:int}"
+@using CinemaCritic.Models.Dto
 @inherits ReviewEditFormBase
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit the review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black; /* changed background color */
+        }
 
-@code {
+        .review-box {
+            width: 1000px; /* modified width */
+            background-color: black; /* changed background color */
+            padding: 60px;
+            border: 1px solid #ccc;
+            text-align: center;
+            color: white; /* changed text color */
+        }
 
+            .review-box h1 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+
+            .review-box input[type="text"],
+            .review-box textarea {
+                background: black;
+                outline: none;
+                color: white;
+                border-radius: 0;
+                border: 0;
+                border-bottom: 2px solid white;
+                box-shadow: none;
+                font-size: 1.4rem;
+                font-weight: 600;
+                height: 40px;
+                line-height: 40px;
+                margin-bottom: 25px;
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            .review-box textarea {
+                height: 100px;
+            }
+
+        .rating {
+            margin-bottom: 20px;
+        }
+
+            .rating input {
+                display: none;
+            }
+
+            .rating label {
+                font-size: 2rem;
+                color: #ccc;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+                .rating label:hover,
+                .rating input:checked + label {
+                    color: yellow;
+                }
+
+        .review-box button.submit {
+            background-color: rgb(1, 1, 54); /* changed background color */
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 10px 30px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+            .review-box button.submit:hover {
+                background-color: rgb(0, 0, 78);
+                transform: scale(1.05);
+            }
+
+            .review-box button.submit:active {
+                transform: scale(0.95);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="review-box">
+        <h1>Edit your review for @ReviewEditDto.Title</h1>
+        <form action="/" method="post" @onsubmit="HandleValidSubmit">
+            <div class="rating">
+                <input @onclick="() => Rating = 1" type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+                <input @onclick="() => Rating = 2" type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input @onclick="() => Rating = 3" type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input @onclick="() => Rating = 4" type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input @onclick="() => Rating = 5" type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+            <input @bind="Title" type="text" name="title" placeholder="Title" required><br>
+            <textarea @bind="Review" name="review" placeholder="Your Review" required></textarea><br>
+            <button class="submit" type="submit">Update</button>
+            
+            @if (showPopup)
+            {
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>@PopupTitle</h2>
+                        <p>@PopupMessage</p>
+                        <button @onclick="ClosePopup">Close</button>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+</body>
+</html>
+@code
+{
+    private int Rating { get; set; }
+    private string Title { get; set; }
+    private string Review { get; set; }
+
+    public bool showPopup = false;
+    public string PopupMessage = " ";
+    public string PopupTitle = " ";
+
+    protected virtual async Task HandleValidSubmit()
+    {
+        ReviewDto rev = ReviewEditDto;
+        rev.Rating = Rating;
+        rev.Title = Title;
+        rev.Comment = Review;
+
+        try
+        {
+            UpdateReview(rev);
+            PopupTitle = "Success";
+            PopupMessage = "Review updated successfully!";
+            showPopup = true;
+        }
+        catch (Exception e)
+        {
+            PopupTitle = "Error";
+            PopupMessage = "An error occurred while updating the review!";
+            showPopup = true;
+        }
+
+    }
+
+    protected void ClosePopup()
+    {
+        showPopup = false;
+    }
 }
+

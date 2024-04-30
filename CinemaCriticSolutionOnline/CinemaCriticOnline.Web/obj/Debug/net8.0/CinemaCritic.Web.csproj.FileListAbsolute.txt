@@ -4769,3 +4769,4 @@ C:\Users\Kajus\source\repos\CinemaCritic\CinemaCriticSolutionOnline\CinemaCritic
 C:\Users\Kajus\source\repos\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\w8ervx4j4d.gz
 C:\Users\Kajus\source\repos\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\h56fncba2r.gz
 C:\Users\Kajus\source\repos\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\compressed\pyedzs2pj1.gz
+C:\Users\Kajus\source\repos\CinemaCritic\CinemaCriticSolutionOnline\CinemaCriticOnline.Web\obj\Debug\net8.0\scopedcss\Pages\ReviewEditForm.razor.rz.scp.css

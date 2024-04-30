@@ -1675,41 +1675,57 @@ body[b-166sw1llnw] {
 
 /* Popup container */
 .popup[b-166sw1llnw] {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
+    position: fixed;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Popup content */
 .popup-content[b-166sw1llnw] {
-    background-color: rgb(1, 1, 54,0.8); /* Light gray background */
-    margin: 15% auto; /* 15% from the top and centered */
+    background: rgb(1,1,74);
+    background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-    width: 80%; /* 80% width */
-    max-width: 500px; /* Max width of 500px */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #ccc;
 }
 
-/* Close button */
-.popup-close[b-166sw1llnw] {
-    color: #aaa;
-    position: absolute; /* Position relative to the content */
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.popup h2[b-166sw1llnw] {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popup p[b-166sw1llnw] {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.popup button[b-166sw1llnw] {
+    background-color: rgb(1, 1, 54); /* changed background color */
+    color: white;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-    .popup-close:hover[b-166sw1llnw],
-    .popup-close:focus[b-166sw1llnw] {
-        color: #333; /* Darker color on hover/focus */
+    .popup button:hover[b-166sw1llnw] {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
+    }
+
+    .popup button.submit:active[b-166sw1llnw] {
+        transform: scale(0.95);
     }
 /* /Pages/MovieDetails.razor.rz.scp.css */
 *[b-85rcilmavl]{
@@ -1960,6 +1976,60 @@ body[b-qrp1xnnosw] {
     .signup-box .submit:active[b-qrp1xnnosw] {
         transform: scale(0.95);
     }
+/* /Pages/ReviewEditForm.razor.rz.scp.css */
+.popup[b-su33pbrsmb] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popup-content[b-su33pbrsmb] {
+    background: rgb(1,1,74);
+    background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.popup h2[b-su33pbrsmb] {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popup p[b-su33pbrsmb] {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.popup button[b-su33pbrsmb] {
+    background-color: rgb(1, 1, 54); /* changed background color */
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .popup button:hover[b-su33pbrsmb] {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
+    }
+    .popup button.submit:active[b-su33pbrsmb] {
+        transform: scale(0.95);
+    }
 /* /Pages/Reviews.razor.rz.scp.css */
 *[b-vh7d0qh1mu]{
     margin: 0;
@@ -2198,43 +2268,58 @@ body[b-k4t44gf9ix] {
         }
 /* Popup container */
 .popup[b-k4t44gf9ix] {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
+    position: fixed;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Popup content */
 .popup-content[b-k4t44gf9ix] {
-    background-color: rgb(29, 6, 148,0.8); /* Light gray background */
-    margin: 15% auto; /* 15% from the top and centered */
+    background: rgb(1,1,74);
+    background: radial-gradient(circle, rgba(1,1,20,1) 0%, rgba(0,0,0,1) 100%);
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-    width: 80%; /* 80% width */
-    max-width: 500px; /* Max width of 500px */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #ccc;
 }
 
-/* Close button */
-.popup-close[b-k4t44gf9ix] {
-    color: #aaa;
-    position: absolute; /* Position relative to the content */
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.popup h2[b-k4t44gf9ix] {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popup p[b-k4t44gf9ix] {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.popup button[b-k4t44gf9ix] {
+    background-color: rgb(1, 1, 54); /* changed background color */
+    color: white;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-    .popup-close:hover[b-k4t44gf9ix],
-    .popup-close:focus[b-k4t44gf9ix] {
-        color: #333; /* Darker color on hover/focus */
+    .popup button:hover[b-k4t44gf9ix] {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
     }
 
+    .popup button.submit:active[b-k4t44gf9ix] {
+        transform: scale(0.95);
+    }
 /* /Pages/Welcome.razor.rz.scp.css */
 body[b-6e82rfcyib] {
     margin: 0;
