@@ -100,3 +100,24 @@ hr[b-85rcilmavl] {
         font-size: 16px;
     }
 }
+.review-button[b-85rcilmavl] {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background-color: rgb(1, 1, 54);
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    width: fit-content;
+    display: flex;
+    border-color: white;
+    border: groove;
+    text-decoration: none;
+}
+
+    .review-button:hover[b-85rcilmavl] {
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+        background-color: #2d2d86;
+    }

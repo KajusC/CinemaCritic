@@ -1,0 +1,77 @@
+﻿@page "/Review/{id:int}"
+@using CinemaCritic.Models.Dto
+@inherits ReviewBase
+
+
+    <div class="review-box">
+        <h1 class="review-title"> Write a Review </h1>
+        <div>
+            <form action ="/" method="post" @onsubmit="HandleValidSubmit">
+            <div class="rating">
+                    <input @onclick="() => Rating = 5" type="radio" id="star5" name="rating" value="5" />
+                    <label for="star5">☆</label>
+                    <input @onclick="() => Rating = 4" type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4">☆</label>
+                    <input @onclick="() => Rating = 3" type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3">☆</label>
+                    <input @onclick="() => Rating = 2" type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2">☆</label>
+                    <input @onclick="() => Rating = 1" type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1">☆</label>
+            </div>
+                <input @bind="Title" class="title-input" maxlength="30" type="text" name="title" placeholder="Title" required><br>
+                <textarea @bind="Text" class="review-input" maxlength="160" name="review" placeholder="Your Review" required></textarea><br>
+            <button class="submit" type="submit">Submit</button>
+            @if (showPopup)
+            {
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>@PopupTitle</h2>
+                        <p>@PopupMessage</p>
+                        <button @onclick="ClosePopup">Close</button>
+                    </div>
+                </div>
+            }
+        </form>
+        </div>
+    </div>
+
+@code{
+    private int Rating { get; set; }
+    private string Title { get; set; }
+    private string Text { get; set; }
+
+    public bool showPopup = false;
+    public string PopupMessage = " ";
+    public string PopupTitle = " ";
+
+    protected virtual async Task HandleValidSubmit()
+    {
+        ReviewDto rev = new ReviewDto();
+        rev.Rating = Rating;
+        rev.Title = Title;
+        rev.Comment = Text;
+        rev.CommentDate = DateTime.UtcNow;
+        rev.Id = 0;
+
+        try
+        {
+            await AddReview(rev,Id);
+            PopupTitle = "Success";
+            PopupMessage = "Review added successfully!";
+            showPopup = true;
+        }
+        catch (Exception e)
+        {
+            PopupTitle = "Error";
+            PopupMessage = "An error occurred while adding the review!";
+            showPopup = true;
+        }
+
+    }
+
+    protected void ClosePopup()
+    {
+        showPopup = false;
+    }
+}

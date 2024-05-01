@@ -51,3 +51,49 @@
     .popup button.submit:active {
         transform: scale(0.95);
     }
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+
+    .rating > span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+    }
+
+        .rating > span:hover:before,
+        .rating > span:hover ~ span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+
+        .rating > span:hover:before {
+            content: "\2605";
+            color: gold;
+        }
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label {
+        color: #ccc;
+        font-size: 2em;
+        padding: 0 0.1em;
+        cursor: pointer;
+    }
+
+    .rating > input:checked ~ label,
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+    }
+
+        .rating > input:checked + label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            color: #ccc;
+        }

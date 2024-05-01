@@ -56,25 +56,7 @@
                 height: 100px;
             }
 
-        .rating {
-            margin-bottom: 20px;
-        }
-
-            .rating input {
-                display: none;
-            }
-
-            .rating label {
-                font-size: 2rem;
-                color: #ccc;
-                cursor: pointer;
-                transition: color 0.3s;
-            }
-
-                .rating label:hover,
-                .rating input:checked + label {
-                    color: yellow;
-                }
+        
 
         .review-box button.submit {
             background-color: rgb(1, 1, 54); /* changed background color */
@@ -105,16 +87,16 @@
         <h1>Edit your review for @ReviewEditDto.Title</h1>
         <form action="/" method="post" @onsubmit="HandleValidSubmit">
             <div class="rating">
-                <input @onclick="() => Rating = 1" type="radio" id="star5" name="rating" value="5">
-                <label for="star5">&#9733;</label>
-                <input @onclick="() => Rating = 2" type="radio" id="star4" name="rating" value="4">
-                <label for="star4">&#9733;</label>
-                <input @onclick="() => Rating = 3" type="radio" id="star3" name="rating" value="3">
-                <label for="star3">&#9733;</label>
-                <input @onclick="() => Rating = 4" type="radio" id="star2" name="rating" value="2">
-                <label for="star2">&#9733;</label>
-                <input @onclick="() => Rating = 5" type="radio" id="star1" name="rating" value="1">
-                <label for="star1">&#9733;</label>
+                <input @onclick="() => Rating = 5" type="radio" id="star5" name="rating" value="5" />
+                <label for="star5">☆</label>
+                <input @onclick="() => Rating = 4" type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">☆</label>
+                <input @onclick="() => Rating = 3" type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">☆</label>
+                <input @onclick="() => Rating = 2" type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">☆</label>
+                <input @onclick="() => Rating = 1" type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">☆</label>
             </div>
             <input @bind="Title" type="text" name="title" placeholder="Title" required><br>
             <textarea @bind="Review" name="review" placeholder="Your Review" required></textarea><br>

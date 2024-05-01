@@ -1,7 +1,9 @@
 ﻿using CinemaCritic.Models.Dto;
 using CinemaCritic.Web.Services.Contracts;
+using Newtonsoft.Json;
 using System.Data.Entity;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace CinemaCritic.Web.Services
 {
@@ -86,6 +88,26 @@ namespace CinemaCritic.Web.Services
             try
             {
                 var response = await _httpClient.DeleteAsync($"api/Review/{reviewId}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+                // Log error
+                throw;
+            }
+        }
+        public async Task AddReview(ReviewDto review, int movieId, int userId)
+        {
+            try
+            {
+                var jsoned = JsonConvert.SerializeObject(review);
+                var content = new StringContent(jsoned, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync($"api/Review?userId={userId}&movieId={movieId}", content);
 
                 if (!response.IsSuccessStatusCode)
                 {
