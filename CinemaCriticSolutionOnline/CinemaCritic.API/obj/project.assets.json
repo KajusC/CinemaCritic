@@ -8433,23 +8433,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\obunga\\.nuget\\packages\\": {},
+    "C:\\Users\\Kajus\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\obunga\\Source\\Repos\\CinemaCriti\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+      "projectUniqueName": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
       "projectName": "CinemaCritic.API",
-      "projectPath": "C:\\Users\\obunga\\Source\\Repos\\CinemaCriti\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
-      "packagesPath": "C:\\Users\\obunga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\obunga\\Source\\Repos\\CinemaCriti\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
+      "projectPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\CinemaCritic.API.csproj",
+      "packagesPath": "C:\\Users\\Kajus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\obunga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kajus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8458,14 +8458,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\obunga\\Source\\Repos\\CinemaCriti\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-              "projectPath": "C:\\Users\\obunga\\Source\\Repos\\CinemaCriti\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+            "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+              "projectPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
             }
           }
         }

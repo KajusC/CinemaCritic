@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "CinemaCritic.Web",
   "resources": {
-    "hash": "sha256-0vVX6kaUhKloyxsZ8Y7CsGA+ray+c6hFls+ZLLF0Lv8=",
+    "hash": "sha256-b8fyx+2SJMaR+fcacuqz0YmDv3jZgO/omOGpKbnW9yI=",
     "jsModuleNative": {
-      "dotnet.native.8.0.4.8rk8ud3518.js": "sha256-ju0+XWE0ihz554eKEj0HQ8Opa61xpbUIaX5/MNo8we4="
+      "dotnet.native.8.0.4.dl584dwfbv.js": "sha256-ju0+XWE0ihz554eKEj0HQ8Opa61xpbUIaX5/MNo8we4="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.4.8siz4xx5x2.js": "sha256-JeVsECOqOie/Pe89n9PJNJaMmb5vJsAAxfXY8INN64A="
+      "dotnet.runtime.8.0.4.258anxffzu.js": "sha256-JeVsECOqOie/Pe89n9PJNJaMmb5vJsAAxfXY8INN64A="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-U1JSgnum2OTerSq8i5Y9L17deHEWJmae0djinSPLyJM="
@@ -236,12 +236,12 @@
       "mscorlib.wasm": "sha256-/xjZuJwCmantx5vGyH5ZZ8keySSTeu+YHKQRJbZzcuM=",
       "netstandard.wasm": "sha256-vuFKmCGJbyv85DrzI6S1ZvCikuhIllH6hqbXIL+fUAA=",
       "System.Private.CoreLib.wasm": "sha256-SZkozEDkHEFN0VaDmhl2HOenGaqTOmHqEGkraz3Aejc=",
-      "CinemaCritic.Models.wasm": "sha256-/UUhjDY1SKLXmbb/xkzuQ6IXCN8Hd4G2xyAWStRLXjg=",
-      "CinemaCritic.Web.wasm": "sha256-VDgTTG4j/R2SETO3KR5qsp+q1IfS2+pWE6HbWy6RnEM="
+      "CinemaCritic.Models.wasm": "sha256-1uPRd3dI6a6ps/Oq9pXL5oCjtZcNYTiYi1rXHlJASdM=",
+      "CinemaCritic.Web.wasm": "sha256-gM8Rk+cot4e96vTQTfdaxK6xuBWzSnTJeheRioUewK0="
     },
     "pdb": {
-      "CinemaCritic.Models.pdb": "sha256-o0zGbf/HBCrK3HBTgaTG8Qgi6N5mE3l6PrC3hQk3nn0=",
-      "CinemaCritic.Web.pdb": "sha256-gzymdZ/uKq+U+vtjfaY7kCSxOQeLxPTTxd2zwodiOg8="
+      "CinemaCritic.Models.pdb": "sha256-HBRFRa/YjT6uHYfaNG5ITwwqtAWeaj0UUthcnty/mE0=",
+      "CinemaCritic.Web.pdb": "sha256-yMG/m71XfLefV4xxot/WsnSA1kBTXrKFpZckXQ5ZObA="
     }
   },
   "cacheBootResources": true,
