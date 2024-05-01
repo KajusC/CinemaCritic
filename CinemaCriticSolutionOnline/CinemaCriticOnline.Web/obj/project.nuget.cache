@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J8rErWVRI/6tbsH41FOWaxzWkcmLBC9ubKkTI/En6QOyUiOAB3NFkfz00EG1CRhHieco4xLPoIZJY5yDlXXxiA==",
+  "dgSpecHash": "h9uAqStQHYtHfg38OSXimZjER8FWEwaIxf5b5uifCIqG866Ol/s6NcLNbe3XcyO1XfZ5W+O4euq+5rFSAz6NGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+  "projectFilePath": "C:\\Users\\Kajus\\Source\\Repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kajus\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\Kajus\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",
