@@ -1981,7 +1981,294 @@ body[b-qrp1xnnosw] {
         transform: scale(0.95);
     }
 /* /Pages/Review.razor.rz.scp.css */
-body[b-4ubclwfsgm] {
+*[b-4ubclwfsgm] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr[b-4ubclwfsgm] {
+    border-top: 6px solid #3939ac;
+    margin: 4px 0;
+}
+
+.movie-title[b-4ubclwfsgm] {
+    font-size: 40px;
+}
+
+.movie-description[b-4ubclwfsgm] {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.movie-details[b-4ubclwfsgm] {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.poster-trailer-container[b-4ubclwfsgm] {
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+}
+
+.movie-poster[b-4ubclwfsgm] {
+    width: auto;
+    height: 100%;
+    margin-right: 10px;
+    border: 1px solid white;
+}
+
+.movie-trailer[b-4ubclwfsgm] {
+    flex: 1;
+    width: auto;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.info-container[b-4ubclwfsgm] {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.detail-container[b-4ubclwfsgm] {
+    display: flex;
+    align-items: center;
+}
+
+.movie-info[b-4ubclwfsgm] {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.movie-genre[b-4ubclwfsgm] {
+    background-color: #14143C;
+    padding: 2px 6px;
+    border-radius: 25%;
+    font-size: 16px;
+}
+
+.bullet-pnt[b-4ubclwfsgm] {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.review-button[b-4ubclwfsgm] {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background-color: rgb(1, 1, 54);
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    width: fit-content;
+    display: flex;
+    border-color: white;
+    border: groove;
+    text-decoration: none;
+}
+
+    .review-button:hover[b-4ubclwfsgm] {
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+        background-color: #2d2d86;
+    }
+
+@media (max-width: 1700px) {
+    .poster-trailer-container[b-4ubclwfsgm] {
+        height: 500px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .poster-trailer-container[b-4ubclwfsgm] {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .poster-trailer-container[b-4ubclwfsgm] {
+        height: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .poster-trailer-container[b-4ubclwfsgm] {
+        height: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-poster[b-4ubclwfsgm] {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .movie-title[b-4ubclwfsgm] {
+        font-size: 30px;
+    }
+
+    .movie-description[b-4ubclwfsgm] {
+        font-size: 16px;
+    }
+}
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+/*-------------------*/
+.review-title[b-4ubclwfsgm] {
+    text-align: center;
+
+}
+.review-box[b-4ubclwfsgm] {
+    width: 1000px; /* modified width */
+    background-color: black; /* changed background color */
+    padding: 60px;
+    border: 1px solid #ccc;
+    color: white; /* changed text color */
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+    .review-box h1[b-4ubclwfsgm] {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .review-box input[type="text"][b-4ubclwfsgm],
+    .review-box textarea[b-4ubclwfsgm] {
+        background: black;
+        outline: none;
+        color: white;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 2px solid white;
+        box-shadow: none;
+        font-size: 1.4rem;
+        font-weight: 600;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+        width: 600px;
+        maxlength:160;
+    }
+
+    .review-box textarea[b-4ubclwfsgm] {
+        height: 100px;
+    }
+
+/*.rating {
+    margin-bottom: 20px;
+    text-align: center;
+    height:50px;
+}
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+        .rating label:hover,
+        .rating input:checked + label {
+            color: yellow;
+        }*/
+.rating[b-4ubclwfsgm] {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+
+    .rating > span[b-4ubclwfsgm] {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+    }
+
+        .rating > span:hover[b-4ubclwfsgm]:before,
+        .rating > span:hover ~ span[b-4ubclwfsgm]:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+
+        .rating > span:hover[b-4ubclwfsgm]:before {
+            content: "\2605";
+            color: gold;
+        }
+
+    .rating > input[b-4ubclwfsgm] {
+        display: none;
+    }
+
+    .rating > label[b-4ubclwfsgm] {
+        color: #ccc;
+        font-size: 2em;
+        padding: 0 0.1em;
+        cursor: pointer;
+    }
+
+    .rating > input:checked ~ label[b-4ubclwfsgm],
+    .rating:not(:checked) > label:hover[b-4ubclwfsgm],
+    .rating:not(:checked) > label:hover ~ label[b-4ubclwfsgm] {
+        color: gold;
+    }
+
+        .rating > input:checked + label:hover[b-4ubclwfsgm],
+        .rating > label:hover ~ input:checked ~ label[b-4ubclwfsgm],
+        .rating > input:checked ~ label:hover ~ label[b-4ubclwfsgm] {
+            color: #ccc;
+        }
+.review-box button.submit[b-4ubclwfsgm] {
+    background-color: rgb(1, 1, 54); /* changed background color */
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .review-box button.submit:hover[b-4ubclwfsgm] {
+        background-color: rgb(0, 0, 78);
+        transform: scale(1.05);
+    }
+
+    .review-box button.submit:active[b-4ubclwfsgm] {
+        transform: scale(0.95);
+    }
+.title-input[b-4ubclwfsgm]{
+    width:60%;
+}
+.review-input[b-4ubclwfsgm] {
+    width: 100%;
+
 }
 /* /Pages/SearchBox.razor.rz.scp.css */
 .search-box[b-1ne5r2v03n] {

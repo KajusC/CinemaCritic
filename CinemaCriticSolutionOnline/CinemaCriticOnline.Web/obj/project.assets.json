@@ -8198,24 +8198,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kajus\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Matas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
       "projectName": "CinemaCritic.Web",
-      "projectPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
-      "packagesPath": "C:\\Users\\Kajus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
+      "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\CinemaCritic.Web.csproj",
+      "packagesPath": "C:\\Users\\Matas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCriticOnline.Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Kajus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Matas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8223,15 +8218,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
-              "projectPath": "C:\\Users\\Kajus\\source\\repos\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
+            "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj": {
+              "projectPath": "C:\\Users\\Matas\\Desktop\\CinemaCritic\\CinemaCriticSolutionOnline\\CinemaCritic.Models\\CinemaCritic.Models.csproj"
             }
           }
         }
