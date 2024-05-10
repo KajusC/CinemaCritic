@@ -65,3 +65,30 @@ input[b-4brx93jtjb]::-webkit-inner-spin-button {
 input[type=number][b-4brx93jtjb] {
     -moz-appearance: textfield;
 }
+
+.movies-container[b-4brx93jtjb] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.movie[b-4brx93jtjb] {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.favorite[b-4brx93jtjb], .not-favorite[b-4brx93jtjb] {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.favorite[b-4brx93jtjb] {
+    color: yellow;
+}
+
+.not-favorite[b-4brx93jtjb] {
+    color: gray;
+}

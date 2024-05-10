@@ -1,0 +1,32 @@
+﻿@page "/FavoriteMovies"
+@inherits MoviesBase
+@using CinemaCritic.Models.Dto
+@using CinemaCritic.Web.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@inject JwtAuthenticationService AuthenticationService
+
+
+@if (Movies is null)
+{
+    <h2>Loading...</h2>
+}
+else
+{
+    <DisplayMovies Movies="@pagedMovies"></DisplayMovies>
+}
+
+@code {
+    List<MovieGridDto> pagedMovies = new();
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await LoadFavoriteMovies();
+    }
+
+    private async Task LoadFavoriteMovies()
+    {
+        var favoriteMovieIds = favoriteStatus.Where(kv => kv.Value).Select(kv => kv.Key);
+        var favoriteMovies = Movies.Where(movie => favoriteMovieIds.Contains(movie.Id)).ToList();
+        pagedMovies = favoriteMovies;
+    }
+}

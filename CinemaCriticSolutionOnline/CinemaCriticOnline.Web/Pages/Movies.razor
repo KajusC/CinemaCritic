@@ -3,11 +3,11 @@
 @using CinemaCritic.Models.Dto
 @using CinemaCritic.Web.Services
 @using Microsoft.AspNetCore.Components.Authorization
-@inject JwtAuthenticationService AuthenticationServiced
+@inject JwtAuthenticationService AuthenticationService
 
 @if (Movies is null)
 {
-        <h1>Loading...</h1>
+    <h1>Loading...</h1>
 }
 else
 {
@@ -15,7 +15,7 @@ else
         <SearchBox Items="@Movies" OnSearch="UpdateFilteredMovies"></SearchBox>
         <button @onclick="ApplyFilters" class="filter-button">Apply Filters</button>
     </div>
-    <div class="filter-section" >
+    <div class="filter-section">
         <select @bind="selectedGenre" class="filter-field">
             <option value="">Genre</option>
             @foreach (var genre in Genres.Select(g => g.Name).ToList())
@@ -32,8 +32,9 @@ else
         </select>
         <input type="number" class="filter-field" @bind="fromYear" placeholder="From Year">
         <input type="number" class="filter-field" @bind="toYear" placeholder="To Year">
-        
+
     </div>
+
 
     @if (filteredMovies.Count == 0 && string.IsNullOrEmpty(selectedGenre) && string.IsNullOrEmpty(selectedAgeRating) && !fromYear.HasValue && !toYear.HasValue)
     {
@@ -70,13 +71,13 @@ else
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        await base.OnInitializedAsync();
         if (Movies != null && filteredMovies.Count == 0)
         {
             filteredMovies = Movies.ToList();
             UpdatePagedMovies();
         }
     }
+
     void UpdateFilteredMovies(string search)
     {
         if (string.IsNullOrEmpty(search))
@@ -90,6 +91,7 @@ else
         currentPage = 1;
         UpdatePagedMovies();
     }
+
     void ApplyFilters()
     {
         filteredMovies = Movies.ToList();
@@ -103,7 +105,8 @@ else
             filteredMovies = filteredMovies.Where(m => m.AgeRating.ToLower() == selectedAgeRating.ToLower()).ToList();
         }
 
-        if (fromYear.HasValue){
+        if (fromYear.HasValue)
+        {
             filteredMovies = filteredMovies.Where(m => m.ReleaseDate.Year >= fromYear).ToList();
         }
 
@@ -120,6 +123,7 @@ else
         int startIndex = (currentPage - 1) * pageSize;
         pagedMovies = filteredMovies.Skip(startIndex).Take(pageSize).ToList();
     }
+
 
     void NextPage()
     {
@@ -138,6 +142,5 @@ else
             UpdatePagedMovies();
         }
     }
-
     int totalPages => (int)Math.Ceiling((double)filteredMovies.Count / pageSize);
 }

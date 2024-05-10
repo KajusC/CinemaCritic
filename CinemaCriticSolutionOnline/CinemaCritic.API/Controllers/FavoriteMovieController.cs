@@ -1,53 +1,55 @@
-﻿using CinemaCritic.API.Models;
-using CinemaCritic.API.Repositories.Contracts;
-using Microsoft.AspNetCore.Http;
+﻿using CinemaCritic.API.Repositories.Contracts;
+using CinemaCritic.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace CinemaCritic.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FavoriteMovieController : Controller
+    public class FavoriteMovieController : ControllerBase
     {
-        private readonly IFavoriteMovieRepository _favoriteMovieRepository;
-        public FavoriteMovieController(IFavoriteMovieRepository favoriteMovieRepository)
+        private readonly IFavoriteMovieRepository _favoriteMovieService;
+
+        public FavoriteMovieController(IFavoriteMovieRepository favoriteMovieService)
         {
-            _favoriteMovieRepository = favoriteMovieRepository;
+            _favoriteMovieService = favoriteMovieService;
         }
 
         [HttpGet("movies/{userId}")]
-        [ProducesResponseType(200, Type = typeof(ICollection<Movie>))]
+        [ProducesResponseType(200, Type = typeof(ICollection<MovieGridDto>))]
         public async Task<IActionResult> GetFavoriteMoviesOfUser(int userId)
         {
-            var favoriteMovies = await _favoriteMovieRepository.GetAllFavoriteMoviesOfUser(userId);
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var favoriteMovies = await _favoriteMovieService.GetAllFavoriteMoviesOfUser(userId);
             return Ok(favoriteMovies);
         }
+
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public async Task<IActionResult> CreateFavoriteMovie([FromQuery] int userId, [FromQuery] int movieId)
+        public async Task<IActionResult> AddFavoriteMovie([FromQuery] int userId, [FromQuery] int movieId)
         {
-            if(!await _favoriteMovieRepository.CreateFavoriteMovie(userId, movieId))
+            var success = await _favoriteMovieService.CreateFavoriteMovie(userId, movieId);
+            if (!success)
             {
-                ModelState.AddModelError("", $"Something went wrong while saving the record to the database");
-                return StatusCode(500, ModelState);
+                ModelState.AddModelError("", $"Something went wrong while adding the favorite movie.");
+                return BadRequest(ModelState);
             }
-            return Ok("Success");
+            return NoContent();
         }
+
         [HttpDelete]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> DeleteFavoriteMovie([FromQuery] int userId, [FromQuery] int movieId)
+        public async Task<IActionResult> RemoveFavoriteMovie([FromQuery] int userId, [FromQuery] int movieId)
         {
-            if(!await _favoriteMovieRepository.DeleteFavoriteMovie(userId, movieId))
+            var success = await _favoriteMovieService.DeleteFavoriteMovie(userId, movieId);
+            if (!success)
             {
-                ModelState.AddModelError("", $"Something went wrong while deleting the record from the database");
-                return StatusCode(500, ModelState);
+                ModelState.AddModelError("", $"Something went wrong while removing the favorite movie.");
+                return BadRequest(ModelState);
             }
             return NoContent();
         }

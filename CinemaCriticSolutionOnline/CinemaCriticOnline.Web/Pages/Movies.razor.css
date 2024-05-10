@@ -65,3 +65,30 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.favorite, .not-favorite {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.favorite {
+    color: yellow;
+}
+
+.not-favorite {
+    color: gray;
+}

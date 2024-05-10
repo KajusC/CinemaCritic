@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using CinemaCritic.Web.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
+using CinemaCritic.Web.Pages;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -24,6 +25,7 @@ builder.Services.AddScoped<IRegisterService, RegisterService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<IFavoriteMovieService, FavoriteMovieService>();
 builder.Services.AddScoped<JwtAuthenticationService>();
 builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.GetRequiredService<JwtAuthenticationService>());
 builder.Services.AddAuthorizationCore();

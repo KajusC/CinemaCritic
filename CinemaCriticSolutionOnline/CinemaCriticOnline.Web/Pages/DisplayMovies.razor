@@ -1,17 +1,69 @@
 ﻿@inherits DisplayMoviesBase
+@using CinemaCritic.Web.Services.Contracts
+@using CinemaCritic.Web.Services
+@using System.IdentityModel.Tokens.Jwt;
+@using System.Threading.Tasks;
+@inject IFavoriteMovieService favoriteMovieService
+@inject ILocalStorageService localStorage
 
 <div class="movie-cards">
     @foreach (var movie in Movies)
-    {   
-        <a href="/MovieDetails/@movie.Id">
-            <div class="movie-card">
+    {
+        <div class="movie-card">
+            <div class="card-info">
                 <img src="@movie.ImageUrl" alt="@movie.Name" />
-                <div class="card-info">
-                    <p>@movie.Name</p>
-                </div>
+                <span class="favorite-icon @(favoriteStatus.ContainsKey(movie.Id) && favoriteStatus[movie.Id] ? "favorite" : "not-favorite")" @onclick="() => ToggleFavorite(movie.Id)">&#9733;</span>
+                <p>@movie.Name</p>
             </div>
-        </a>
+        </div>
     }
 </div>
 
+@code {
+    private Dictionary<int, bool> favoriteStatus = new Dictionary<int, bool>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        // Load favorite status from the database or local storage
+        favoriteStatus = await LoadFavoriteStatus();
+    }
+
+    private async Task<Dictionary<int, bool>> LoadFavoriteStatus()
+    {
+        // Code to load favorite status from the database
+        // Implement this based on your backend service
+        // For demonstration, assume it loads from local storage
+        return await localStorage.GetItem<Dictionary<int, bool>>("favoriteStatus") ?? new Dictionary<int, bool>();
+    }
+
+    private async Task ToggleFavorite(int movieId)
+    {
+        if (favoriteStatus.ContainsKey(movieId))
+        {
+            favoriteStatus[movieId] = !favoriteStatus[movieId];
+        }
+        else
+        {
+            favoriteStatus[movieId] = true;
+        }
+        try
+        {
+            var logged = await _authService.IsAuthenticatedAsync();
+            if (logged)
+            {
+                int userId;
+                var handler = new JwtSecurityTokenHandler();
+                var token = handler.ReadJwtToken(await _localStorageService.GetItem<string>("token"));
+                userId = int.Parse(token.Claims.First(claim => claim.Type == "jti").Value);
+                // Save favorite status to the database
+                await favoriteMovieService.AddFavoriteMovie(userId, movieId);
+            }
+            // Update local storage
+            await localStorage.SetItem("favoriteStatus", favoriteStatus);
+        }
+        catch(Exception e)
+        {
+            // Handle error
+        }
+    }
+}
