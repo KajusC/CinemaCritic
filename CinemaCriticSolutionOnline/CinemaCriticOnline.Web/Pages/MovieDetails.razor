@@ -27,8 +27,25 @@ else
             <img class="movie-poster" src="@MovieDetailsDto.ImageUrl" alt="@MovieDetailsDto.Name" />
             <iframe class="movie-trailer" src="@MovieDetailsDto.TrailerUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <div>
-            <a href="/Review/@MovieDetailsDto.Id" class="review-button">Review "@MovieDetailsDto.Name"</a>
+        <button class="review-button"><a href="/Review/@MovieDetailsDto.Id">Review "@MovieDetailsDto.Name"</a></button>
+    </div>
+    <div class="review-container">
+        <h1 class="title">Reviews</h1>
+        @foreach(var item in MovieReviews)
+        {
+        <div class="review-card">
+            <div class="review-card-top">
+                <p class="review-title">@item.Title</p>
+                <p class="movie-name">#@item.User.Username</p>
+            </div>
+            <div class="review-card-middle">
+                <p class="review-rating">@item.Rating / 5</p>
+                <p class="review-date">@item.CommentDate.ToString("yyyy-MM-dd")</p>
+            </div>
+            <div class="review-card-bottom">
+                <p class="review-description">@item.Comment</p>
+            </div>
         </div>
+        }
     </div>
 }

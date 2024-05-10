@@ -65,6 +65,52 @@ hr[b-85rcilmavl] {
     margin-left: 5px;
     margin-right: 5px;
 }
+.review-card[b-85rcilmavl] {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: black;
+}
+.review-container[b-85rcilmavl]{
+    margin-bottom:50px;
+}
+.title[b-85rcilmavl]{
+    text-align: center;
+}
+.review-card-middle[b-85rcilmavl] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-card-bottom[b-85rcilmavl] {
+    margin-top: 10px;
+}
+
+.review-title[b-85rcilmavl] {
+    font-size: 1.8rem;
+}
+
+.movie-name[b-85rcilmavl] {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.review-rating[b-85rcilmavl] {
+    color: darkgoldenrod;
+}
+
+.review-rating[b-85rcilmavl], .review-card[b-85rcilmavl] {
+    font-size: 1rem;
+}
+
+.review-description[b-85rcilmavl] {
+    font-size: 1rem;
+    max-height: 60px;
+    overflow-y: auto;
+}
 @media (max-width: 1700px) {
     .poster-trailer-container[b-85rcilmavl] {
         height: 500px;
@@ -99,10 +145,23 @@ hr[b-85rcilmavl] {
     {
         font-size: 16px;
     }
+    .review-button[b-85rcilmavl]{
+        content: "Review";
+    }
+    .poster-trailer-container[b-85rcilmavl] {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .review-container[b-85rcilmavl] {
+        width: 90%;
+        margin: 20px auto;
+    }
 }
 .review-button[b-85rcilmavl] {
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin-top: 16px;
+    margin-bottom: 10px;
     background-color: rgb(1, 1, 54);
     color: white;
     border-radius: 20px;
@@ -115,7 +174,10 @@ hr[b-85rcilmavl] {
     border: groove;
     text-decoration: none;
 }
-
+.review-button a[b-85rcilmavl]{
+    color: white;
+    text-decoration: none;
+}
     .review-button:hover[b-85rcilmavl] {
         color: rgba(255, 255, 255, 1);
         box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
