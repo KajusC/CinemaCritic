@@ -1,8 +1,12 @@
-﻿@using CinemaCritic.Models.Dto
-@page "/topmovies"
+﻿@page "/topmovies"
+@using CinemaCritic.Models.Dto
+@using CinemaCritic.Web.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@inject JwtAuthenticationService AuthenticationServiced
 @inherits TopMoviesBase
 
-<h3>TopMovies</h3>
+<h3 class="title">Top Movies</h3>
+<p class="description">Here are the top rated movies according to our fellow Users.</p>
 
 @if (Movies is null)
 {
@@ -10,9 +14,7 @@
 }
 else
 {
-
-
-    //<DisplayMovies Movies="@sortedMovies"></DisplayMovies>
+    <DisplayTopMovies Movies="@sortedMovies"></DisplayTopMovies>
 }
 
 @code {

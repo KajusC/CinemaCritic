@@ -1,0 +1,17 @@
+﻿.center {
+    margin: 0 auto;
+    text-align: center;
+}
+.title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 69px;
+    font-family:Algerian;
+    color: yellow;
+}
+.description {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+

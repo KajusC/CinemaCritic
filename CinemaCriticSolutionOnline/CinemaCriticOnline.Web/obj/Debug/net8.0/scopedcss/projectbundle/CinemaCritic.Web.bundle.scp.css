@@ -212,6 +212,99 @@ a[b-expubzeqsq]{
         grid-template-columns: repeat(1, 1fr);
     }
 }
+/* /Pages/DisplayTopMovies.razor.rz.scp.css */
+*[b-lpwidvtv0f] {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.movie-cards[b-lpwidvtv0f] {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: 30px;
+    gap: 6px;
+    justify-items: center;
+    align-items: center;
+}
+
+.movie-card[b-lpwidvtv0f] {
+    height: 380px;
+    width: 220px;
+    transition: box-shadow 0.5s linear;
+    margin-bottom: 10px;
+}
+
+    .movie-card:hover .card-info[b-lpwidvtv0f] {
+        transform: scale(1.05);
+    }
+
+    .movie-card:hover[b-lpwidvtv0f] {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+    }
+
+    .movie-card img[b-lpwidvtv0f] {
+        height: 90%;
+        width: auto;
+        max-width: 100%;
+        object-fit: scale-down;
+    }
+
+.card-info[b-lpwidvtv0f] {
+    text-align: center;
+    color: white;
+    line-height: normal;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 2px;
+}
+
+a[b-lpwidvtv0f] {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1800px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+@media (max-width: 1600px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 1400px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1150px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 950px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .movie-cards[b-lpwidvtv0f] {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 /* /Pages/HomePage.razor.rz.scp.css */
 
 .media-scroller[b-hw4qup8o7j] {
@@ -2728,6 +2821,24 @@ body[b-k4t44gf9ix] {
     .popup button.submit:active[b-k4t44gf9ix] {
         transform: scale(0.95);
     }
+/* /Pages/TopMovies.razor.rz.scp.css */
+.center[b-3edg3j8mvw] {
+    margin: 0 auto;
+    text-align: center;
+}
+.title[b-3edg3j8mvw] {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 69px;
+    font-family:Algerian;
+    color: yellow;
+}
+.description[b-3edg3j8mvw] {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+
 /* /Pages/Welcome.razor.rz.scp.css */
 body[b-6e82rfcyib] {
     margin: 0;

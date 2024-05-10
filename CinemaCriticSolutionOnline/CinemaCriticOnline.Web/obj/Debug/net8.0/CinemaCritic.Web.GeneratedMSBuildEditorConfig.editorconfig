@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZU5vdEZvdW5kLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/TopMovies.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wTW92aWVzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -61,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope = b-j3zdfco5p9
 [C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/DisplayMovies.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheU1vdmllcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-expubzeqsq
+
+[C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/DisplayTopMovies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVRvcE1vdmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-lpwidvtv0f
 
 [C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/HomePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVBhZ2UucmF6b3I=
@@ -101,6 +101,10 @@ build_metadata.AdditionalFiles.CssScope = b-1ne5r2v03n
 [C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Signup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-k4t44gf9ix
+
+[C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/TopMovies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wTW92aWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3edg3j8mvw
 
 [C:/Users/Matas/Desktop/CinemaCritic/CinemaCriticSolutionOnline/CinemaCriticOnline.Web/Pages/Welcome.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5yYXpvcg==
