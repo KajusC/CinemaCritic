@@ -26,7 +26,7 @@
 <h3 align="center">CinemaCritic</h3>
 
   <p align="center">
-    This project is a web application for movie enjoyers who want to share their insights.
+    This project is a web application for movie enjoyers who want to share their insights and discover new movies
     <br />
     <a href=""><strong>Explore the docs » (to be implemented)</strong></a>
     <br />
@@ -69,8 +69,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The project is a movie review website, where users will be able to write reviews and find new movies. It will offer
-features such as: filtering by parametrs, adding movies to you favorites, browsing the top rated movies and much more.
+The project is a movie review website, where users will be able share their insights, rate movies and find new movies. The project offers many features such as:
+being able to review a movie, being able to track your own reviews, see reviews for other movies, find out more about a movie, the ability to favorite movies, filter based on specific
+parameters such as genre, age rating or year of release.
+
+The project aims to unite all movie enjoyers into a single website where all the functionality will be available and no other webpages will be needed. The main goal of the project is to create an environment where movie enthusiasts will be able to express themselves and find new and intriguing movies that maybe they did not think they liked.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,15 +95,14 @@ features such as: filtering by parametrs, adding movies to you favorites, browsi
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+To use this application in a development environment: 
 
 * Download PostgreSQL from the official website: https://www.postgresql.org/
 * Create a database with the name "MovieReviewWebsite"
+* Install the latest .NET SDK from the official website: https://dotnet.microsoft.com/en-us/download
+* Any IDE or text editor can be used, but Visual Studio is recommended: https://visualstudio.microsoft.com/downloads/
 
 ### Installation
 
@@ -118,7 +120,8 @@ This is an example of how to list things you need to use the software and how to
    ```sh
     Update-Database
    ```
-
+4. To run the project you will need to run both the API and the Blazor project simultaneously. To achieve this right click on the solution. In the opened up window click 
+"Configure Startuo Projects...". In the window that opened select "Multiple startup projects:" and set the CinemaCritic.API and CinemaCritic.Web to "Start"
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -126,7 +129,32 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This section will be updated as the program is developed more 
+When the application is first launched you will be met with a home screen. In the navigation bar you can see options of where you can navigate to. The home screen displays the name
+of the website and a short description.
+![home](https://github.com/KajusC/CinemaCritic/assets/144147405/a34086f1-dcfd-4a06-aa16-f5d1000d6c7c)
+
+After running the program clicking on "Sign Up" will redirect to a signup page where the user will be asked to enter in their details. The user is requested to enter their first name, last name, email, username and a password. After entering all the details clicking "Sign Up" will create an account and a popup will appear
+![signup](https://github.com/KajusC/CinemaCritic/assets/144147405/2ede475e-8587-483e-80bd-bcb1adafa7b1)
+
+After signing up the user can now go to the "Log In" page via the navbar and login using their credentials. The user is asked to fill out two fields: username and password. Once the fields are filled out the user presses "Log In" and is now logged in.
+![login](https://github.com/KajusC/CinemaCritic/assets/144147405/c8fcc77f-78a0-4090-ab61-ce277097be46)
+
+After logging in many more navigation bar options appear.
+![change_after_login](https://github.com/KajusC/CinemaCritic/assets/144147405/045c6072-af27-4382-a14e-5e794d9f1770)
+
+Clicking on "Reviews" will redirect to all the logged in users' reviews. This page allows the user to see all the reviews that he has ever written, including the title, the movie for which the review is written, the rating, the comment and the date of the review. It also allows to edit or delete the review with the apporpriate buttons.
+![user_reviews](https://github.com/KajusC/CinemaCritic/assets/144147405/d60d13a7-4951-4924-b23b-984c4eae14a9)
+
+Clicking on "Profile" will redirect the user to his profile dashboard. This dashboard is used to alter the information that was provided during the signup process.
+![edit_profile](https://github.com/KajusC/CinemaCritic/assets/144147405/c5ad6564-6e36-4a1a-b30d-7eaa81a500ce)
+
+Click on "Movies" will redirect the user to the list of movies that are in the database. The webpage displays a movie poster and title. The page also offers the ability to filter movies and implements pagination.
+![movie_view](https://github.com/KajusC/CinemaCritic/assets/144147405/f2af5c3f-61c3-430d-8238-d47d1604476e)
+
+The user has the ability to click on a movie poster (this is indicated with a changed pointer and an outline). After clicking on the specific movie card the user is redirected to a detailed view of the movie with more information such as: title, description, release year, age rating, length, trailer and the reviews that were written for this movie by other users.
+![detailed_view](https://github.com/KajusC/CinemaCritic/assets/144147405/3ff7a80d-f903-4982-b4f8-44b44c284288)
+
+If the user wishes to logout from the website the navigation bar has an option to do so by clicking the "Log Out" button.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
