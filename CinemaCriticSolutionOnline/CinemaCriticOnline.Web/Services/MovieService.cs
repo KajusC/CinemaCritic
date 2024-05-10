@@ -61,7 +61,32 @@ namespace CinemaCritic.Web.Services
                 throw;
             }
         }
+        public async Task<IEnumerable<TopMoviesDto>> GetTopMovies()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync("api/Movie");
 
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return Enumerable.Empty<TopMoviesDto>();
+                    }
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<TopMoviesDto>>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+                //log error
+                throw;
+            }
+        }
         public async Task<IEnumerable<MovieGridDto>> GetMovies()
         {
             try

@@ -1,0 +1,30 @@
+﻿@using CinemaCritic.Models.Dto
+@page "/topmovies"
+@inherits TopMoviesBase
+
+<h3>TopMovies</h3>
+
+@if (Movies is null)
+{
+    <h1>Loading...</h1>
+}
+else
+{
+
+
+    //<DisplayMovies Movies="@sortedMovies"></DisplayMovies>
+}
+
+@code {
+    List<TopMoviesDto> sortedMovies = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await base.OnInitializedAsync();
+        if (Movies != null && sortedMovies.Count == 0)
+        {
+            sortedMovies = Movies.ToList();
+        }
+    }
+}

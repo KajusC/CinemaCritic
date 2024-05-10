@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CinemaCritic.Web",
   "resources": {
-    "hash": "sha256-ay1ybmxxkABFHxQyiuFdVmD7N1Skz74X7pMZ9ua5qQw=",
+    "hash": "sha256-l1+1Y8BYi57wjajpPfspMXQOitmOdP7WChNpXXTPg6E=",
     "jsModuleNative": {
       "dotnet.native.8.0.4.n6miv35z4w.js": "sha256-ju0+XWE0ihz554eKEj0HQ8Opa61xpbUIaX5/MNo8we4="
     },
@@ -236,11 +236,12 @@
       "mscorlib.wasm": "sha256-/xjZuJwCmantx5vGyH5ZZ8keySSTeu+YHKQRJbZzcuM=",
       "netstandard.wasm": "sha256-vuFKmCGJbyv85DrzI6S1ZvCikuhIllH6hqbXIL+fUAA=",
       "System.Private.CoreLib.wasm": "sha256-SZkozEDkHEFN0VaDmhl2HOenGaqTOmHqEGkraz3Aejc=",
-      "CinemaCritic.Models.wasm": "sha256-RSfIdWJg6Z9Su+JZiv9kDQQEXrNBzcIcjx0TYcysews=",
-      "CinemaCritic.Web.wasm": "sha256-jzmq6NEZnunkgJrBKcbWBgAJ1sb8bz8uF66uvtDDnw8="
+      "CinemaCritic.Models.wasm": "sha256-Zbq/en+38vgpNDbbPRAP/0WuIR4PGC03oBe3vlkGnq0=",
+      "CinemaCritic.Web.wasm": "sha256-zc35TFxkGDsPoI/PVdFk3oD2FXTW13xhM1OL+15RSgs="
     },
     "pdb": {
-      "CinemaCritic.Web.pdb": "sha256-2HGWa9pTiDTNVXJG3EnUV/ITzTQjvjR+gaMQUwCiNMo="
+      "CinemaCritic.Models.pdb": "sha256-dFZJEYkYNNc9MsqiUwBwcrVisLmU5evAF3DmLYJMw1E=",
+      "CinemaCritic.Web.pdb": "sha256-loJlO67jb5qMqSYSiVEe2MznqUn2jFD3xmpLqox4I0E="
     }
   },
   "cacheBootResources": true,
