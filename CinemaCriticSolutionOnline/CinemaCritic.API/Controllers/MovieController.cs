@@ -34,6 +34,18 @@ namespace CinemaCritic.API.Controllers
             }
             return Ok(movies);
         }
+        [HttpGet("topmovies")]
+        [ProducesResponseType(200, Type = typeof(ICollection<TopMoviesDto>))]
+        public async Task<IActionResult> GetTopMovies()
+        {
+            //var movies = _mapper.Map<List<TopMoviesDto>>(await _movieRepository.GetTopMovies());
+            var movies = await _movieRepository.GetTopMovies();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(movies);
+        }
         [HttpGet("{movieId}")]
         [ProducesResponseType(200, Type=typeof(Movie))]
         public async Task<IActionResult> GetMovie(int movieId)

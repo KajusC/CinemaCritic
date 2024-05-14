@@ -1,17 +1,23 @@
-﻿using CinemaCritic.API.Data;
+﻿using AutoMapper;
+using CinemaCritic.API.Data;
 using CinemaCritic.API.Models;
 using CinemaCritic.API.Models.JoinTables;
 using CinemaCritic.API.Repositories.Contracts;
+using CinemaCritic.Models.Dto;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CinemaCritic.API.Repositories
 {
     public class MovieRepository : IMovieRepository
     {
         private readonly DataContext _context;
-        public MovieRepository(DataContext context)
+        private readonly IMapper _mapper;
+        public MovieRepository(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper=mapper;
         }
 
         public async Task<bool> CreateMovie(Movie movie)
@@ -29,6 +35,27 @@ namespace CinemaCritic.API.Repositories
         public async Task<ICollection<Movie>> GetAllMovies()
         {
             return await _context.Movies.Include(m => m.Genre).ToListAsync();
+        }
+        public async Task<ICollection<TopMoviesDto>> GetTopMovies()
+        {
+            var topMovies = await _context.Movies
+                .Include(m => m.Reviews)
+                .Select(m => new
+                {
+                    m.Id,
+                    m.Name,
+                    AverageRating = m.Reviews.Any() ? m.Reviews.Average(r => r.Rating) : 0.0,
+                    m.ImageUrl
+                })
+                .OrderByDescending(m => m.AverageRating)
+                .Take(20)
+                .ToListAsync();
+            ICollection<TopMoviesDto> movies= new List<TopMoviesDto>();
+            foreach (var movie in topMovies)
+            {
+                movies.Add(new TopMoviesDto { Id = movie.Id, Rating = movie.AverageRating, Name = movie.Name, ImageUrl = movie.ImageUrl });
+            }
+            return movies;
         }
 
         public async Task<Movie> GetMovie(int id)

@@ -1,0 +1,25 @@
+﻿@inherits DisplayTopMoviesBase
+
+<div class="movie-cards">
+    @if (Movies != null)
+    {
+        @foreach (var movie in Movies)
+        {
+            <a href="/MovieDetails/@movie.Id">
+                <div class="movie-card">
+                    <img src="@movie.ImageUrl" alt="@movie.Name" />
+                    <div class="card-info">
+                        <p>@movie.Name</p>
+                        <p>@movie.Rating.ToString("F1")</p>
+                    </div>
+                </div>
+            </a>
+        }
+    }
+    else
+    {
+        <p>No movies to display</p>
+    }
+</div>
+
+

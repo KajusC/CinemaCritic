@@ -1,0 +1,31 @@
+﻿@page "/topmovies"
+@using CinemaCritic.Models.Dto
+@using CinemaCritic.Web.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@inject JwtAuthenticationService AuthenticationService
+@inherits TopMoviesBase
+
+<h3 class="title">Top Movies</h3>
+<p class="description">Here are the top rated movies according to our fellow Users.</p>
+
+@if (sortedMovies is null)
+{
+    <h1>Loading...</h1>
+}
+else
+{
+    <DisplayTopMovies Movies="@sortedMovies"></DisplayTopMovies>
+}
+
+@code {
+    List<TopMoviesDto> sortedMovies = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await base.OnInitializedAsync();
+
+        sortedMovies = Movies.ToList();
+        
+    }
+}
