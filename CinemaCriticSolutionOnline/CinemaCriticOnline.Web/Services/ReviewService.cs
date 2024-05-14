@@ -83,6 +83,37 @@ namespace CinemaCritic.Web.Services
 			}
 		}
 
+        public async Task<double> GetMovieAverage(int movieId)
+        {
+            double average = 0;
+            try
+            {
+                var response = await _httpClient.GetAsync($"api/Review/movie/{movieId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var items = await response.Content.ReadFromJsonAsync<List<ReviewDto>>();
+
+                    if (items.Count > 0)
+                    {
+                        average = items.Average(r => r.Rating);
+                    }
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("An error occurred while retrieving the review.");
+            }
+
+            return average;
+        }
+
+
         public async Task DeleteReview(int reviewId)
         {
             try

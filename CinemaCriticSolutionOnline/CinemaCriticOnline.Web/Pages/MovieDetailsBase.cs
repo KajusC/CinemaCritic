@@ -9,8 +9,13 @@ namespace CinemaCritic.Web.Pages
         [Parameter]
         public int Id { get; set; }
 
+        public double AverageRating { get; set; }
+
         [Inject]
         public IMovieService MovieService { get; set; }
+
+        [Inject]
+        public IReviewService ReviewService { get; set; }
 
         public MovieDetailsDto MovieDetailsDto { get; set; }
         public string ErrorMessage { get; set; }
@@ -18,7 +23,11 @@ namespace CinemaCritic.Web.Pages
         {
             try
             {
+                double average;
                 MovieDetailsDto = await MovieService.GetMovieDetails(Id);
+                average = await ReviewService.GetMovieAverage(Id);
+                AverageRating = (double)MathF.Round((float)average,2);
+
             }
             catch (Exception ex)
             {

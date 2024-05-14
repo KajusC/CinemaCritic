@@ -153,5 +153,16 @@ namespace CinemaCritic.API.Controllers
             }
             return NoContent();
         }
+        [HttpGet("movie/{movieId}")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
+        public async Task<IActionResult> GetReviewsOfMovie(int movieId)
+        {
+            var reviews = _mapper.Map<List<ReviewListDto>>(await _reviewRepository.GetReviewsOfMovie(movieId));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(reviews);
+        }
     }
 }

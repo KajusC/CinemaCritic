@@ -7,15 +7,20 @@
 @inject ILocalStorageService localStorage
 
 <div class="movie-cards">
+
     @foreach (var movie in Movies)
     {
-        <div class="movie-card">
+        
+            <div class="movie-card">
             <div class="card-info">
-                <img src="@movie.ImageUrl" alt="@movie.Name" />
-                <span class="favorite-icon @(favoriteStatus.ContainsKey(movie.Id) && favoriteStatus[movie.Id] ? "favorite" : "not-favorite")" @onclick="() => ToggleFavorite(movie.Id)">&#9733;</span>
-                <p>@movie.Name</p>
+                <a href="/MovieDetails/@movie.Id">
+                    <img src="@movie.ImageUrl" alt="@movie.Name" />
+                 </a>
+                    <span class="favorite-icon @(favoriteStatus.ContainsKey(movie.Id) && favoriteStatus[movie.Id] ? "favorite" : "not-favorite")" @onclick="() => ToggleFavorite(movie.Id)">&#9733;</span>
+                    <p>@movie.Name</p>
+                </div>
             </div>
-        </div>
+
     }
 </div>
 
@@ -38,30 +43,38 @@
 
     private async Task ToggleFavorite(int movieId)
     {
-        if (favoriteStatus.ContainsKey(movieId))
-        {
-            favoriteStatus[movieId] = !favoriteStatus[movieId];
-        }
-        else
-        {
-            favoriteStatus[movieId] = true;
-        }
+        
         try
         {
             var logged = await _authService.IsAuthenticatedAsync();
             if (logged)
             {
                 int userId;
+
                 var handler = new JwtSecurityTokenHandler();
                 var token = handler.ReadJwtToken(await _localStorageService.GetItem<string>("token"));
                 userId = int.Parse(token.Claims.First(claim => claim.Type == "jti").Value);
+
+                if (favoriteStatus.ContainsKey(movieId))
+                {
+                    favoriteStatus[movieId] = !favoriteStatus[movieId];
+                    await favoriteMovieService.DeleteFavoriteMovie(userId, movieId);
+
+                }
+                else
+                {
+                    favoriteStatus[movieId] = true;
+                    await favoriteMovieService.AddFavoriteMovie(userId, movieId);
+                }
+
+                
                 // Save favorite status to the database
-                await favoriteMovieService.AddFavoriteMovie(userId, movieId);
+                
             }
             // Update local storage
             await localStorage.SetItem("favoriteStatus", favoriteStatus);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             // Handle error
         }

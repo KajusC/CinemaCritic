@@ -85,6 +85,12 @@
             ErrorMessageFooter = "Please try again with a different username or email";
             showPopup = true;
         }
+        catch (FatalRegisterException ex)
+        {
+            ErrorMessage = "User already exists";
+            ErrorMessageFooter = "Please try again with a different username or email";
+            showPopup = true;
+        }
         
     }
 
