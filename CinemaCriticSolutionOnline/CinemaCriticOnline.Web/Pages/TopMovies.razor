@@ -2,13 +2,13 @@
 @using CinemaCritic.Models.Dto
 @using CinemaCritic.Web.Services
 @using Microsoft.AspNetCore.Components.Authorization
-@inject JwtAuthenticationService AuthenticationServiced
+@inject JwtAuthenticationService AuthenticationService
 @inherits TopMoviesBase
 
 <h3 class="title">Top Movies</h3>
 <p class="description">Here are the top rated movies according to our fellow Users.</p>
 
-@if (Movies is null)
+@if (sortedMovies is null)
 {
     <h1>Loading...</h1>
 }
@@ -24,9 +24,8 @@ else
     {
         await base.OnInitializedAsync();
         await base.OnInitializedAsync();
-        if (Movies != null && sortedMovies.Count == 0)
-        {
-            sortedMovies = Movies.ToList();
-        }
+
+        sortedMovies = Movies.ToList();
+        
     }
 }

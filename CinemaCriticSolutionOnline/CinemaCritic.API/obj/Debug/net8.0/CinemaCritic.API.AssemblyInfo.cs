@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaCritic.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+546be36e02929dd4ff228a92d4ab09af8c382e0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e338bf536524d0651e8b9d3a38ed8907fc9e234")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaCritic.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaCritic.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

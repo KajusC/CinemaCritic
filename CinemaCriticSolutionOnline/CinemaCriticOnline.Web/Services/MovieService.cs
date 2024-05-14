@@ -65,7 +65,7 @@ namespace CinemaCritic.Web.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync("api/Movie");
+                var response = await _httpClient.GetAsync("api/Movie/topmovies");
 
                 if (response.IsSuccessStatusCode)
                 {

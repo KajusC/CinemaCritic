@@ -16,7 +16,10 @@ namespace CinemaCritic.Web.Pages
         [Parameter]
         public IEnumerable<TopMoviesDto> Movies { get; set; }
 
-        [Inject]
+		[Parameter]
+		public List<TopMoviesDto> MoviesList { get; set; }
+
+		[Inject]
         IAuthenticationService _authService { get; set; }
 
         override protected async Task OnInitializedAsync()
