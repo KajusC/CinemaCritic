@@ -88,7 +88,7 @@ namespace CinemaCritic.Web.Services
             double average = 0;
             try
             {
-                var response = await _httpClient.GetAsync($"api/Review/movie/{movieId}");
+                var response = await _httpClient.GetAsync($"api/Review/movie/review/{movieId}");
 
                 if (response.IsSuccessStatusCode)
                 {

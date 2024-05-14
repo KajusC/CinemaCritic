@@ -8,6 +8,7 @@ namespace CinemaCritic.API.Repositories.Contracts
         Task<Review> GetReview(int id);
         Task<ICollection<Review>> GetReviewsOfUser(int userId);
         Task<ICollection<Review>> GetReviewsOfMovie(int movieId);
+        Task<ICollection<Review>> GetReviewsOfMovieWithMovie(int movieId);
         Task<bool> CreateReview(Review review);
         Task<bool> UpdateReview(Review review);
         Task<bool> DeleteReview(Review review);

@@ -61,17 +61,7 @@ namespace CinemaCritic.API.Controllers
             }
             return Ok(reviews);
         }
-        [HttpGet("movie/{movieId}")]
-        [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
-        public async Task<IActionResult> GetReviewsOfMovie(int movieId)
-        {
-            var reviews = _mapper.Map<List<ReviewOfMovieDto>>(await _reviewRepository.GetReviewsOfMovie(movieId));
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            return Ok(reviews);
-        }
+
 
         [HttpPost]
         [ProducesResponseType(204)]
@@ -164,11 +154,24 @@ namespace CinemaCritic.API.Controllers
             }
             return NoContent();
         }
+
         [HttpGet("movie/{movieId}")]
         [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
         public async Task<IActionResult> GetReviewsOfMovie(int movieId)
         {
-            var reviews = _mapper.Map<List<ReviewListDto>>(await _reviewRepository.GetReviewsOfMovie(movieId));
+            var reviews = _mapper.Map<List<ReviewOfMovieDto>>(await _reviewRepository.GetReviewsOfMovie(movieId));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(reviews);
+        }
+
+        [HttpGet("movie/review/{movieId}")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Review>))]
+        public async Task<IActionResult> GetReviewsOfMovies(int movieId)
+        {
+            var reviews = _mapper.Map<List<ReviewListDto>>(await _reviewRepository.GetReviewsOfMovieWithMovie(movieId));
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
