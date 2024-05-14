@@ -35,9 +35,11 @@ namespace CinemaCritic.API.Controllers
         public async Task<IActionResult> Register([FromBody]RegisterModel request)
         {
             User? existingUser = null;
+            User? existingUserEmail = null;
             try
             {
                 existingUser = await _userManager.FindByNameAsync(request.UserName);
+                existingUserEmail = await _userManager.FindByEmailAsync(request.Email);
             }
             catch (Exception ex)
             {
@@ -45,7 +47,7 @@ namespace CinemaCritic.API.Controllers
             }
             
 
-            if (existingUser != null)
+            if (existingUser != null || existingUserEmail != null)
                 return Conflict("User already exists.");
 
             var user = new User()

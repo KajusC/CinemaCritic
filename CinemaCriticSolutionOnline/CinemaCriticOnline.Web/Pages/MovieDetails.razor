@@ -18,9 +18,11 @@ else
         <div class="info-container">
             <p class="movie-genre">@MovieDetailsDto.Genre.Name</p>
             <div class="detail-container">
+                
                 <p class="movie-info">@MovieDetailsDto.ReleaseDate.ToString("yyyy")</p>
-                <p class ="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.AgeRating</p>
+                <p class="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.AgeRating</p>
                 <p class="movie-info"><span class="bullet-pnt"></span> @MovieDetailsDto.MovieLength</p>
+                <p class="movie-info"><span class="bullet-pnt"></span> ⭐ @MathF.Round((float)AverageRating, 2)</p>
             </div>
         </div>
         <div class="poster-trailer-container">
