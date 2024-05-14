@@ -13,11 +13,15 @@ namespace CinemaCritic.Web.Pages
 
         [Inject]
         public IMovieService MovieService { get; set; }
+        [Inject]
+        public IReviewService Review { get; set; }
 
         [Inject]
         public IReviewService ReviewService { get; set; }
 
         public MovieDetailsDto MovieDetailsDto { get; set; }
+        public IEnumerable<ReviewOfMovieDto> MovieReviews { get; set; }
+
         public string ErrorMessage { get; set; }
         override protected async Task OnInitializedAsync()
         {
@@ -25,6 +29,7 @@ namespace CinemaCritic.Web.Pages
             {
                 double average;
                 MovieDetailsDto = await MovieService.GetMovieDetails(Id);
+                MovieReviews = await Review.GetReviewsOfMovie(Id);
                 average = await ReviewService.GetMovieAverage(Id);
                 AverageRating = (double)MathF.Round((float)average,2);
 

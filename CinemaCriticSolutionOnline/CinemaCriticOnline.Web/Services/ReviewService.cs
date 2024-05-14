@@ -152,5 +152,31 @@ namespace CinemaCritic.Web.Services
                 throw;
             }
         }
+
+        public async Task<IEnumerable<ReviewOfMovieDto>> GetReviewsOfMovie(int movieId)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"api/Review/movie/{movieId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return Enumerable.Empty<ReviewOfMovieDto>();
+                    }
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<ReviewOfMovieDto>>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"{response.StatusCode}: {message}");
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("An error occurred while retrieving the reviews.");
+            }
+        }
     }
 }

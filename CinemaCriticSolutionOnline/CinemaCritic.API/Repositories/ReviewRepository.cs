@@ -34,6 +34,11 @@ namespace CinemaCritic.API.Repositories
             return await _context.Reviews.Where(r => r.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<ICollection<Review>> GetReviewsOfMovie(int movieId)
+        {
+            return await _context.Reviews.Include(r => r.User).Where(r => r.Movie.Id == movieId).ToListAsync();
+        }
+
         public async Task<ICollection<Review>> GetReviewsOfUser(int userId)
         {
             return await _context.Reviews.Include(r => r.Movie).Where(r => r.User.Id == userId).ToListAsync();
